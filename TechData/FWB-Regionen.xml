@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE regionen [
+    <!ELEMENT regionen (region*)>
+    <!ATTLIST regionen  
+        name      CDATA        #REQUIRED
+        abbr      CDATA        #IMPLIED
+    >
+    <!ELEMENT region (region*)>
+    <!ATTLIST region  
+        name      CDATA        #REQUIRED
+        abbr      CDATA        #IMPLIED
+        separate  (no | col | hat) "no"
+    >
+]>
+
+<!-- 
+    Das Format - eine Zeile pro Region; EndeTag </region> in eigener Zeile - bitte beibehalten!
+    Jede Region muss einen Namen enthalten.
+    Gibt es kein Abkürzungsattribut, wird programmintern der gleiche String für name und abbr verwendet.
+    
+    "Abhängige" Städte oder Regionen erhalten das Attribut separate="no", um sie der übergeordneten Region zuzuweisen.
+    Einzufärbende Regionen erhalten das Attribut separate="col" (für "color")
+    Regionen, die (z.B.) schraffiert einzufärben sind, erhalten das Attribut separate="hat" (für "hatch pattern")
+-->
+
+
+<regionen name="Frühneuhochdeutsch" abbr="frnhdt.">
+    
+    <region name="Norddeutsch" abbr="nrddt.">
+        <region name="Niederdeutsch" abbr="nd." separate="no"/>        
+        
+        <region name="Nordniedersächsisch" abbr="nrdnieders." separate="col">
+            <region name="Bremen" separate="no"/>
+            <region name="Hamburg" abbr="Hamb." separate="no"/>
+            <region name="Lübeck" separate="no"/>
+            <region name="Schleswig" separate="no"/>
+            <region name="Ülzen" separate="no"/>
+            <region name="Ostelbisch" abbr="ostelb." separate="no"/>
+        </region>
+    
+        <region name="Niederfränkisch" abbr="nfrk." separate="col">
+            <region name="Antwerpen" separate="no"/>
+            <region name="Braunsrath" separate="no"/>
+            <region name="Cleve" separate="no"/>
+            <region name="Dahlem" separate="no"/>
+            <region name="Sittard" separate="no"/>
+            <region name="Südniederfränkisch" abbr="snfrk." separate="no"/>
+        </region>
+    
+        <region name="Westfälisch" abbr="westf." separate="col">
+            <region name="Dortmund" abbr="Dortm." separate="no"/>
+            <region name="Düsseldorf" separate="no"/>
+            <region name="Münster" separate="no"/>
+        </region>
+    
+        <region name="Ostfälisch" abbr="ostf." separate="col">
+            <region name="Braunschweig" separate="no"/>
+            <region name="Helmstedt" separate="no"/>
+            <region name="Hildesheim" separate="no"/>
+            <region name="Wolfenbüttel" abbr="Wolfenb." separate="no"/>
+        </region>
+    
+        <region name="Mecklenburgisch-Vorpommersch" abbr="mecklemb.-vorpommer." separate="col">
+            <region name="Rostock" separate="no"/>
+        </region>
+    
+        <region name="Brandenburgisch" abbr="brandenb." separate="col">
+            <region name="Brandenburg" abbr="Brandenb." separate="no"/>
+            <region name="Frankfurt/Oder" abbr="Frankf./O." separate="no"/>
+            <region name="Magdeburg" abbr="Magdeb." separate="no"/>
+            <region name="Stettin" separate="no"/>
+        </region>
+        
+        <region name="Ostpommersch" abbr="ostpommer." separate="col"/>
+    
+        <region name="Preußisch" abbr="preuß.">
+            <region name="Niederpreußisch" abbr="npreuß." separate="col">
+                <region name="Danzig" separate="no"/>
+                <region name="Königsberg" abbr="Königsb." separate="no"/>
+            </region>
+
+            <region name="Hochpreußisch" abbr="hpreuß." separate="col"/>
+                <region name="Kulm" separate="no"/>
+                <region name="Thorn" separate="no"/>            
+        </region>
+        
+    </region>
+
+    <region name="Mitteldeutsch" abbr="md.">
+        
+        <region name="Westmitteldeutsch" abbr="wmd.">
+            
+            <region name="Mittelfränkisch" abbr="mfrk.">
+                <region name="Rheinisch" abbr="rhein." separate="no"/>
+
+                <region name="Ribuarisch" abbr="rib." separate="col">
+                    <region name="Bergisch-Gladbach" abbr="B.-Gladbach" separate="no"/>
+                    <region name="Blankenberg" separate="no"/>
+                    <region name="Düren" separate="no"/>
+                    <region name="Eckenhagen" separate="no"/>
+                    <region name="Freialdenhoven" separate="no"/>
+                    <region name="Jülich" separate="no"/>
+                    <region name="Kaster" separate="no"/>
+                    <region name="Köln" separate="no"/>
+                    <region name="Lützenkirchen" separate="no"/>
+                    <region name="Mondorf" separate="no"/>
+                    <region name="Neukirchen" separate="no"/>
+                    <region name="Rolandseck" separate="no"/>
+                    <region name="Rosbach" separate="no"/>
+                    <region name="Waldriel" separate="no"/>
+                    <region name="Wipperfürth" separate="no"/>
+                    <region name="Niederrheinisch" abbr="nrhein." separate="no"/>
+                </region>
+                
+                <region name="Moselfränkisch" abbr="mosfrk." separate="col">
+                    <region name="Hunsrück" separate="no"/>
+                    <region name="Simmern" separate="no"/>
+                    <region name="Trier" separate="no"/>
+                    <region name="Mittelrheinisch" abbr="mrhein." separate="no"/>
+                </region>
+                
+            </region>
+            
+            <region name="Rheinfränkisch" abbr="rhfrk.">
+                
+                <region name="Pfälzisch" abbr="pfälz." separate="col">
+                    <region name="Hambach" separate="no"/>
+                    <region name="Heidelberg" separate="no"/>
+                    <region name="Mainz" separate="no"/>
+                    <region name="Oppenheim" separate="no"/>
+                    <region name="Speyer" separate="no"/>
+                    <region name="Worms" separate="no"/>
+                    <region name="Südrheinfränkisch" abbr="srhfrk." separate="no"/>
+                </region>
+                
+                <region name="Hessisch" abbr="hess." separate="col">
+                    <region name="Eltville" separate="no"/>
+                    <region name="Frankfurt" abbr="Frankf." separate="no"/>
+                    <region name="Frankfurt/Main" abbr="Frankf./M." separate="no"/>
+                    <region name="Friedberg" separate="no"/>
+                    <region name="Hanau" separate="no"/>
+                    <region name="Herborn" separate="no"/>
+                    <region name="Hessen-Nassauisch" abbr="hess.-nass." separate="no"/>
+                    <region name="Marburg" separate="no"/>
+                    <region name="Offenbach" separate="no"/>
+                    <region name="Wetzlar" separate="no"/>
+                    <region name="Mittelhessisch" abbr="mhess." separate="no"/>
+                    <region name="Niederhessisch" abbr="ndhess." separate="no"/>
+                    <region name="Nordrheinfränkisch" abbr="nrhfrk." separate="no"/>
+                    <region name="Oberhessisch" abbr="ohess." separate="no"/>
+                    <region name="Südhessisch" abbr="shess." separate="no"/>
+                </region>
+            </region>
+            
+        </region>
+        
+        <region name="Ostmitteldeutsch" abbr="omd.">
+            
+            <region name="Thüringisch" abbr="thür." separate="col">
+                <region name="Allstedt" separate="no"/>
+                <region name="Eisleben" separate="no"/>
+                <region name="Erfurt" separate="no"/>
+                <region name="Halle" separate="no"/>
+                <region name="Ilfeld" separate="no"/>
+                <region name="Jena" separate="no"/>
+                <region name="Mühlhausen" abbr="Mühlh." separate="no"/>
+                <region name="Schleusingen" separate="no"/>
+                <region name="Nordthüringisch" abbr="nthür." separate="no"/>
+            </region>
+            
+            <region name="Obersächsisch" abbr="osächs." separate="col">
+                <region name="Annaberg" separate="no"/>
+                <region name="Bautzen" separate="no"/>
+                <region name="Dresden" separate="no"/>
+                <region name="Freiberg" separate="no"/>
+                <region name="Eilenburg" abbr="Eilenb." separate="no"/>
+                <region name="Grimma" separate="no"/>
+                <region name="Leipzig" separate="no"/> 
+                <region name="Wittenberg" abbr="Wittenb." separate="no"/>
+                <region name="Zittau" separate="no"/>
+                <region name="Zwickau" separate="no"/>
+                <region name="Sudetendeutsch" abbr="sudetendt." separate="no"/>
+            </region>
+            
+            <region name="Schlesisch" abbr="schles." separate="col">
+                <region name="Breslau" separate="no"/>
+                <region name="Görlitz" separate="no"/>
+                <region name="Grunau" separate="no"/>
+                <region name="Liegnitz" separate="no"/>
+                <region name="Öls" separate="no"/>
+                <region name="Mittelschlesisch" abbr="mschles." separate="no"/>
+            </region>
+            
+        </region>
+        
+    </region>
+
+    <region name="Oberdeutsch" abbr="obd.">
+        
+         <region name="Westoberdeutsch" abbr="wobd.">
+            
+             <region name="Alemannisch" abbr="alem.">
+                <region name="Oberrheinisch" abbr="orhein." separate="no"/>
+                
+                <region name="Niederalemannisch" abbr="nalem.">
+                  
+                    <region name="Elsässisch" abbr="els." separate="col">
+                        <region name="Edimburg" separate="no"/>
+                        <region name="Hagenau" separate="no"/>
+                        <region name="Mühlhausen/Elsass" abbr="Mühlh./E." separate="no"/>
+                        <region name="Straßburg" abbr="Straßb." separate="no"/>
+                    </region>
+                
+                    <region name="Östliches Niederalemannisch" abbr="önalem." separate="col">
+                        <region name="Arbon" separate="no"/>
+                        <region name="Bodenseegebiet" abbr="Bodenseegeb." separate="no"/>
+                        <region name="Ermatingen" separate="no"/>
+                        <region name="Freiburg" abbr="Freib." separate="no"/>
+                        <region name="Gottlieben" separate="no"/>
+                        <region name="Güttingen" separate="no"/>
+                        <region name="Konstanz" separate="no"/>
+                        <region name="Lueg" separate="no"/>
+                        <region name="Nordostschweizerisch" abbr="noschweiz." separate="no"/>
+                        <region name="Nordschweizerisch" abbr="nschweiz." separate="no"/>
+                        <region name="Ostalemannisch" abbr="oalem." separate="no"/>
+                        <region name="Reichenau" separate="no"/>
+                        <region name="Schaffhausen" separate="no"/>
+                        <region name="Vorarlbergisch" abbr="vorarlb." separate="no"/>
+                    </region>
+                  
+                </region>
+                
+                 <region name="Hochalemannisch" abbr="halem." separate="col">
+                    <region name="Basel" separate="no"/>
+                    <region name="Bern" separate="no"/>
+                    <region name="Bettlern" separate="no"/>
+                    <region name="Bischofszell" separate="no"/>
+                    <region name="Bussnang" separate="no"/>
+                    <region name="Diessenhofen" separate="no"/>
+                    <region name="Dussmang" separate="no"/>
+                    <region name="Eschlikon" separate="no"/>
+                    <region name="Frauenfeld" separate="no"/>
+                    <region name="Genf" separate="no"/>
+                    <region name="Langenerchingen" separate="no"/>
+                    <region name="Luzern" separate="no"/>
+                    <region name="Petershausen" separate="no"/>
+                    <region name="St. Katharinental" separate="no"/>
+                    <region name="Steckborn" separate="no"/>
+                    <region name="Tänikon" separate="no"/>
+                    <region name="Unterschlatt" separate="no"/>
+                    <region name="Wil" separate="no"/>
+                    <region name="Winterthur" separate="no"/>
+                    <region name="Zürich" separate="no"/>
+                    <region name="Östliches Hochalemannisch" abbr="ohalem." separate="no"/>
+                    <region name="Schweiz" abbr="schweiz." separate="no"/>
+                    <region name="Südalemannisch" abbr="salem." separate="no"/>
+                    <region name="Thurgauisch" abbr="thurg." separate="no"/>
+                    <region name="Westhochalemannisch" abbr="whalem." separate="no"/>
+                </region>
+                
+            </region>
+            
+             <region name="Schwäbisch" abbr="schwäb." separate="col"> 
+                <region name="Augsburg" abbr="Augsb." separate="no"/>
+                <region name="Dillingen" separate="no"/>
+                <region name="Lauben" separate="no"/>
+                <region name="Lauingen" separate="no"/>
+                <region name="Nördlingen" separate="no"/>
+                <region name="Reutlingen" separate="no"/>
+                <region name="Rottweil" separate="no"/>
+                <region name="Tübingen" separate="no"/>
+                <region name="Ulm" separate="no"/>
+                <region name="Oberschwäbisch" abbr="oschwäb." separate="no"/>
+                <region name="Südschwäbisch" abbr="sschwäb." separate="no"/>
+                <region name="Westschwäbisch" abbr="wschwäb." separate="no"/>
+            </region>
+            
+        </region>
+        
+        <region name="Ostoberdeutsch und Nordoberdeutsch" abbr="o/nobd.">
+        
+            <region name="Nordoberdeutsch" abbr="nobd.">
+                
+                <region name="Ostfränkisch" abbr="ofrk." separate="col">
+                    <region name="Bamberg" abbr="Bamb." separate="no"/>
+                    <region name="Coburg" separate="no"/>
+                    <region name="Hof" separate="no"/>
+                    <region name="Nürnberg" abbr="Nürnb." separate="no"/>
+                    <region name="Schwabach" separate="no"/>
+                    <region name="Schweinfurt" separate="no"/>
+                    <region name="Würzburg" abbr="Würzb." separate="no"/>
+                    <region name="Nürnbergisch" abbr="nürnb." separate="no"/>
+                </region>     
+                
+                <region name="Südfränkisch" abbr="sfrk." separate="col">
+                    <region name="Pforzheim" separate="no"/>
+                    <region name="Spiegelberg" separate="no"/>
+                </region>
+                
+            </region>
+
+    
+            <region name="Ostoberdeutsch" abbr="oobd.">
+                   
+                <region name="Nördliches Ostoberdeutsch" abbr="noobd." separate="col">
+                    <region name="Regensburg" abbr="Regensb." separate="no"/>
+                </region>
+                
+                <region name="Mittleres und südliches Ostoberdeutsch" abbr="m/soobd.">     
+
+                    <region name="Mittleres Ostoberdeutsch" abbr="moobd.">
+                        
+                        <region name="Bairisch" abbr="bair." separate="no"/>
+                        <region name="Österreichisch" abbr="öst." separate="no"/>
+                        <region name="Östliches Ostoberdeutsch" abbr="öoobd." separate="no"/>
+                        <region name="Westbairisch" abbr="wbair." separate="no"/>
+                        <region name="Westmittelbairisch" abbr="wmbair." separate="no"/>
+                    
+                        <region name="Nördliches Mittleres Ostoberdeutsch" abbr="nmoobd." separate="col"> 
+                            <region name="Abensperg" separate="no"/>
+                            <region name="Ingolstadt" abbr="Ingolst." separate="no"/>
+                            <region name="Landshut" separate="no"/>
+                            <region name="Linz" separate="no"/>
+                            <region name="München" separate="no"/>
+                            <region name="Pressburg" separate="no"/>
+                            <region name="Tegernsee" separate="no"/>
+                            <region name="Wien" separate="no"/>
+                            <region name="Mittelbairisch" abbr="mbair." separate="no"/>
+                            <region name="Niederbairisch" abbr="nbair." separate="no"/>
+                            <region name="Niederösterreichisch" abbr="nöst." separate="no"/>
+                        </region>
+              
+                        <region name="Südliches Mittleres Ostoberdeutsch" abbr="smoobd." separate="col">
+                            <region name="Grünau" separate="no"/>
+                        </region>
+                                           
+                    </region>
+            
+                    <region name="Südliches Ostoberdeutsch" abbr="soobd." separate="col">
+                        <region name="Bozen" separate="no"/>
+                        <region name="Bruneck" separate="no"/>
+                        <region name="Eernperg" separate="no"/>
+                        <region name="Eppan" separate="no"/>
+                        <region name="Finstermünz" separate="no"/>
+                        <region name="Innsbruck" separate="no"/>
+                        <region name="Klausen" separate="no"/>
+                        <region name="Lienz" separate="no"/>
+                        <region name="Seefeld" separate="no"/>
+                        <region name="Tirol" separate="no"/>
+                        <region name="Toblach" separate="no"/>
+                        <region name="Südtirolisch" abbr="stir." separate="no"/>
+                        <region name="Tirolisch" abbr="tir." separate="no"/>
+                        <region name="Villach" separate="no"/>
+                        <region name="Zirl" separate="no"/>
+                    </region>
+            
+                </region>
+            </region>
+        </region>
+    </region>
+
+    
+    <region name="Inseldeutsch" abbr="inseldt.">
+        
+        <region name="Italienisches Inseldeutsch" abbr="ital. inseldt." separate="hat">
+            <region name="Rovereto" separate="no"/>
+            <region name="Venedig" separate="no"/>
+            <region name="Südliches Inseldeutsch" abbr="südl. inseldt." separate="no"/>
+        </region>
+        
+        <region name="Östliches Inseldeutsch" abbr="östl. inseldt.">
+        
+            <region name="Ungarisches Inseldeutsch" abbr="ung. inseldt." separate="hat">
+                <region name="Niederungarisches Inseldeutsch" abbr="niederung. inseldt." separate="no"/>
+                <region name="Siebenbürgisch" abbr="siebenb." separate="no"/>
+            </region>
+        
+            <region name="Böhmisch-Mährisches Inseldeutsch" abbr="böhm.-mähr. inseldt." separate="hat">
+                <region name="Arnau" separate="no"/>
+                <region name="Böhmisch" abbr="böhm." separate="no"/>
+                <region name="Mährisches Inseldeutsch" abbr="mähr. inseldt." separate="no"/>
+                <region name="Mittelslowakisch" abbr="mslow." separate="no"/>
+                <region name="Mittelslowakisches Inseldeutsch" abbr="mslow. inseldt." separate="no"/>
+                <region name="Nordwestböhmisch" abbr="nwböhm." separate="no"/>
+                <region name="Nordböhmisch" abbr="nböhm." separate="no"/>    
+                <region name="Prag" separate="no"/>
+                <region name="Slowakisches Inseldeutsch" abbr="slow. inseldt." separate="no"/>
+                <region name="Südböhmisch" abbr="sböhm." separate="no"/>
+                <region name="Südmährisches Inseldeutsch" abbr="smähr. inseldt." separate="no"/>
+                <region name="Südslowakisches Inseldeutsch" abbr="sslow. inseldt." separate="no"/>
+                <region name="Westböhmisch" abbr="wböhm." separate="no"/>
+            </region>
+        
+            <region name="Polnisches Inseldeutsch" abbr="poln. inseldt." separate="hat">
+                <region name="Schlesisches Inseldeutsch" abbr="schles. inseldt." separate="no"/>
+                <region name="Schlokau" separate="no"/>
+            </region>
+            
+            <region name="Baltisch" abbr="balt." separate="hat"/>
+            
+        </region>
+
+    </region>
+        
+  </regionen>
+  

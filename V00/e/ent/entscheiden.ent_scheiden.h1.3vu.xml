@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>
+          ent_scheiden
+        </title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence notBefore="2021-11-01"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="printedSource">
+          <title>Frühneuhochdeutsches Wörterbuch</title>
+          <idno>18458bae-5785-44ff-a583-3344705555e2</idno>
+          <biblScope unit="volume">05</biblScope>
+          <biblScope unit="column">2880</biblScope>
+        </bibl>
+        <listBibl type="examples">
+          <bibl>
+            <!-- TODO: hier sollte die Liste der Quellen stehen -->
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <!-- Bedeutung der @type-Attribute in ref bzw. von @subtype in re -->
+        <taxonomy xml:id="ref.type_re.subtype">
+          <category xml:id="cnv">
+            <catDesc>konvertiert: aus dem Konvertierungsprozess</catDesc>
+          </category>
+          <category xml:id="nex">
+            <catDesc>nicht existent: Verweisziel in unbearbeitetem Lemmabereich</catDesc>
+          </category>
+          <category xml:id="non">
+            <catDesc>unbekannt: kein Ziel in der Verweisprüfung gefunden</catDesc>
+          </category>
+          <category xml:id="unc">
+            <catDesc>unsicher: nach Verweisprüfung mehrere Ziele möglich</catDesc>
+          </category>
+          <category xml:id="mat">
+            <catDesc>abgeglichen: durch Verweisprüfung eingetragen</catDesc>
+          </category>
+          <category xml:id="gen">
+            <catDesc>generiert: das Verweisziel ist als Synonym generiert worden</catDesc>
+          </category>
+          <category xml:id="sta">
+            <catDesc>stabil: manuell verifiziert</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in re -->
+        <taxonomy xml:id="re.type">
+          <category xml:id="re.neblem">
+            <catDesc>verbundener Eintrag: Nebenlemma (auch als Ziel eines Verweisartikels)</catDesc>
+          </category>
+          <category xml:id="re.wbg">
+            <catDesc>verbundener Eintrag: Wortbildung als Ziel eines Verweisartikels</catDesc>
+          </category>
+          <category xml:id="re.ofe">
+            <catDesc>verbundener Eintrag: Verweisziel im Orientierungsfeld</catDesc>
+          </category>
+          <category xml:id="re.bdv">
+            <catDesc>verbundener Eintrag: Verweisziel ist synonym</catDesc>
+          </category>
+          <category xml:id="re.ggs">
+            <catDesc>verbundener Eintrag: Verweisziel ist antonym</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in oVar -->
+        <taxonomy xml:id="oVar.type">
+          <category xml:id="oVar.lem">
+            <catDesc>Originalschreibung des Lemmas (in Zitaten)</catDesc>
+          </category>
+          <category xml:id="oVar.wbg">
+            <catDesc>Originalschreibung einer Wortbildung (in Zitaten)</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <tagsDecl>
+        <!-- Typografie: verwendet z.B. als <hi rendition="#sc">Text in Kapitälchen</hi> -->
+        <rendition xml:id="rect" scheme="css">font-variant: normal;</rendition>
+        <rendition xml:id="sc" scheme="css">font-variant: small-caps;</rendition>
+        <rendition xml:id="b" scheme="css">font-weight: bold;</rendition>
+        <rendition xml:id="it" scheme="css">font-style: italic;</rendition>
+        <rendition xml:id="hoch" scheme="css">vertical-align: super;</rendition>
+        <rendition xml:id="tief" scheme="css">vertical-align: sub;</rendition>
+        <rendition xml:id="wide" scheme="css">letter-spacing: 0.5em;</rendition>
+        <namespace name="http://www.tei-c.org/ns/1.0">
+          <!-- Bedeutung der unterschiedlichen dictScrap Bereiche -->
+          <tagUsage gi="dictScrap">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>artkopf</label>
+              <item>Artikelkopf</item>
+              <label>bdv</label>
+              <item>Synomyme</item>
+              <label>bls</label>
+              <item>Belegstellenangaben</item>
+              <label>cit</label>
+              <item>Quellenzitate</item>
+              <label>ggs</label>
+              <item>Antonyme</item>
+              <label>phrase</label>
+              <item>Phraseme</item>
+              <label>ra</label>
+              <item>Redensarten</item>
+              <label>ref</label>
+              <item>Sachkommentar</item>
+              <label>semcom</label>
+              <item>semantischer Kommentar</item>
+              <label>stw</label>
+              <item>Symptomwertangaben</item>
+              <label>sv</label>
+              <item>sub-voce-Angaben</item>
+              <label>synt</label>
+              <item>Syntagmen</item>
+              <label>vw</label>
+              <item>Verweis (bei Verweisstichwörtern)</item>
+              <label>wbg</label>
+              <item>Wortbildungen</item>
+              <label>wbv</label>
+              <item>Wortbildungsverweise</item>
+              <label>meta</label>
+              <item>Einschub, Einleitung oder ergänzende Texte</item>
+              <label>ipLiPkt</label>
+              <item>Punkt einer Informationsprogrammliste</item>
+              <label>BBlock</label>
+              <item>Abgrenzung eines Belegstellenblocks</item>
+            </list>
+          </tagUsage>
+          <tagUsage gi="citedRange">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>export</label>
+              <item>Ein ggf. vorhandener externer Link darf öffentlich exportiert werden</item>
+            </list>
+          </tagUsage>
+        </namespace>
+      </tagsDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change status="cnvResult">Text blieb erhalten; XML-Struktur: ok</change>
+      <change status="cnv" when-iso="2023-08-23">converted from print</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <entry xml:id="ent_scheiden.h1.3vu" sortKey="entscheiden.ent_scheiden.h1.3vu">
+        <form type="lemma">
+          <orth>ent|<hi rendition="hoch">1</hi>scheiden,</orth>
+        </form>
+        
+        <dictScrap rend="artkopf" xml:space="preserve"> <gram xml:space="preserve" type="wortart">V., unr. abl.;</gram> Bedeutungsfeld mit dem gemeinsamen Moment ,etw. trennen, voneinander abgrenzen‘: 1 fasst verschiedene, häufig nicht klar voneinander abgrenzbare rechtssprachliche Verwendungsweisen zusammen, in denen die Schaffung sozialer Ordnung und vor allem die Streitschlichtung durch weltliche Gerichte und deren ausführende Organe im Vordergrund stehen; 2 verhält sich metonymisch zu <ref type="mat" target="ent_scheiden.h1.3vu_s1">1</ref>; die schwächer belegten Bedeutungen 3-5 beziehen sich auf weitere abstrakte oder konkrete Formen der Trennung und Abgrenzung.</dictScrap>
+        
+        <!-- Bedeutung 1.  -->
+        <sense xml:id="ent_scheiden.h1.3vu_s1" rend="1">
+          <!-- Definition -->
+          <def>›einen juristischen Streitfall klären, einen Streit beilegen, schlichten, ein Urteil fällen; eine Einigung zwischen zwei Parteien erzielen, einen Vergleich erwirken‹; ›etw. rechtsverbindlich festsetzen, festlegen, bestimmen‹; speziell: ›einen Grenzverlauf festsetzen‹; mit Umkehrung der Perspektive: ›eine Obrigkeit, ein Gericht um die Klärung eines Streitfalles anrufen‹; auch: ›sich gütlich einigen‹; </def>
+          <dictScrap rend="wbv">vgl. <ref type="mat" target="ent-.s.8w_8w">ent-</ref> <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s3">3</ref>a; <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s6">6</ref>.</dictScrap>
+          <dictScrap rend="stw">Gehäuft Rechts- und Wirtschaftstexte.</dictScrap>
+          <dictScrap rend="bdv">(bzw. Orientierungsfeld): <re type="re.ofe"><ref type="mat" target="abtragen.s.3vu">abtragen</ref> <ref type="mat" target="abtragen.s.3vu#abtragen.s.3vu_s5">5</ref>, <ref type="mat" target="berichten.s.3v">berichten</ref> <ref type="mat" target="berichten.s.3v#berichten.s.3v_s11">11</ref>; <ref type="mat" target="berichten.s.3v#berichten.s.3v_s13">13</ref>, <hi rendition="hoch">1</hi><ref type="mat" target="betragen.h1.3vu">betragen</ref> <ref type="mat" target="betragen.h1.3vu#betragen.h1.3vu_s3">3</ref>, <ref type="mat" target="einen.rI.3v">einen</ref> I, <ref type="mat" target="einen.rI.3v#einen.rI.3v_s2">2</ref>, <ref type="mat" target="entrichten.s.3v">entrichten</ref> <ref type="mat" target="entrichten.s.3v#entrichten.s.3v_s2">2</ref>, <ref type="mat" target="entschliessen.s.3vu">entschliessen</ref> <ref type="mat" target="entschliessen.s.3vu#entschliessen.s.3vu_s4">4</ref>, <ref type="mat" target="entsetzen.s.3v">entsetzen</ref> <ref type="mat" target="entsetzen.s.3v#entsetzen.s.3v_s7">7</ref>, <ref type="mat" target="läutern.s.3v">läutern</ref> <ref type="mat" target="läutern.s.3v#läutern.s.3v_s3">3</ref>, <ref type="mat" target="mitteln.s.3v">mitteln</ref> <ref type="mat" target="mitteln.s.3v#mitteln.s.3v_s2">2</ref>, <ref type="mat" target="rechtfertigen.s.3v">rechtfertigen</ref> <ref type="mat" target="rechtfertigen.s.3v#rechtfertigen.s.3v_s2">2</ref>, <ref type="mat" target="richten.s.3v">richten</ref> <ref type="mat" target="richten.s.3v#richten.s.3v_s9">9</ref>; <ref type="mat" target="richten.s.3v#richten.s.3v_s12">12</ref>, <ref type="mat" target="scheiden.s.3vu">scheiden</ref> (V., unr. abl.) <ref type="mat" target="scheiden.s.3vu#scheiden.s.3vu_s7">7</ref>, <ref type="nex" target="urteilen.s.*">urteilen</ref>, <ref type="nex" target="vereinen.s.*">vereinen</ref>, <ref type="nex" target="verrichten.s.*">verrichten</ref>, <ref type="nex" target="vertragen.s.*">vertragen</ref></re>.</dictScrap>
+          <dictScrap rend="synt"><hi rendition="it">jn. / etw</hi>. (z. B. <hi rendition="it">einen krieg / span, die / eine irrung / klage / sache / zwietracht, das gezänke / kämpfen, die parteien, gerichte</hi> hier: ›Gerichtsbezirke‹ <hi rendition="it">/ landmarken</hi>) <hi rendition="it">e., j</hi>. (z. B. <hi rendition="it">ein junker / richter, die gemeine, die herren / schiedsrichter / schöffen</hi>) <hi rendition="it">etw. e., die leute</hi> (Subj.) <hi rendition="it">sich miteinander e., jm. etw. e., etw</hi>. [wie] (z. B. <hi rendition="it">auf antwort / schiedsrichter, auf ein recht, durch amptleute / recht, durch ein urteil, mit freundschaft / minne / recht, mit rechtlichem spruch, endlich / freundlich / gütlich / nüzlich / rechtlich</hi>) <hi rendition="it">e. (lassen), über etw. e., jn. voneinander, von anderen e</hi>.; <hi rendition="it">e., das [...]</hi>.</dictScrap>
+          <dictScrap rend="wbg"><re type="re.wbg" subtype="mat" copyOf="entscheidenheit.s.1f">entscheidenheit</re> 1 ›Auseinandersetzung, Klärung einer Frage‹.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Strehlke</name>, Nic. Jerosch. Chron. <citedRange n="49" facs="1971" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n338">1971</citedRange> (<region key="preuß.">preuß.</region>, <date from="1325" to="1335" confidence="0.0909">um 1330</date>/<date from="1335" to="1345" confidence="0.0909">40</date>)</bibl>
+              <quote xml:space="preserve">des gab durch ganze sichirheit<lb/>der herzoge vorgeseit<lb/>den brûderen brîve wol bereit<lb/>nâch der sache <oVar type="oVar.wbg" n="88" rend="jedit" norm="entscheidenheit">intscheidinheit</oVar><lb/>mit sîme ingesigele ganz. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="346" cert="high">Luther</name>, WA <citedRange n="346" facs="33,589,38" rend="export" target="https://archive.org/details/werkekritischege33luthuoft/page/589">33, 589, 38</citedRange> (<region key="omd."/><date from="1531" to="1531" confidence="1">1531</date>)</bibl>
+              <quote xml:space="preserve">dan wie ihr von der Erden geboren seidt, do sich die leuthe nicht freundlich mit einander <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> und Christus und die seinen sich alhier auch also vertragen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="999a" cert="high">Köbler</name>, Ref. Wormbs <citedRange n="999a" facs="175,4">175, 4</citedRange> (<region key="pfälz.">Worms</region> <date from="1499" to="1499" confidence="1">1499</date>)</bibl>
+              <quote xml:space="preserve">So zwuschen kinden vnd vormundern zweytracht wurde [...] wie solichs <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">zuentscheiden</oVar> ist. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="998" cert="high">Ders.</name>, Ref. Franckenfort <citedRange n="998" facs="85,30">85, 30</citedRange> (<region key="pfälz.">Mainz</region> <date from="1509" to="1509" confidence="1">1509</date>)</bibl>
+              <quote xml:space="preserve">Vñ wie sie [parthyen] durch die selben [Schoͤffen] <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> werde͂ / des [soldes] benügig zusein. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="88" cert="high">Kurz</name>, Waldis. Esopus <citedRange n="88" facs="3,78,16" rend="export" target="https://archive.org/details/esopus00unkngoog/page/n415">3, 78, 16</citedRange> (<region key="hess.">Frankf.</region> <date from="1557" to="1557" confidence="1">1557</date>)</bibl>
+              <quote xml:space="preserve">moͤcht ich das vppig kempffen<lb/><oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">Entscheiden</oVar> vnd in freundtschafft dempffen! </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="81" cert="high">Österley</name>, Kirchhof. Wendunmuth <citedRange n="81" facs="4,47,31" rend="export" target="https://books.google.de/books?id=1lJMAAAAcAAJ&amp;pg=PA47&amp;dq&amp;f=false#v=onepage&amp;q&amp;f=false">4, 47, 31</citedRange> (<region key="hess.">Frankf.</region> <date from="1603" to="1603" confidence="1">1603</date>)</bibl>
+              <quote xml:space="preserve">drey [herrn] solten zu eim sonderlichen kampff erwehlet, und der zweyspalt durch ihr gewinnen oder verlieren <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> und auffgehaben seyn. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="191" cert="high">Grosch</name> u. a., Schöffenspr. Pössneck <citedRange n="191" facs="146,20">146, 20</citedRange> (<region key="thür.">thür.</region>, <date from="1474" to="1474" confidence="1">1474</date>)</bibl>
+              <quote xml:space="preserve">So [...] dy sachen uff scheydeßrichter, uff schult unde uff antwert zcu <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheyden</oVar>, befolen sint worden von deme obirhern. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="191" cert="high">Ebd.</name> <citedRange n="191" facs="152,16">152, 16</citedRange><date from="1474" to="1474" confidence="1"/><region key="thür."/></bibl>
+              <quote xml:space="preserve">dann beyde teill also irer sachen [...] uff das gemeyne landtlawftige Sechsßische rechte zu <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> gegangen sein. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="723" cert="high">Küther</name>, UB Frauensee <citedRange n="723" facs="259,18">259, 18</citedRange> (<region key="thür.">thür.</region>, <date from="1489" to="1489" confidence="1">1489</date>)</bibl>
+              <quote xml:space="preserve">geczencke, die [...] mit beyder partyen wisßen unde willen gutlich unde fruntlich abegetragen unde <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> ist. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="729" cert="low">Chron. Nürnb.</name> <citedRange n="729" facs="3,71,17" rend="export" target="https://archive.org/details/diechronikender00lexegoog/page/n90">3, 71, 17</citedRange> (<region key="nobd.">nobd.</region>, <date from="1488" to="1488" confidence="1">1488</date>)</bibl>
+              <quote xml:space="preserve">er [Hainrich] ließ auch vil sach des reichs zu Nurenberg <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschaiden</oVar> durch sein amptleut. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="999" cert="high">Köbler</name>, Ref. Nürnberg <citedRange n="999" facs="68,2">68, 2</citedRange> (<region key="ofrk.">Nürnb.</region> <date from="1484" to="1484" confidence="1">1484</date>)</bibl>
+              <quote xml:space="preserve">vmb ir aller vnd ir yedes spruch. clag vnd vordrung. darumb dañ der wertlich Richter oder gericht richte͂ vnd <oVar type="oVar.lem" n="97" rend="jedit" norm="entscheiden">entscheide͂</oVar> moͤgen vnd zerichten haben. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="211" cert="high">Boos</name>, UB Aarau <citedRange n="211" facs="130,31" rend="export" target="https://archive.org/details/urkundenbuchder00unkngoog/page/n258">130, 31</citedRange> (<region key="halem.">halem.</region>, <date from="1379" to="1379" confidence="1">1379</date>)</bibl>
+              <quote xml:space="preserve">tun wir ab mit [...] kuniglicher mechte volkomenheit aller schulde [...] und <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar>, leutern, cleren und sprechen, das [...]. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="226" cert="high">Koller</name>, Ref. Siegmunds <citedRange n="226" facs="299,16" rend="export" target="http://daten.digitale-sammlungen.de/bsb00000655/images/index.html?id=00000655&amp;groesser=&amp;fip=193.174.98.30&amp;no=&amp;seite=304">299, 16</citedRange> (<add>Hs. ˹</add><region key="halem.">Basel</region>, <date from="1435" to="1445" confidence="0.0909">um 1440</date>˺)</bibl>
+              <quote xml:space="preserve">hat ein geystlich man im rehten ützig zuͦ sprechen an einen weltlichen umb eygen oder erb, so sol der geistlich im lossen <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheyden</oVar> gegem einem weltlichem vor einem rat. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="250" cert="high">Rapp</name>, UB Stuttg. <citedRange n="250" facs="537,24" rend="export" target="https://archive.org/details/UrkundenbuchDerStadtStuttgart/page/n541">537, 24</citedRange> (<region key="schwäb.">schwäb.</region>, <date from="1492" to="1492" confidence="1">1492</date>)</bibl>
+              <quote xml:space="preserve">soͤlich irrungen und spene in zweien gerichtstagen bisher der wochen gehalten rechtlich nit gehoͤrt noch <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschaiden</oVar> werden.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="999a" cert="high">Köbler</name>, Ref. Wormbs <citedRange n="999a" facs="32,1">32, 1</citedRange><region key="pfälz."/><date from="1499" to="1499" confidence="1"/>; <citedRange n="999a" facs="279,3">279, 3</citedRange><region key="pfälz."/><date from="1499" to="1499" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="88" cert="high">Kurz</name>, a. a. O. <citedRange n="88" facs="1,3,18" rend="export" target="https://archive.org/details/esopus00unkngoog/page/n70">1, 3, 18</citedRange><region key="hess."/><date from="1557" to="1557" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="191" cert="high">Grosch</name> u. a., a. a. O. <citedRange n="191" facs="161,13">161, 13</citedRange><region key="thür."/><date from="1474" to="1474" confidence="1"/>; <citedRange n="191" facs="164,37">164, 37</citedRange><region key="thür."/><date from="1474" to="1474" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="723" cert="high">Küther</name>, a. a. O. <citedRange n="723" facs="282,19">282, 19</citedRange><region key="thür."/><date from="1202" to="1540" confidence="0.0029"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="374" cert="high">Ermisch</name>, Sächs. Bergr. <citedRange n="374" facs="46,18" rend="export" target="https://archive.org/details/bub_gb_6Q4PAAAAYAAJ/page/n219">46, 18</citedRange><region key="osächs."/><date from="1350" to="1524" confidence="0.0057"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="215" cert="high">Kisch</name>, Leipz. Schöffenspr. <citedRange n="215" facs="824,6" rend="export" target="https://archive.org/details/leipzigerschffe00mgoog/page/n732">824, 6</citedRange><region key="osächs."/><date from="1523" to="1524" confidence="0.5"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="296" cert="high">Wutke</name>, Schles. Bergb., Cod. Sil. <citedRange n="296" facs="20,175,31" rend="export" target="http://daten.digitale-sammlungen.de/0007/bsb00071399/images/index.html?fip=193.174.98.30&amp;id=00071399&amp;seite=187">20, 175, 31</citedRange><region key="schles."/><date from="1136" to="1528" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="619" cert="high">Franck</name>, Decl. <citedRange n="619" facs="333,14">333, 14</citedRange><region key="ofrk."/><date from="1531" to="1531" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="3601" cert="high">Bolte</name>, Pauli. Schimpf u. Ernst <citedRange n="3601" facs="1,360,26" rend="export" target="https://archive.org/details/schimpfundernst01pauluoft/page/n399/mode/2up">1, 360, 26</citedRange><region key="els."/><date from="1522" to="1522" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="999b" cert="high">Köbler</name>, Stattr. Fryburg <citedRange n="999b" facs="43,27" rend="export" target="http://dl.ub.uni-freiburg.de/diglit/zasius1520/0047?sid=825010b5ccfdd15ef4e2b62e13596681">43, 27</citedRange><region key="halem."/><date from="1520" to="1520" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="750" cert="high">Uhlirz</name>, Qu. Wien <citedRange n="750" facs="2,2,3607,5" rend="export" target="https://archive.org/details/bub_gb_9xdWAAAAYAAJ/page/n381/mode/2up">2, 2, 3607, 5</citedRange><region key="moobd."/><date from="1412" to="1457" confidence="0.0217"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="300" cert="high">Winter</name>, Nöst. Weist. <citedRange n="300" facs="3,561,47" rend="export" target="https://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=buecher&amp;term=oew+ix&amp;seite=g561">3, 561, 47</citedRange><region key="moobd."/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="463" cert="high">Grothausmann</name>, Stadtb. Karpfen <citedRange n="463" facs="31,20">31, 20</citedRange><region key="böhm.-mähr. inseldt."/><date from="1500" to="1624" confidence="0.008"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="461" cert="high">Schöpper</name> <citedRange n="461" facs="89a" rend="export" target="https://digital.staatsbibliothek-berlin.de/werkansicht?PPN=PPN671869167&amp;PHYSID=PHYS_0103&amp;DMDID=">89a</citedRange><region key="westf."/><date from="1550" to="1550" confidence="1"/>; <citedRange n="461" facs="99b" rend="export" target="https://digital.staatsbibliothek-berlin.de/werkansicht?PPN=PPN671869167&amp;PHYSID=PHYS_0113&amp;DMDID=">99b</citedRange><region key="westf."/><date from="1550" to="1550" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d4" cert="high">Maaler</name> <citedRange n="d4" facs="105r" rend="export" target="https://books.google.de/books?id=57Gj3Yh2iTcC&amp;hl=de&amp;pg=PA105#v=onepage&amp;q&amp;f=false">105r</citedRange><region key="halem."/><date from="1561" to="1561" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d50" cert="high">Rwb</name> <citedRange n="d50" facs="2,1592" rend="export" target="http://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=lemmata&amp;bd2_1591=F">2, 1592</citedRange> f<region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/>.; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d39" cert="high">Schweiz. Id.</name> <citedRange n="d39" facs="8,241" rend="export" target="https://digital.idiotikon.ch/idtkn/id8.htm#!page/80241/mode/1up">8, 241</citedRange> f<region key="alem."/><date from="1320" to="1680" confidence="0.0028"/>.; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d24" cert="high">Schwäb. Wb.</name> <citedRange n="d24" facs="2,737" rend="export" target="https://archive.org/details/bub_gb_P0o_AAAAMAAJ_2/page/n378">2, 737</citedRange><region key="schwäb."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="b136" cert="high">Cirullies</name>, Rechtsterm. Anh. <citedRange n="b136" facs="1981,139">1981, 139</citedRange><region key="rhfrk."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- sub voce -->
+          <dictScrap rend="sv">Vgl. ferner s. v. <ref type="mat" target="abwesung.s.1f">abwesung</ref> <ref type="mat" target="abwesung.s.1f#abwesung.s.1f_s1">1</ref>, <ref type="mat" target="part.s.2n">part</ref> <ref type="mat" target="part.s.2n#part.s.2n_s3">3</ref>.</dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 2.  -->
+        <sense xml:id="ent_scheiden.h1.3vu_s2" rend="2">
+          <!-- Definition -->
+          <def>›jm. das Ergebnis eines Rechtsstreites mitteilen, darlegen‹; außerhalb rechtlicher Kontexte: ›jm. etw. berichten, erläutern, auseinandersetzen‹; metonymisch zu <ref type="mat" target="ent_scheiden.h1.3vu_s1">1</ref>; vgl. <ref type="mat" target="ent-.s.8w_8w">ent-</ref> <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s3">3</ref>a.</def>
+          <dictScrap rend="bdv"><ref type="mat" target="berichten.s.3v">berichten</ref> <ref type="mat" target="berichten.s.3v#berichten.s.3v_s2">2</ref>, <ref type="mat" target="deuten.s.3v">deuten</ref> <ref type="mat" target="deuten.s.3v#deuten.s.3v_s2">2</ref>, <ref type="mat" target="erläutern.s.3v">erläutern</ref> <ref type="mat" target="erläutern.s.3v#erläutern.s.3v_s1">1</ref>, <ref type="nex" target="unterrichten.s.*">unterrichten</ref>; vgl. <ref type="mat" target="entrichten.s.3v">entrichten</ref> <ref type="mat" target="entrichten.s.3v#entrichten.s.3v_s5">5</ref>, <ref type="mat" target="künden.s.3v">künden</ref> <ref type="mat" target="künden.s.3v#künden.s.3v_s1">1</ref>.</dictScrap>
+          <dictScrap rend="synt"><hi rendition="it">jn. der dinge e., (jm.) etw</hi>. [wie] (z. B. <hi rendition="it">freundlich / heimlich / klärlich, mit gedichten</hi>) <hi rendition="it">e., jn. gründlich e</hi>.</dictScrap>
+          <dictScrap rend="wbg"><re type="re.wbg" subtype="mat" copyOf="entscheidenheit.s.1f">entscheidenheit</re> 2 (in Verbindung mit der Präposition <hi rendition="it">mit</hi> 1) ›ausdrücklich, explizit‹, <re type="re.wbg" subtype="mat" copyOf="entscheidenlich.s.9ref">entscheidenlich</re> ›ausdrücklich‹.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Strehlke</name>, Nic. Jerosch. Chron. <citedRange n="49" facs="13462" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n471">13462</citedRange> (<region key="preuß.">preuß.</region>, <date from="1325" to="1335" confidence="0.0909">um 1330</date>/<date from="1335" to="1345" confidence="0.0909">40</date>)</bibl>
+              <quote xml:space="preserve">Nû wil ich mit <oVar type="oVar.wbg" n="88" rend="jedit" norm="entscheidenheit">intscheidinheit</oVar><lb/>ûch ouch dî strite kundin. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Ebd.</name> <citedRange n="49" facs="18598" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n531">18598</citedRange><date from="1325" to="1335" confidence="0.0909"/><date from="1335" to="1345" confidence="0.0909"/><region key="preuß."/></bibl>
+              <quote xml:space="preserve">[sî] heimelîchin<lb/><oVar type="oVar.lem" n="91" rend="jedit" norm="entscheiden">intschidin</oVar> unde duitin<lb/>den Bartin, [...]<lb/>wî iz zu Gartin was gewant<lb/>um dî burg und um daz lant. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Ebd.</name> <citedRange n="49" facs="20483" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n553">20483</citedRange><date from="1325" to="1335" confidence="0.0909"/><date from="1335" to="1345" confidence="0.0909"/><region key="preuß."/></bibl>
+              <quote xml:space="preserve">Der vorgenante Dîterîch<lb/>von Esebek <oVar type="oVar.wbg" n="84" rend="jedit" norm="entscheidenlich">intscheidinlîch</oVar><lb/>hatte [...]<lb/>brûdir Conrâde Rôten<lb/>geoffenbârit sînin tôt. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="26" cert="high">Kopp</name>, Volks- u. Gesellschaftsl. <citedRange n="26" facs="182,33" rend="export" target="https://archive.org/details/volksundgesells00heidgoog/page/n228/mode/2up">182, 33</citedRange> (<add>Hs. ˹</add><region key="pfälz.">pfälz.</region>, <date from="1540" to="1560" confidence="0.0476">M. 16. Jh.</date>˺)</bibl>
+              <quote xml:space="preserve">das best ich khan<lb/>dich der ding gruntlich <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="290" cert="high">Behrend</name>, Magd. Fragen <citedRange n="290" facs="79,23" rend="export" target="https://books.google.de/books?id=SsE8AAAAYAAJ&amp;pg=PA79&amp;dq&amp;f=false#v=onepage&amp;q&amp;f=false">79, 23</citedRange> (<region key="omd.">omd.</region>, <date from="1395" to="1405" confidence="0.0909">um 1400</date>)</bibl>
+              <quote xml:space="preserve">ich [gast] warte lantrechtis mit czuge unde mit eynis hant, alz mir ist <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="351" cert="high">Bindewald</name>, Texte schles. Kanzl. <citedRange n="351" facs="158,6">158, 6</citedRange> (<region key="schles.">schles.</region>, <date from="1378" to="1378" confidence="1">1378</date>)</bibl>
+              <quote xml:space="preserve">Jch Borgold von Benotindorff Bekenne [...], daz ich [...] von mȳs brudirr heynczhils weyne [...] frundlich vnd liplich bericht vnd <oVar type="oVar.lem" n="94" rend="jedit" norm="entscheiden">intscheydin</oVar> bin. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="729" cert="low">Chron. Nürnb.</name> <citedRange n="729" facs="3,371,9" rend="export" target="https://archive.org/details/diechronikender00lexegoog/page/n390">3, 371, 9</citedRange> (<region key="nobd.">nobd.</region>, <date from="1440" to="1440" confidence="1">1440</date>/<date from="1444" to="1444" confidence="1">4</date>)</bibl>
+              <quote xml:space="preserve">als man in des nu clerlicher <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> und sie unterrichtet hette, begerten die obgenanten [...].</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Strehlke</name>, a. a. O. <citedRange n="49" facs="3678" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n357">3678</citedRange><region key="preuß."/><date from="1325" to="1345" confidence="0.0476"/>; <citedRange n="49" facs="6398" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n389">6398</citedRange><region key="preuß."/><date from="1325" to="1345" confidence="0.0476"/>; <citedRange n="49" facs="14348" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n481">14348</citedRange><region key="preuß."/><date from="1325" to="1345" confidence="0.0476"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="789b" cert="high">Qu. Schweiz. Gesch.</name> <citedRange n="789b" facs="1,24,20" rend="export" target="https://archive.org/details/bub_gb_w2lKAAAAYAAJ/page/n49">1, 24, 20</citedRange><region key="halem."/><date from="1460" to="1480" confidence="0.0476"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d4" cert="high">Maaler</name> <citedRange n="d4" facs="105r" rend="export" target="https://books.google.de/books?id=57Gj3Yh2iTcC&amp;hl=de&amp;pg=PA105#v=onepage&amp;q&amp;f=false">105r</citedRange><region key="halem."/><date from="1561" to="1561" confidence="1"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- sub voce -->
+          <dictScrap rend="sv">Vgl. ferner s. v. <ref type="mat" target="äussern.s.3v">äussern</ref> <ref type="mat" target="äussern.s.3v#äussern.s.3v_s3">3</ref>.</dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 3.  -->
+        <sense xml:id="ent_scheiden.h1.3vu_s3" rend="3">
+          <!-- Definition -->
+          <def>›etw. (begrifflich) von etw. anderem unterscheiden, etw. von etw. anderem trennen, einer Kategorie zuordnen‹; auch: ›eine (theologische) Streitfrage mit dem Anspruch der Endgültigkeit klären, etw. begrifflich festlegen, definieren‹; seltener: ›jn. / etw. fachlich beurteilen‹; </def>
+          <dictScrap rend="wbv">vgl. <ref type="mat" target="ent-.s.8w_8w">ent-</ref> <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s3">3</ref>a; <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s6">6</ref>.</dictScrap>
+          <dictScrap rend="stw">Verstärkt Texte der Sinnwelt ,Religion / Didaxe‘.</dictScrap>
+          <dictScrap rend="bdv"><ref type="mat" target="bestimmen.s.3v">bestimmen</ref> <ref type="mat" target="bestimmen.s.3v#bestimmen.s.3v_s1">1</ref>, <ref type="mat" target="entrichten.s.3v">entrichten</ref> <ref type="mat" target="entrichten.s.3v#entrichten.s.3v_s2">2</ref>, <ref type="mat" target="richten.s.3v">richten</ref> <ref type="mat" target="richten.s.3v#richten.s.3v_s15">15</ref>, <ref type="nex" target="urteilen.s.*">urteilen</ref>; vgl. <ref type="mat" target="ausscheiden.s.3v">ausscheiden</ref> <ref type="mat" target="ausscheiden.s.3v#ausscheiden.s.3v_s6">6</ref>, <hi rendition="hoch">1</hi><ref type="mat" target="heissen.h1.3vu">heissen</ref> <ref type="mat" target="heissen.h1.3vu#heissen.h1.3vu_s9">9</ref>.</dictScrap>
+          <dictScrap rend="synt"><hi rendition="it">jn</hi>. (z. B. <hi rendition="it">die päpste und ire wiedersacher</hi>) <hi rendition="it">e., etw</hi>. (z. B. <hi rendition="it">einen sentenz, die auslegungen / fragen / planeten</hi>) <hi rendition="it">e., etw. von got, einen tag von einem anderen e., zwischen etw. und etw. anderem e., etw. gewislich / klar e</hi>.</dictScrap>
+          <dictScrap rend="wbg"><re type="re.wbg" subtype="mat" copyOf="entscheidenheit.s.1f">entscheidenheit</re> 3 ›Sinn, Bedeutung‹ (im Beleg: eines Namens).</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="49" cert="high">Strehlke</name>, Nic. Jerosch. Chron. <citedRange n="49" facs="741" rend="export" target="https://archive.org/details/bub_gb_YX8OAAAAYAAJ/page/n324">741</citedRange> (<region key="preuß.">preuß.</region>, <date from="1325" to="1335" confidence="0.0909">um 1330</date>/<date from="1335" to="1345" confidence="0.0909">40</date>)</bibl>
+              <quote xml:space="preserve">Er [Dâvit] welte zwei geslechte,<lb/>[...]<lb/>ûz sînem volke allintsamt<lb/>und bevûl in sulch ein amt,<lb/>daz sî vor allin vârin<lb/>soldin sîn houbt bewarin<lb/>nâch irre namen <oVar type="oVar.wbg" n="97" rend="jedit" norm="entscheidenheit">entscheidinheit</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="346" cert="high">Luther</name>, WA <citedRange n="346" facs="23,338,13" rend="export" target="https://archive.org/details/werkekritischege23luthuoft/page/338">23, 338, 13</citedRange> (<region key="omd."/><date from="1527" to="1527" confidence="1">1527</date>)</bibl>
+              <quote xml:space="preserve">wurdet yhr [Johann Hess] [...] wol selbst on vnser zuthǔn, solche vnd wol grossere fragen <oVar type="oVar.wbg" n="96" rend="jedit" norm="entscheidenheit">entscheiden</oVar> vnd richten. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="86" cert="high">Jungbluth</name>, J. v. Saaz. Ackermann <citedRange n="86" facs="17,16">17, 16</citedRange> (<add>Hs. ˹</add><region key="omd.">omd.</region>, <date from="1465" to="1465" confidence="1">1465</date>˺)</bibl>
+              <quote xml:space="preserve">Wo sint sie hin, die auf erden saßen under dem gestirne, umbgiengen und <oVar type="oVar.lem" n="98" rend="jedit" norm="entscheiden">entschieden</oVar> die planeten? </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="122" cert="high">Strauch</name>, Par. anime int. <citedRange n="122" facs="119,14">119, 14</citedRange> (<region key="thür.">thür.</region>, <date from="1300" to="1399" confidence="0.01">14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">noch dan minnent si di dinc di si fon Gode nicht <oVar type="oVar.lem" n="90" rend="jedit" norm="entscheiden">intschedint</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="944" cert="high">Andreae.</name> Ber. Nachtmal <citedRange n="944" facs="29v,1">29v, 1</citedRange> ([<region key="schwäb.">Augsb.</region>] <date from="1557" to="1557" confidence="1">1557</date>)</bibl>
+              <quote xml:space="preserve">Nun woͤllen wir für vns nemen die Erste spaltung / naͤmlich der Paͤbster vnd jrer widersacher / vn̄ dieselbigen klaͤrlich <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschayden</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="944" cert="high">Ebd.</name> <citedRange n="944" facs="77v,20">77v, 20</citedRange><date from="1557" to="1557" confidence="1"/><region key="schwäb."/></bibl>
+              <quote xml:space="preserve">Darauß kan nun ain yeder [...] leichtlich die widerwaͤrtigen außlegungen <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschayden</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="196c" cert="high">Meisen</name> u. a., J. Eck <citedRange n="196c" facs="31,29">31, 29</citedRange> (<region key="nmoobd.">Ingolst.</region> <date from="1526" to="1526" confidence="1">1526</date>)</bibl>
+              <quote xml:space="preserve">es syen nit so vill gelerter luͤt zuͦ Costentz, die yre predicanten moͤchten <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="127" cert="high">Höver</name>, Bonaventura. Itin. A <citedRange n="127" facs="412">412</citedRange> (<region key="moobd.">moobd.</region>, <date from="1450" to="1499" confidence="0.02">2. H. 15. Jh.</date>)</bibl>
+              <quote xml:space="preserve">darumb seyt nun alle ding, dy wir gewisleicher <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschayden</oVar> oder entrichten, durch söllich vernunft vnd ausweysung [...] <oVar type="oVar.lem" n="95" rend="jedit" norm="entscheiden">enttschayden</oVar> vnd vrtailen, so [...]. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="230" cert="high">Bauer</name>, Zist.-Pred. Haller <citedRange n="230" facs="555,23">555, 23</citedRange> (<region key="soobd.">tir.</region>, <date from="1466" to="1466" confidence="1">1466</date>)</bibl>
+              <quote xml:space="preserve">Durch die selbig ainig lieb würt <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschaiden</oVar> das heilig geschlecht von dem vnheiligen geschlecht.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="115b" cert="high">Mayer</name>, Folz. Meisterl. <citedRange n="115b" facs="10,34" rend="export" target="https://archive.org/details/diemeisterliede00folzgoog/page/n76">10, 34</citedRange><region key="nobd."/><date from="1470" to="1490" confidence="0.0476"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="319" cert="high">Adomatis</name> u. a., J. Murer. Bab. <citedRange n="319" facs="4578">4578</citedRange><region key="halem."/><date from="1556" to="1576" confidence="0.0476"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="127" cert="high">Höver</name>, a. a. O. <citedRange n="127" facs="1,446">1, 446</citedRange><region key="moobd."/><date from="1450" to="1499" confidence="0.02"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d8" cert="high">Voc. Teut.-Lat.</name> <citedRange n="d8" facs="g iiijv">g iiijv</citedRange><region key="ofrk."/><date from="1482" to="1482" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="468b" cert="high">Dict. Germ.-Gall.-Lat.</name> <citedRange n="468b" facs="139">139</citedRange><region key="halem."/><date from="1636" to="1636" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d39" cert="high">Schweiz. Id.</name> <citedRange n="d39" facs="8,241" rend="export" target="https://digital.idiotikon.ch/idtkn/id8.htm#!page/80241/mode/1up">8, 241</citedRange><region key="alem."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 4.  -->
+        <sense xml:id="ent_scheiden.h1.3vu_s4" rend="4">
+          <!-- Definition -->
+          <def>›jn. / sich von etw. abspalten, trennen‹; ütr.: ›sich von einer Meinung, einem Irrtum distanzieren, lösen‹; </def>
+          <dictScrap rend="wbv">zu <ref type="mat" target="ent-.s.8w_8w">ent-</ref> <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s6">6</ref>.</dictScrap>
+          <dictScrap rend="bdv"><ref type="mat" target="teilen.s.3v">teilen</ref> <ref type="mat" target="teilen.s.3v#teilen.s.3v_s2">2</ref>; <ref type="mat" target="teilen.s.3v#teilen.s.3v_s3">3</ref>; vgl. <ref type="mat" target="entfremden.s.3v">entfremden</ref> <ref type="mat" target="entfremden.s.3v#entfremden.s.3v_s3">3</ref>.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="247c" cert="high">Baumann</name>, Bauernkr. Rotenb. <citedRange n="247c" facs="25,13" rend="export" target="https://archive.org/details/quellenzurgesch00zweigoog/page/n36">25, 13</citedRange> (<region key="nobd.">nobd.</region>, <date from="1525" to="1525" confidence="1">1525</date>)</bibl>
+              <quote xml:space="preserve">aus welicher christlicher gemain du dich mitsampt den deinen [...] nit <oVar type="oVar.lem" n="98" rend="jedit" norm="entscheiden">entschieden</oVar> wurdst. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="986" cert="high">UB Zug</name> <citedRange n="986" facs="935,2">935, 2</citedRange> (<region key="halem.">halem.</region>, <date from="1451" to="1451" confidence="1">1451</date>)</bibl>
+              <quote xml:space="preserve">Nachdem als min matt und weid Morgarten geteilt und <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> ist von Ruͤdis [...] matten. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="123" cert="high">Karnein</name>, de amore dt. <citedRange n="123" facs="92,153">92, 153</citedRange> (<region key="moobd.">moobd.</region>, <date from="1430" to="1440" confidence="0.0909">v. 1440</date>)</bibl>
+              <quote xml:space="preserve">Aber darumb, das der adel allain von zucht, tugent vnd recht thün in erbern sitn entsprungen ist, so mügt ir ewrs ersten jrrgangks wol <oVar type="oVar.lem" n="96" rend="jedit" norm="entscheiden">entschaiden</oVar> sein vnd den niderlegen.</quote>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 5.  -->
+        <sense xml:id="ent_scheiden.h1.3vu_s5" rend="5">
+          <!-- Definition -->
+          <def>›js. Seele vom Körper abtrennen, jn. abberufen‹; intrans.: ›sterben, verscheiden‹; </def>
+          <dictScrap rend="wbv">Spezialisierung zu <ref type="mat" target="ent_scheiden.h1.3vu_s4">4</ref>; vgl. <ref type="mat" target="ent-.s.8w_8w">ent-</ref> <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s3">3</ref>a; <ref type="mat" target="ent-.s.8w_8w#ent-.s.8w_8w_s6">6</ref>.</dictScrap>
+          <dictScrap rend="phras"><hi rendition="it">der tod jn. von seinem körper e</hi>.</dictScrap>
+          <dictScrap rend="bdv"><ref type="mat" target="entschlafen.s.3vu">entschlafen</ref> <ref type="mat" target="entschlafen.s.3vu#entschlafen.s.3vu_s2">2</ref>.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="643" cert="high">Hoffmeister</name>, Kuffstein. Gef. <citedRange n="643" facs="B ir,1">B ir, 1</citedRange> (<region key="osächs.">Leipzig</region> <date from="1625" to="1625" confidence="1">1625</date>)</bibl>
+              <quote xml:space="preserve">biß so lang der Todt von diesem Coͤrper mich <oVar type="oVar.lem" n="97" rend="jedit" norm="entscheiden">entscheidet</oVar>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="793" cert="high">Qu. Brassó</name> <citedRange n="793" facs="4,508,2">4, 508, 2</citedRange> (<region key="ung. inseldt.">siebenb.</region>, <date from="1548" to="1548" confidence="1">1548</date><add>, Hs. </add><date from="1613" to="1613" confidence="1">1613</date>/<date from="1617" to="1617" confidence="1">7</date>)</bibl>
+              <quote xml:space="preserve">Anno 1547 [...] ist die vieltugendsame, gottsfürchtige Matrona Apollonia [...] im Herrn seliglichen <oVar type="oVar.lem" n="100" rend="jedit" norm="entscheiden">entscheiden</oVar> und entschlafen.</quote>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+      </entry>
+    </body>
+  </text>
+  
+  
+  
+  
+
+  <!--Texttest: Original
+ent|1scheiden, V., unr. abl.; Bedeutungsfeld mit dem gemeinsamen Moment ,etw. trennen, voneinander abgrenzen‘: 1 fasst verschiedene, häufig nicht klar voneinander abgrenzbare rechtssprachliche Verwendungsweisen zusammen, in denen die Schaffung sozialer Ordnung und vor allem die Streitschlichtung durch weltliche Gerichte und deren ausführende Organe im Vordergrund stehen; 2 verhält sich metonymisch zu 1; die schwächer belegten Bedeutungen 3-5 beziehen sich auf weitere abstrakte oder konkrete Formen der Trennung und Abgrenzung. 1. ›einen juristischen Streitfall klären, einen Streit beilegen, schlichten, ein Urteil fällen; eine Einigung zwischen zwei Parteien erzielen, einen Vergleich erwirken‹; ›etw. rechtsverbindlich festsetzen, festlegen, bestimmen‹; speziell: ›einen Grenzverlauf festsetzen‹; mit Umkehrung der Perspektive: ›eine Obrigkeit, ein Gericht um die Klärung eines Streitfalles anrufen‹; auch: ›sich gütlich einigen‹; vgl. ent- 3a; 6. – Gehäuft Rechts- und Wirtschaftstexte. – Bdv. (bzw. Orientierungsfeld): abtragen 5, berichten 11; 13, 1betragen 3, einen I, 2, entrichten 2, entschliessen 4, entsetzen 7, läutern 3, mitteln 2, rechtfertigen 2, richten 9; 12, scheiden (V., unr. abl.) 7, urteilen, vereinen, verrichten, vertragen. – Synt.: jn. / etw. (z. B. einen krieg / span, die / eine irrung / klage / sache / zwietracht, das gezänke / kämpfen, die parteien, gerichte hier: ›Gerichtsbezirke‹ / landmarken) e., j. (z. B. ein junker / richter, die gemeine, die herren / schiedsrichter / schöffen) etw. e., die leute (Subj.) sich miteinander e., jm. etw. e., etw. [wie] (z. B. auf antwort / schiedsrichter, auf ein recht, durch amptleute / recht, durch ein urteil, mit freundschaft / minne / recht, mit rechtlichem spruch, endlich / freundlich / gütlich / nüzlich / rechtlich) e. (lassen), über etw. e., jn. voneinander, von anderen e.; e., das [...]. Wbg.: entscheidenheit 1 ›Auseinandersetzung, Klärung einer Frage‹. Strehlke, Nic. Jerosch. Chron. 1971 (preuß., um 1330/40): des gab durch ganze sichirheit | der herzoge vorgeseit | den brûderen brîve wol bereit | nâch der sache intscheidinheit | mit sîme ingesigele ganz. Luther, WA 33, 589, 38 (1531): dan wie ihr von der Erden geboren seidt, do sich die leuthe nicht freundlich mit einander entscheiden und Christus und die seinen sich alhier auch also vertragen. Köbler, Ref. Wormbs 175, 4 (Worms 1499): So zwuschen kinden vnd vormundern zweytracht wurde [...] wie solichs zuentscheiden ist. Ders., Ref. Franckenfort 85, 30 (Mainz 1509): Vñ wie sie [parthyen] durch die selben [Schoͤffen] entscheiden werde͂ / des [soldes] benügig zusein. Kurz, Waldis. Esopus 3, 78, 16 (Frankf. 1557): moͤcht ich das vppig kempffen | Entscheiden vnd in freundtschafft dempffen! Österley, Kirchhof. Wendunmuth 4, 47, 31 (Frankf. 1603): drey [herrn] solten zu eim sonderlichen kampff erwehlet, und der zweyspalt durch ihr gewinnen oder verlieren entscheiden und auffgehaben seyn. Grosch u. a., Schöffenspr. Pössneck 146, 20 (thür., 1474): So [...] dy sachen uff scheydeßrichter, uff schult unde uff antwert zcu entscheyden, befolen sint worden von deme obirhern. Ebd. 152, 16: dann beyde teill also irer sachen [...] uff das gemeyne landtlawftige Sechsßische rechte zu entscheiden gegangen sein. Küther, UB Frauensee 259, 18 (thür., 1489): geczencke, die [...] mit beyder partyen wisßen unde willen gutlich unde fruntlich abegetragen unde entscheiden ist. Chron. Nürnb. 3, 71, 17 (nobd., 1488): er [Hainrich] ließ auch vil sach des reichs zu Nurenberg entschaiden durch sein amptleut. Köbler, Ref. Nürnberg 68, 2 (Nürnb. 1484): vmb ir aller vnd ir yedes spruch. clag vnd vordrung. darumb dañ der wertlich Richter oder gericht richte͂ vnd entscheide͂ moͤgen vnd zerichten haben. Boos, UB Aarau 130, 31 (halem., 1379): tun wir ab mit [...] kuniglicher mechte volkomenheit aller schulde [...] und entscheiden, leutern, cleren und sprechen, das [...]. Koller, Ref. Siegmunds 299, 16 (Hs. ˹Basel, um 1440˺): hat ein geystlich man im rehten ützig zuͦ sprechen an einen weltlichen umb eygen oder erb, so sol der geistlich im lossen entscheyden gegem einem weltlichem vor einem rat. Rapp, UB Stuttg. 537, 24 (schwäb., 1492): soͤlich irrungen und spene in zweien gerichtstagen bisher der wochen gehalten rechtlich nit gehoͤrt noch entschaiden werden. – Köbler, Ref. Wormbs 32, 1; 279, 3; Kurz, a. a. O. 1, 3, 18; Grosch u. a., a. a. O. 161, 13; 164, 37; Küther, a. a. O. 282, 19; Ermisch, Sächs. Bergr. 46, 18; Kisch, Leipz. Schöffenspr. 824, 6; Wutke, Schles. Bergb., Cod. Sil. 20, 175, 31; Franck, Decl. 333, 14; Bolte, Pauli. Schimpf u. Ernst 1, 360, 26; Köbler, Stattr. Fryburg 43, 27; Uhlirz, Qu. Wien 2, 2, 3607, 5; Winter, Nöst. Weist. 3, 561, 47; Grothausmann, Stadtb. Karpfen 31, 20; Schöpper 89a; 99b; Maaler 105r; Rwb 2, 1592 f.; Schweiz. Id. 8, 241 f.; Schwäb. Wb. 2, 737; Cirullies, Rechtsterm. Anh. 1981, 139. – Vgl. ferner s. v. abwesung 1, part 3. 2. ›jm. das Ergebnis eines Rechtsstreites mitteilen, darlegen‹; außerhalb rechtlicher Kontexte: ›jm. etw. berichten, erläutern, auseinandersetzen‹; metonymisch zu 1; vgl. ent- 3a. – Bdv.: berichten 2, deuten 2, erläutern 1, unterrichten; vgl. entrichten 5, künden 1. – Synt.: jn. der dinge e., (jm.) etw. [wie] (z. B. freundlich / heimlich / klärlich, mit gedichten) e., jn. gründlich e. Wbg.: entscheidenheit 2 (in Verbindung mit der Präposition mit 1) ›ausdrücklich, explizit‹, entscheidenlich ›ausdrücklich‹. Strehlke, Nic. Jerosch. Chron. 13462 (preuß., um 1330/40): Nû wil ich mit intscheidinheit | ûch ouch dî strite kundin. Ebd. 18598: [sî] heimelîchin | intschidin unde duitin | den Bartin, [...] | wî iz zu Gartin was gewant | um dî burg und um daz lant. Ebd. 20483: Der vorgenante Dîterîch | von Esebek intscheidinlîch | hatte [...] | brûdir Conrâde Rôten | geoffenbârit sînin tôt. Kopp, Volks- u. Gesellschaftsl. 182, 33 (Hs. ˹pfälz., M. 16. Jh.˺): das best ich khan | dich der ding gruntlich entscheiden. Behrend, Magd. Fragen 79, 23 (omd., um 1400): ich [gast] warte lantrechtis mit czuge unde mit eynis hant, alz mir ist entscheiden. Bindewald, Texte schles. Kanzl. 158, 6 (schles., 1378): Jch Borgold von Benotindorff Bekenne [...], daz ich [...] von mȳs brudirr heynczhils weyne [...] frundlich vnd liplich bericht vnd intscheydin bin. Chron. Nürnb. 3, 371, 9 (nobd., 1440/4): als man in des nu clerlicher entscheiden und sie unterrichtet hette, begerten die obgenanten [...]. – Strehlke, a. a. O. 3678; 6398; 14348; Qu. Schweiz. Gesch. 1, 24, 20; Maaler 105r. – Vgl. ferner s. v. äussern 3. 3. ›etw. (begrifflich) von etw. anderem unterscheiden, etw. von etw. anderem trennen, einer Kategorie zuordnen‹; auch: ›eine (theologische) Streitfrage mit dem Anspruch der Endgültigkeit klären, etw. begrifflich festlegen, definieren‹; seltener: ›jn. / etw. fachlich beurteilen‹; vgl. ent- 3a; 6. – Verstärkt Texte der Sinnwelt ,Religion / Didaxe‘. – Bdv.: bestimmen 1, entrichten 2, richten 15, urteilen; vgl. ausscheiden 6, 1heissen 9. – Synt.: jn. (z. B. die päpste und ire wiedersacher) e., etw. (z. B. einen sentenz, die auslegungen / fragen / planeten) e., etw. von got, einen tag von einem anderen e., zwischen etw. und etw. anderem e., etw. gewislich / klar e. Wbg.: entscheidenheit 3 ›Sinn, Bedeutung‹ (im Beleg: eines Namens). Strehlke, Nic. Jerosch. Chron. 741 (preuß., um 1330/40): Er [Dâvit] welte zwei geslechte, | [...] | ûz sînem volke allintsamt | und bevûl in sulch ein amt, | daz sî vor allin vârin | soldin sîn houbt bewarin | nâch irre namen entscheidinheit. Luther, WA 23, 338, 13 (1527): wurdet yhr [Johann Hess] [...] wol selbst on vnser zuthǔn, solche vnd wol grossere fragen entscheiden vnd richten. Jungbluth, J. v. Saaz. Ackermann 17, 16 (Hs. ˹omd., 1465˺): Wo sint sie hin, die auf erden saßen under dem gestirne, umbgiengen und entschieden die planeten? Strauch, Par. anime int. 119, 14 (thür., 14. Jh.): noch dan minnent si di dinc di si fon Gode nicht intschedint. Andreae. Ber. Nachtmal 29v, 1 ([Augsb.] 1557): Nun woͤllen wir für vns nemen die Erste spaltung / naͤmlich der Paͤbster vnd jrer widersacher / vn̄ dieselbigen klaͤrlich entschayden. Ebd. 77v, 20: Darauß kan nun ain yeder [...] leichtlich die widerwaͤrtigen außlegungen entschayden. Meisen u. a., J. Eck 31, 29 (Ingolst. 1526): es syen nit so vill gelerter luͤt zuͦ Costentz, die yre predicanten moͤchten entscheiden. Höver, Bonaventura. Itin. A 412 (moobd., 2. H. 15. Jh.): darumb seyt nun alle ding, dy wir gewisleicher entschayden oder entrichten, durch söllich vernunft vnd ausweysung [...] enttschayden vnd vrtailen, so [...]. Bauer, Zist.-Pred. Haller 555, 23 (tir., 1466): Durch die selbig ainig lieb würt entschaiden das heilig geschlecht von dem vnheiligen geschlecht. – Mayer, Folz. Meisterl. 10, 34; Adomatis u. a., J. Murer. Bab. 4578; Höver, a. a. O. 1, 446; Voc. Teut.-Lat. g iiijv; Dict. Germ.-Gall.-Lat. 139; Schweiz. Id. 8, 241. 4. ›jn. / sich von etw. abspalten, trennen‹; ütr.: ›sich von einer Meinung, einem Irrtum distanzieren, lösen‹; zu ent- 6. – Bdv.: teilen 2; 3; vgl. entfremden 3. Baumann, Bauernkr. Rotenb. 25, 13 (nobd., 1525): aus welicher christlicher gemain du dich mitsampt den deinen [...] nit entschieden wurdst. UB Zug 935, 2 (halem., 1451): Nachdem als min matt und weid Morgarten geteilt und entscheiden ist von Ruͤdis [...] matten. Karnein, de amore dt. 92, 153 (moobd., v. 1440): Aber darumb, das der adel allain von zucht, tugent vnd recht thün in erbern sitn entsprungen ist, so mügt ir ewrs ersten jrrgangks wol entschaiden sein vnd den niderlegen. 5. ›js. Seele vom Körper abtrennen, jn. abberufen‹; intrans.: ›sterben, verscheiden‹; Spezialisierung zu 4; vgl. ent- 3a; 6. – Phras.: der tod jn. von seinem körper e. – Bdv.: entschlafen 2. Hoffmeister, Kuffstein. Gef. B ir, 1 (Leipzig 1625): biß so lang der Todt von diesem Coͤrper mich entscheidet. Qu. Brassó 4, 508, 2 (siebenb., 1548, Hs. 1613/7): Anno 1547 [...] ist die vieltugendsame, gottsfürchtige Matrona Apollonia [...] im Herrn seliglichen entscheiden und entschlafen.
+-->
+  <!--Texttest: Konvertiert
+ent|1scheiden, V., unr. abl.; Bedeutungsfeld mit dem gemeinsamen Moment ,etw. trennen, voneinander abgrenzen‘: 1 fasst verschiedene, häufig nicht klar voneinander abgrenzbare rechtssprachliche Verwendungsweisen zusammen, in denen die Schaffung sozialer Ordnung und vor allem die Streitschlichtung durch weltliche Gerichte und deren ausführende Organe im Vordergrund stehen; 2 verhält sich metonymisch zu 1; die schwächer belegten Bedeutungen 3-5 beziehen sich auf weitere abstrakte oder konkrete Formen der Trennung und Abgrenzung. 1. ›einen juristischen Streitfall klären, einen Streit beilegen, schlichten, ein Urteil fällen; eine Einigung zwischen zwei Parteien erzielen, einen Vergleich erwirken‹; ›etw. rechtsverbindlich festsetzen, festlegen, bestimmen‹; speziell: ›einen Grenzverlauf festsetzen‹; mit Umkehrung der Perspektive: ›eine Obrigkeit, ein Gericht um die Klärung eines Streitfalles anrufen‹; auch: ›sich gütlich einigen‹; vgl. ent- 3a; 6. – Gehäuft Rechts- und Wirtschaftstexte. – Bdv.: (bzw. Orientierungsfeld): abtragen 5, berichten 11; 13, 1betragen 3, einen I, 2, entrichten 2, entschliessen 4, entsetzen 7, läutern 3, mitteln 2, rechtfertigen 2, richten 9; 12, scheiden (V., unr. abl.) 7, urteilen, vereinen, verrichten, vertragen. – Synt.: jn. / etw. (z. B. einen krieg / span, die / eine irrung / klage / sache / zwietracht, das gezänke / kämpfen, die parteien, gerichte hier: ›Gerichtsbezirke‹ / landmarken) e., j. (z. B. ein junker / richter, die gemeine, die herren / schiedsrichter / schöffen) etw. e., die leute (Subj.) sich miteinander e., jm. etw. e., etw. [wie] (z. B. auf antwort / schiedsrichter, auf ein recht, durch amptleute / recht, durch ein urteil, mit freundschaft / minne / recht, mit rechtlichem spruch, endlich / freundlich / gütlich / nüzlich / rechtlich) e. (lassen), über etw. e., jn. voneinander, von anderen e.; e., das [...]. – Wbg.: entscheidenheit 1 ›Auseinandersetzung, Klärung einer Frage‹. Strehlke, Nic. Jerosch. Chron. 1971 (preuß., um 1330/40) des gab durch ganze sichirheit | der herzoge vorgeseit | den brûderen brîve wol bereit | nâch der sache intscheidinheit | mit sîme ingesigele ganz. Luther, WA 33, 589, 38 (1531) dan wie ihr von der Erden geboren seidt, do sich die leuthe nicht freundlich mit einander entscheiden und Christus und die seinen sich alhier auch also vertragen. Köbler, Ref. Wormbs 175, 4 (Worms 1499) So zwuschen kinden vnd vormundern zweytracht wurde [...] wie solichs zuentscheiden ist. Ders., Ref. Franckenfort 85, 30 (Mainz 1509) Vñ wie sie [parthyen] durch die selben [Schoͤffen] entscheiden werde͂ / des [soldes] benügig zusein. Kurz, Waldis. Esopus 3, 78, 16 (Frankf. 1557) moͤcht ich das vppig kempffen | Entscheiden vnd in freundtschafft dempffen! Österley, Kirchhof. Wendunmuth 4, 47, 31 (Frankf. 1603) drey [herrn] solten zu eim sonderlichen kampff erwehlet, und der zweyspalt durch ihr gewinnen oder verlieren entscheiden und auffgehaben seyn. Grosch u. a., Schöffenspr. Pössneck 146, 20 (thür., 1474) So [...] dy sachen uff scheydeßrichter, uff schult unde uff antwert zcu entscheyden, befolen sint worden von deme obirhern. Ebd. 152, 16 dann beyde teill also irer sachen [...] uff das gemeyne landtlawftige Sechsßische rechte zu entscheiden gegangen sein. Küther, UB Frauensee 259, 18 (thür., 1489) geczencke, die [...] mit beyder partyen wisßen unde willen gutlich unde fruntlich abegetragen unde entscheiden ist. Chron. Nürnb. 3, 71, 17 (nobd., 1488) er [Hainrich] ließ auch vil sach des reichs zu Nurenberg entschaiden durch sein amptleut. Köbler, Ref. Nürnberg 68, 2 (Nürnb. 1484) vmb ir aller vnd ir yedes spruch. clag vnd vordrung. darumb dañ der wertlich Richter oder gericht richte͂ vnd entscheide͂ moͤgen vnd zerichten haben. Boos, UB Aarau 130, 31 (halem., 1379) tun wir ab mit [...] kuniglicher mechte volkomenheit aller schulde [...] und entscheiden, leutern, cleren und sprechen, das [...]. Koller, Ref. Siegmunds 299, 16 (Hs. ˹Basel, um 1440˺) hat ein geystlich man im rehten ützig zuͦ sprechen an einen weltlichen umb eygen oder erb, so sol der geistlich im lossen entscheyden gegem einem weltlichem vor einem rat. Rapp, UB Stuttg. 537, 24 (schwäb., 1492) soͤlich irrungen und spene in zweien gerichtstagen bisher der wochen gehalten rechtlich nit gehoͤrt noch entschaiden werden. – Köbler, Ref. Wormbs 32, 1; 279, 3; Kurz, a. a. O. 1, 3, 18; Grosch u. a., a. a. O. 161, 13; 164, 37; Küther, a. a. O. 282, 19; Ermisch, Sächs. Bergr. 46, 18; Kisch, Leipz. Schöffenspr. 824, 6; Wutke, Schles. Bergb., Cod. Sil. 20, 175, 31; Franck, Decl. 333, 14; Bolte, Pauli. Schimpf u. Ernst 1, 360, 26; Köbler, Stattr. Fryburg 43, 27; Uhlirz, Qu. Wien 2, 2, 3607, 5; Winter, Nöst. Weist. 3, 561, 47; Grothausmann, Stadtb. Karpfen 31, 20; Schöpper 89a; 99b; Maaler 105r; Rwb 2, 1592 f.; Schweiz. Id. 8, 241 f.; Schwäb. Wb. 2, 737; Cirullies, Rechtsterm. Anh. 1981, 139. – Vgl. ferner s. v. abwesung 1, part 3. 2. ›jm. das Ergebnis eines Rechtsstreites mitteilen, darlegen‹; außerhalb rechtlicher Kontexte: ›jm. etw. berichten, erläutern, auseinandersetzen‹; metonymisch zu 1; vgl. ent- 3a. – Bdv.: berichten 2, deuten 2, erläutern 1, unterrichten; vgl. entrichten 5, künden 1. – Synt.: jn. der dinge e., (jm.) etw. [wie] (z. B. freundlich / heimlich / klärlich, mit gedichten) e., jn. gründlich e. – Wbg.: entscheidenheit 2 (in Verbindung mit der Präposition mit 1) ›ausdrücklich, explizit‹, entscheidenlich ›ausdrücklich‹. Strehlke, Nic. Jerosch. Chron. 13462 (preuß., um 1330/40) Nû wil ich mit intscheidinheit | ûch ouch dî strite kundin. Ebd. 18598 [sî] heimelîchin | intschidin unde duitin | den Bartin, [...] | wî iz zu Gartin was gewant | um dî burg und um daz lant. Ebd. 20483 Der vorgenante Dîterîch | von Esebek intscheidinlîch | hatte [...] | brûdir Conrâde Rôten | geoffenbârit sînin tôt. Kopp, Volks- u. Gesellschaftsl. 182, 33 (Hs. ˹pfälz., M. 16. Jh.˺) das best ich khan | dich der ding gruntlich entscheiden. Behrend, Magd. Fragen 79, 23 (omd., um 1400) ich [gast] warte lantrechtis mit czuge unde mit eynis hant, alz mir ist entscheiden. Bindewald, Texte schles. Kanzl. 158, 6 (schles., 1378) Jch Borgold von Benotindorff Bekenne [...], daz ich [...] von mȳs brudirr heynczhils weyne [...] frundlich vnd liplich bericht vnd intscheydin bin. Chron. Nürnb. 3, 371, 9 (nobd., 1440/4) als man in des nu clerlicher entscheiden und sie unterrichtet hette, begerten die obgenanten [...]. – Strehlke, a. a. O. 3678; 6398; 14348; Qu. Schweiz. Gesch. 1, 24, 20; Maaler 105r. – Vgl. ferner s. v. äussern 3. 3. ›etw. (begrifflich) von etw. anderem unterscheiden, etw. von etw. anderem trennen, einer Kategorie zuordnen‹; auch: ›eine (theologische) Streitfrage mit dem Anspruch der Endgültigkeit klären, etw. begrifflich festlegen, definieren‹; seltener: ›jn. / etw. fachlich beurteilen‹; vgl. ent- 3a; 6. – Verstärkt Texte der Sinnwelt ,Religion / Didaxe‘. – Bdv.: bestimmen 1, entrichten 2, richten 15, urteilen; vgl. ausscheiden 6, 1heissen 9. – Synt.: jn. (z. B. die päpste und ire wiedersacher) e., etw. (z. B. einen sentenz, die auslegungen / fragen / planeten) e., etw. von got, einen tag von einem anderen e., zwischen etw. und etw. anderem e., etw. gewislich / klar e. – Wbg.: entscheidenheit 3 ›Sinn, Bedeutung‹ (im Beleg: eines Namens). Strehlke, Nic. Jerosch. Chron. 741 (preuß., um 1330/40) Er [Dâvit] welte zwei geslechte, | [...] | ûz sînem volke allintsamt | und bevûl in sulch ein amt, | daz sî vor allin vârin | soldin sîn houbt bewarin | nâch irre namen entscheidinheit. Luther, WA 23, 338, 13 (1527) wurdet yhr [Johann Hess] [...] wol selbst on vnser zuthǔn, solche vnd wol grossere fragen entscheiden vnd richten. Jungbluth, J. v. Saaz. Ackermann 17, 16 (Hs. ˹omd., 1465˺) Wo sint sie hin, die auf erden saßen under dem gestirne, umbgiengen und entschieden die planeten? Strauch, Par. anime int. 119, 14 (thür., 14. Jh.) noch dan minnent si di dinc di si fon Gode nicht intschedint. Andreae. Ber. Nachtmal 29v, 1 ([Augsb.] 1557) Nun woͤllen wir für vns nemen die Erste spaltung / naͤmlich der Paͤbster vnd jrer widersacher / vn̄ dieselbigen klaͤrlich entschayden. Ebd. 77v, 20 Darauß kan nun ain yeder [...] leichtlich die widerwaͤrtigen außlegungen entschayden. Meisen u. a., J. Eck 31, 29 (Ingolst. 1526) es syen nit so vill gelerter luͤt zuͦ Costentz, die yre predicanten moͤchten entscheiden. Höver, Bonaventura. Itin. A 412 (moobd., 2. H. 15. Jh.) darumb seyt nun alle ding, dy wir gewisleicher entschayden oder entrichten, durch söllich vernunft vnd ausweysung [...] enttschayden vnd vrtailen, so [...]. Bauer, Zist.-Pred. Haller 555, 23 (tir., 1466) Durch die selbig ainig lieb würt entschaiden das heilig geschlecht von dem vnheiligen geschlecht. – Mayer, Folz. Meisterl. 10, 34; Adomatis u. a., J. Murer. Bab. 4578; Höver, a. a. O. 1, 446; Voc. Teut.-Lat. g iiijv; Dict. Germ.-Gall.-Lat. 139; Schweiz. Id. 8, 241. 4. ›jn. / sich von etw. abspalten, trennen‹; ütr.: ›sich von einer Meinung, einem Irrtum distanzieren, lösen‹; zu ent- 6. – Bdv.: teilen 2; 3; vgl. entfremden 3. Baumann, Bauernkr. Rotenb. 25, 13 (nobd., 1525) aus welicher christlicher gemain du dich mitsampt den deinen [...] nit entschieden wurdst. UB Zug 935, 2 (halem., 1451) Nachdem als min matt und weid Morgarten geteilt und entscheiden ist von Ruͤdis [...] matten. Karnein, de amore dt. 92, 153 (moobd., v. 1440) Aber darumb, das der adel allain von zucht, tugent vnd recht thün in erbern sitn entsprungen ist, so mügt ir ewrs ersten jrrgangks wol entschaiden sein vnd den niderlegen. 5. ›js. Seele vom Körper abtrennen, jn. abberufen‹; intrans.: ›sterben, verscheiden‹; Spezialisierung zu 4; vgl. ent- 3a; 6. – Phras.: der tod jn. von seinem körper e. – Bdv.: entschlafen 2. Hoffmeister, Kuffstein. Gef. B ir, 1 (Leipzig 1625) biß so lang der Todt von diesem Coͤrper mich entscheidet. Qu. Brassó 4, 508, 2 (siebenb., 1548, Hs. 1613/7) Anno 1547 [...] ist die vieltugendsame, gottsfürchtige Matrona Apollonia [...] im Herrn seliglichen entscheiden und entschlafen.
+-->
+  <!--Interpunktionsloser Text:
+ent|1scheidenVunrablBedeutungsfeldmitdemgemeinsamenMomentetwtrennenvoneinanderabgrenzen‘1fasstverschiedenehäufignichtklarvoneinanderabgrenzbarerechtssprachlicheVerwendungsweisenzusammenindenendieSchaffungsozialerOrdnungundvorallemdieStreitschlichtungdurchweltlicheGerichteundderenausführendeOrganeimVordergrundstehen2verhältsichmetonymischzu1dieschwächerbelegtenBedeutungen35beziehensichaufweitereabstrakteoderkonkreteFormenderTrennungundAbgrenzung1›einenjuristischenStreitfallkläreneinenStreitbeilegenschlichteneinUrteilfälleneineEinigungzwischenzweiParteienerzieleneinenVergleicherwirken‹›etwrechtsverbindlichfestsetzenfestlegenbestimmen‹speziell›einenGrenzverlauffestsetzen‹mitUmkehrungderPerspektive›eineObrigkeiteinGerichtumdieKlärungeinesStreitfallesanrufen‹auch›sichgütlicheinigen‹vglent3a6GehäuftRechtsundWirtschaftstexteBdv(bzwOrientierungsfeld)abtragen5berichten11131betragen3einenI2entrichten2entschliessen4entsetzen7läutern3mitteln2rechtfertigen2richten912scheiden(Vunrabl)7urteilenvereinenverrichtenvertragenSyntjn/etw(zBeinenkrieg/spandie/eineirrung/klage/sache/zwietrachtdasgezänke/kämpfendieparteiengerichtehier›Gerichtsbezirke‹/landmarken)ej(zBeinjunker/richterdiegemeinedieherren/schiedsrichter/schöffen)etwedieleute(Subj)sichmiteinanderejmetweetw[wie](zBaufantwort/schiedsrichteraufeinrechtdurchamptleute/rechtdurcheinurteilmitfreundschaft/minne/rechtmitrechtlichemspruchendlich/freundlich/gütlich/nüzlich/rechtlich)e(lassen)überetwejnvoneinandervonandereneedas[]Wbgentscheidenheit1›AuseinandersetzungKlärungeinerFrage‹StrehlkeNicJeroschChron1971(preußum1330/40)desgabdurchganzesichirheit|derherzogevorgeseit|denbrûderenbrîvewolbereit|nâchdersacheintscheidinheit|mitsîmeingesigeleganzLutherWA3358938(1531)danwieihrvonderErdengeborenseidtdosichdieleuthenichtfreundlichmiteinanderentscheidenundChristusunddieseinensichalhierauchalsovertragenKöblerRefWormbs1754(Worms1499)Sozwuschenkindenvndvormundernzweytrachtwurde[]wiesolichszuentscheidenistDersRefFranckenfort8530(Mainz1509)Vñwiesie[parthyen]durchdieselben[Schoͤffen]entscheidenwerde͂/des[soldes]benügigzuseinKurzWaldisEsopus37816(Frankf1557)moͤchtichdasvppigkempffen|EntscheidenvndinfreundtschafftdempffenÖsterleyKirchhofWendunmuth44731(Frankf1603)drey[herrn]soltenzueimsonderlichenkampfferwehletundderzweyspaltdurchihrgewinnenoderverlierenentscheidenundauffgehabenseynGroschuaSchöffensprPössneck14620(thür1474)So[]dysachenuffscheydeßrichteruffschultundeuffantwertzcuentscheydenbefolensintwordenvondemeobirhernEbd15216dannbeydeteillalsoirersachen[]uffdasgemeynelandtlawftigeSechsßischerechtezuentscheidengegangenseinKütherUBFrauensee25918(thür1489)geczenckedie[]mitbeyderpartyenwisßenundewillengutlichundefruntlichabegetragenundeentscheidenistChronNürnb37117(nobd1488)er[Hainrich]ließauchvilsachdesreichszuNurenbergentschaidendurchseinamptleutKöblerRefNürnberg682(Nürnb1484)vmbirallervndiryedesspruchclagvndvordrungdarumbdañderwertlichRichterodergerichtrichte͂vndentscheide͂moͤgenvndzerichtenhabenBoosUBAarau13031(halem1379)tunwirabmit[]kuniglichermechtevolkomenheitallerschulde[]undentscheidenleuternclerenundsprechendas[]KollerRefSiegmunds29916(Hs˹Baselum1440˺)hateingeystlichmanimrehtenützigzuͦsprechenaneinenweltlichenumbeygenodererbsosoldergeistlichimlossenentscheydengegemeinemweltlichemvoreinemratRappUBStuttg53724(schwäb1492)soͤlichirrungenundspeneinzweiengerichtstagenbisherderwochengehaltenrechtlichnitgehoͤrtnochentschaidenwerdenKöblerRefWormbs3212793KurzaaO1318GroschuaaaO1611316437KütheraaO28219ErmischSächsBergr4618KischLeipzSchöffenspr8246WutkeSchlesBergbCodSil2017531FranckDecl33314BoltePauliSchimpfuErnst136026KöblerStattrFryburg4327UhlirzQuWien2236075WinterNöstWeist356147GrothausmannStadtbKarpfen3120Schöpper89a99bMaaler105rRwb21592fSchweizId8241fSchwäbWb2737CirulliesRechtstermAnh1981139Vglfernersvabwesung1part32›jmdasErgebniseinesRechtsstreitesmitteilendarlegen‹außerhalbrechtlicherKontexte›jmetwberichtenerläuternauseinandersetzen‹metonymischzu1vglent3aBdvberichten2deuten2erläutern1unterrichtenvglentrichten5künden1Syntjnderdingee(jm)etw[wie](zBfreundlich/heimlich/klärlichmitgedichten)ejngründlicheWbgentscheidenheit2(inVerbindungmitderPräpositionmit1)›ausdrücklichexplizit‹entscheidenlich›ausdrücklich‹StrehlkeNicJeroschChron13462(preußum1330/40)Nûwilichmitintscheidinheit|ûchouchdîstritekundinEbd18598[sî]heimelîchin|intschidinundeduitin|denBartin[]|wîizzuGartinwasgewant|umdîburgundumdazlantEbd20483DervorgenanteDîterîch|vonEsebekintscheidinlîch|hatte[]|brûdirConrâdeRôten|geoffenbâritsînintôtKoppVolksuGesellschaftsl18233(Hs˹pfälzM16Jh˺)dasbestichkhan|dichderdinggruntlichentscheidenBehrendMagdFragen7923(omdum1400)ich[gast]wartelantrechtismitczugeundemiteynishantalzmiristentscheidenBindewaldTexteschlesKanzl1586(schles1378)JchBorgoldvonBenotindorffBekenne[]dazich[]vonmȳsbrudirrheynczhilsweyne[]frundlichvndliplichberichtvndintscheydinbinChronNürnb33719(nobd1440/4)alsmanindesnuclerlicherentscheidenundsieunterrichtethettebegertendieobgenanten[]StrehlkeaaO3678639814348QuSchweizGesch12420Maaler105rVglfernersväussern33›etw(begrifflich)vonetwanderemunterscheidenetwvonetwanderemtrenneneinerKategoriezuordnen‹auch›eine(theologische)StreitfragemitdemAnspruchderEndgültigkeitklärenetwbegrifflichfestlegendefinieren‹seltener›jn/etwfachlichbeurteilen‹vglent3a6VerstärktTextederSinnweltReligion/Didaxe‘Bdvbestimmen1entrichten2richten15urteilenvglausscheiden61heissen9Syntjn(zBdiepäpsteundirewiedersacher)eetw(zBeinensentenzdieauslegungen/fragen/planeten)eetwvongoteinentagvoneinemanderenezwischenetwundetwanderemeetwgewislich/klareWbgentscheidenheit3›SinnBedeutung‹(imBelegeinesNamens)StrehlkeNicJeroschChron741(preußum1330/40)Er[Dâvit]weltezweigeslechte|[]|ûzsînemvolkeallintsamt|undbevûlinsulcheinamt|dazsîvorallinvârin|soldinsînhoubtbewarin|nâchirrenamenentscheidinheitLutherWA2333813(1527)wurdetyhr[JohannHess][]wolselbstonvnserzuthǔnsolchevndwolgrosserefragenentscheidenvndrichtenJungbluthJvSaazAckermann1716(Hs˹omd1465˺)WosintsiehindieauferdensaßenunderdemgestirneumbgiengenundentschiedendieplanetenStrauchParanimeint11914(thür14Jh)nochdanminnentsididincdisifonGodenichtintschedintAndreaeBerNachtmal29v1([Augsb]1557)NunwoͤllenwirfürvnsnemendieErstespaltung/naͤmlichderPaͤbstervndjrerwidersacher/vn̄dieselbigenklaͤrlichentschaydenEbd77v20Daraußkannunainyeder[]leichtlichdiewiderwaͤrtigenaußlegungenentschaydenMeisenuaJEck3129(Ingolst1526)essyennitsovillgelerterluͤtzuͦCostentzdieyrepredicantenmoͤchtenentscheidenHöverBonaventuraItinA412(moobd2H15Jh)darumbseytnunalledingdywirgewisleicherentschaydenoderentrichtendurchsöllichvernunftvndausweysung[]enttschaydenvndvrtailenso[]BauerZistPredHaller55523(tir1466)DurchdieselbigainigliebwürtentschaidendasheiliggeschlechtvondemvnheiligengeschlechtMayerFolzMeisterl1034AdomatisuaJMurerBab4578HöveraaO1446VocTeutLatgiiijvDictGermGallLat139SchweizId82414›jn/sichvonetwabspaltentrennen‹ütr›sichvoneinerMeinungeinemIrrtumdistanzierenlösen‹zuent6Bdvteilen23vglentfremden3BaumannBauernkrRotenb2513(nobd1525)auswelicherchristlichergemaindudichmitsamptdendeinen[]nitentschiedenwurdstUBZug9352(halem1451)NachdemalsminmattundweidMorgartengeteiltundentscheidenistvonRuͤdis[]mattenKarneindeamoredt92153(moobdv1440)Aberdarumbdasderadelallainvonzuchttugentvndrechtthüninerbernsitnentsprungenistsomügtirewrserstenjrrgangkswolentschaidenseinvnddenniderlegen5›jsSeelevomKörperabtrennenjnabberufen‹intrans›sterbenverscheiden‹Spezialisierungzu4vglent3a6PhrasdertodjnvonseinemkörpereBdventschlafen2HoffmeisterKuffsteinGefBir1(Leipzig1625)bißsolangderTodtvondiesemCoͤrpermichentscheidetQuBrassó45082(siebenb1548Hs1613/7)Anno1547[]istdievieltugendsamegottsfürchtigeMatronaApollonia[]imHerrnseliglichenentscheidenundentschlafen
+ent|1scheidenVunrablBedeutungsfeldmitdemgemeinsamenMomentetwtrennenvoneinanderabgrenzen‘1fasstverschiedenehäufignichtklarvoneinanderabgrenzbarerechtssprachlicheVerwendungsweisenzusammenindenendieSchaffungsozialerOrdnungundvorallemdieStreitschlichtungdurchweltlicheGerichteundderenausführendeOrganeimVordergrundstehen2verhältsichmetonymischzu1dieschwächerbelegtenBedeutungen35beziehensichaufweitereabstrakteoderkonkreteFormenderTrennungundAbgrenzung1›einenjuristischenStreitfallkläreneinenStreitbeilegenschlichteneinUrteilfälleneineEinigungzwischenzweiParteienerzieleneinenVergleicherwirken‹›etwrechtsverbindlichfestsetzenfestlegenbestimmen‹speziell›einenGrenzverlauffestsetzen‹mitUmkehrungderPerspektive›eineObrigkeiteinGerichtumdieKlärungeinesStreitfallesanrufen‹auch›sichgütlicheinigen‹vglent3a6GehäuftRechtsundWirtschaftstexteBdv(bzwOrientierungsfeld)abtragen5berichten11131betragen3einenI2entrichten2entschliessen4entsetzen7läutern3mitteln2rechtfertigen2richten912scheiden(Vunrabl)7urteilenvereinenverrichtenvertragenSyntjn/etw(zBeinenkrieg/spandie/eineirrung/klage/sache/zwietrachtdasgezänke/kämpfendieparteiengerichtehier›Gerichtsbezirke‹/landmarken)ej(zBeinjunker/richterdiegemeinedieherren/schiedsrichter/schöffen)etwedieleute(Subj)sichmiteinanderejmetweetw[wie](zBaufantwort/schiedsrichteraufeinrechtdurchamptleute/rechtdurcheinurteilmitfreundschaft/minne/rechtmitrechtlichemspruchendlich/freundlich/gütlich/nüzlich/rechtlich)e(lassen)überetwejnvoneinandervonandereneedas[]Wbgentscheidenheit1›AuseinandersetzungKlärungeinerFrage‹StrehlkeNicJeroschChron1971(preußum1330/40)desgabdurchganzesichirheit|derherzogevorgeseit|denbrûderenbrîvewolbereit|nâchdersacheintscheidinheit|mitsîmeingesigeleganzLutherWA3358938(1531)danwieihrvonderErdengeborenseidtdosichdieleuthenichtfreundlichmiteinanderentscheidenundChristusunddieseinensichalhierauchalsovertragenKöblerRefWormbs1754(Worms1499)Sozwuschenkindenvndvormundernzweytrachtwurde[]wiesolichszuentscheidenistDersRefFranckenfort8530(Mainz1509)Vñwiesie[parthyen]durchdieselben[Schoͤffen]entscheidenwerde͂/des[soldes]benügigzuseinKurzWaldisEsopus37816(Frankf1557)moͤchtichdasvppigkempffen|EntscheidenvndinfreundtschafftdempffenÖsterleyKirchhofWendunmuth44731(Frankf1603)drey[herrn]soltenzueimsonderlichenkampfferwehletundderzweyspaltdurchihrgewinnenoderverlierenentscheidenundauffgehabenseynGroschuaSchöffensprPössneck14620(thür1474)So[]dysachenuffscheydeßrichteruffschultundeuffantwertzcuentscheydenbefolensintwordenvondemeobirhernEbd15216dannbeydeteillalsoirersachen[]uffdasgemeynelandtlawftigeSechsßischerechtezuentscheidengegangenseinKütherUBFrauensee25918(thür1489)geczenckedie[]mitbeyderpartyenwisßenundewillengutlichundefruntlichabegetragenundeentscheidenistChronNürnb37117(nobd1488)er[Hainrich]ließauchvilsachdesreichszuNurenbergentschaidendurchseinamptleutKöblerRefNürnberg682(Nürnb1484)vmbirallervndiryedesspruchclagvndvordrungdarumbdañderwertlichRichterodergerichtrichte͂vndentscheide͂moͤgenvndzerichtenhabenBoosUBAarau13031(halem1379)tunwirabmit[]kuniglichermechtevolkomenheitallerschulde[]undentscheidenleuternclerenundsprechendas[]KollerRefSiegmunds29916(Hs˹Baselum1440˺)hateingeystlichmanimrehtenützigzuͦsprechenaneinenweltlichenumbeygenodererbsosoldergeistlichimlossenentscheydengegemeinemweltlichemvoreinemratRappUBStuttg53724(schwäb1492)soͤlichirrungenundspeneinzweiengerichtstagenbisherderwochengehaltenrechtlichnitgehoͤrtnochentschaidenwerdenKöblerRefWormbs3212793KurzaaO1318GroschuaaaO1611316437KütheraaO28219ErmischSächsBergr4618KischLeipzSchöffenspr8246WutkeSchlesBergbCodSil2017531FranckDecl33314BoltePauliSchimpfuErnst136026KöblerStattrFryburg4327UhlirzQuWien2236075WinterNöstWeist356147GrothausmannStadtbKarpfen3120Schöpper89a99bMaaler105rRwb21592fSchweizId8241fSchwäbWb2737CirulliesRechtstermAnh1981139Vglfernersvabwesung1part32›jmdasErgebniseinesRechtsstreitesmitteilendarlegen‹außerhalbrechtlicherKontexte›jmetwberichtenerläuternauseinandersetzen‹metonymischzu1vglent3aBdvberichten2deuten2erläutern1unterrichtenvglentrichten5künden1Syntjnderdingee(jm)etw[wie](zBfreundlich/heimlich/klärlichmitgedichten)ejngründlicheWbgentscheidenheit2(inVerbindungmitderPräpositionmit1)›ausdrücklichexplizit‹entscheidenlich›ausdrücklich‹StrehlkeNicJeroschChron13462(preußum1330/40)Nûwilichmitintscheidinheit|ûchouchdîstritekundinEbd18598[sî]heimelîchin|intschidinundeduitin|denBartin[]|wîizzuGartinwasgewant|umdîburgundumdazlantEbd20483DervorgenanteDîterîch|vonEsebekintscheidinlîch|hatte[]|brûdirConrâdeRôten|geoffenbâritsînintôtKoppVolksuGesellschaftsl18233(Hs˹pfälzM16Jh˺)dasbestichkhan|dichderdinggruntlichentscheidenBehrendMagdFragen7923(omdum1400)ich[gast]wartelantrechtismitczugeundemiteynishantalzmiristentscheidenBindewaldTexteschlesKanzl1586(schles1378)JchBorgoldvonBenotindorffBekenne[]dazich[]vonmȳsbrudirrheynczhilsweyne[]frundlichvndliplichberichtvndintscheydinbinChronNürnb33719(nobd1440/4)alsmanindesnuclerlicherentscheidenundsieunterrichtethettebegertendieobgenanten[]StrehlkeaaO3678639814348QuSchweizGesch12420Maaler105rVglfernersväussern33›etw(begrifflich)vonetwanderemunterscheidenetwvonetwanderemtrenneneinerKategoriezuordnen‹auch›eine(theologische)StreitfragemitdemAnspruchderEndgültigkeitklärenetwbegrifflichfestlegendefinieren‹seltener›jn/etwfachlichbeurteilen‹vglent3a6VerstärktTextederSinnweltReligion/Didaxe‘Bdvbestimmen1entrichten2richten15urteilenvglausscheiden61heissen9Syntjn(zBdiepäpsteundirewiedersacher)eetw(zBeinensentenzdieauslegungen/fragen/planeten)eetwvongoteinentagvoneinemanderenezwischenetwundetwanderemeetwgewislich/klareWbgentscheidenheit3›SinnBedeutung‹(imBelegeinesNamens)StrehlkeNicJeroschChron741(preußum1330/40)Er[Dâvit]weltezweigeslechte|[]|ûzsînemvolkeallintsamt|undbevûlinsulcheinamt|dazsîvorallinvârin|soldinsînhoubtbewarin|nâchirrenamenentscheidinheitLutherWA2333813(1527)wurdetyhr[JohannHess][]wolselbstonvnserzuthǔnsolchevndwolgrosserefragenentscheidenvndrichtenJungbluthJvSaazAckermann1716(Hs˹omd1465˺)WosintsiehindieauferdensaßenunderdemgestirneumbgiengenundentschiedendieplanetenStrauchParanimeint11914(thür14Jh)nochdanminnentsididincdisifonGodenichtintschedintAndreaeBerNachtmal29v1([Augsb]1557)NunwoͤllenwirfürvnsnemendieErstespaltung/naͤmlichderPaͤbstervndjrerwidersacher/vn̄dieselbigenklaͤrlichentschaydenEbd77v20Daraußkannunainyeder[]leichtlichdiewiderwaͤrtigenaußlegungenentschaydenMeisenuaJEck3129(Ingolst1526)essyennitsovillgelerterluͤtzuͦCostentzdieyrepredicantenmoͤchtenentscheidenHöverBonaventuraItinA412(moobd2H15Jh)darumbseytnunalledingdywirgewisleicherentschaydenoderentrichtendurchsöllichvernunftvndausweysung[]enttschaydenvndvrtailenso[]BauerZistPredHaller55523(tir1466)DurchdieselbigainigliebwürtentschaidendasheiliggeschlechtvondemvnheiligengeschlechtMayerFolzMeisterl1034AdomatisuaJMurerBab4578HöveraaO1446VocTeutLatgiiijvDictGermGallLat139SchweizId82414›jn/sichvonetwabspaltentrennen‹ütr›sichvoneinerMeinungeinemIrrtumdistanzierenlösen‹zuent6Bdvteilen23vglentfremden3BaumannBauernkrRotenb2513(nobd1525)auswelicherchristlichergemaindudichmitsamptdendeinen[]nitentschiedenwurdstUBZug9352(halem1451)NachdemalsminmattundweidMorgartengeteiltundentscheidenistvonRuͤdis[]mattenKarneindeamoredt92153(moobdv1440)Aberdarumbdasderadelallainvonzuchttugentvndrechtthüninerbernsitnentsprungenistsomügtirewrserstenjrrgangkswolentschaidenseinvnddenniderlegen5›jsSeelevomKörperabtrennenjnabberufen‹intrans›sterbenverscheiden‹Spezialisierungzu4vglent3a6PhrasdertodjnvonseinemkörpereBdventschlafen2HoffmeisterKuffsteinGefBir1(Leipzig1625)bißsolangderTodtvondiesemCoͤrpermichentscheidetQuBrassó45082(siebenb1548Hs1613/7)Anno1547[]istdievieltugendsamegottsfürchtigeMatronaApollonia[]imHerrnseliglichenentscheidenundentschlafen
+-->
+  <!--Original:
+<p2 uuid="18458bae-5785-44ff-a583-3344705555e2"><b>ent|<sup>1</sup>scheiden,</b> V., unr. abl.; Bedeutungsfeld mit dem gemeinsamen Moment ,etw. trennen, voneinander abgrenzen‘ : 1 fasst verschiedene, häufig nicht klar voneinander abgrenzbare rechtssprachliche Verwendungsweisen zusammen, in denen die Schaffung sozialer Ordnung und vor allem die Streitschlichtung durch weltliche Gerichte und deren ausführende Organe im Vordergrund stehen; 2 verhält sich metonymisch zu 1; die schwächer belegten Bedeutungen 3-5 beziehen sich auf weitere abstrakte oder konkrete Formen der Trennung und Abgrenzung.</p2>
+<p2 uuid="e70766f0-c94b-4b9d-a41f-721dc2552975">1. ›einen juristischen Streitfall klären, einen Streit beilegen, schlichten, ein Urteil fällen; eine Einigung zwischen zwei Parteien erzielen, einen Vergleich erwirken‹ ; ›etw. rechtsverbindlich festsetzen, festlegen, bestimmen‹ ; speziell: ›einen Grenzverlauf festsetzen‹ ; mit Umkehrung der Perspektive: ›eine Obrigkeit, ein Gericht um die Klärung eines Streitfalles anrufen‹ ; auch: ›sich gütlich einigen‹ ; vgl. <i>ent-</i> 3a; 6. – Gehäuft Rechts- und Wirtschaftstexte. – Bdv. (bzw. Orientierungsfeld): <i>abtragen</i> 5, <i>berichten</i> 11; 13, <sup>1</sup><i>betragen</i> 3, <i>einen</i> I, 2, <i>entrichten</i> 2, <i>entschliessen</i> 4, <i>entsetzen</i> 7, <i>läutern</i> 3, <i>mitteln</i> 2, <i>rechtfertigen</i> 2, <i>richten</i> 9; 12, <i>scheiden</i> (V., unr. abl.) 7, <i>urteilen, vereinen, verrichten, vertragen</i>. – Synt.: <i>jn. / etw</i>. (z. B. <i>einen krieg / span, die / eine irrung / klage / sache / zwietracht, das gezänke / kämpfen, die parteien, gerichte</i> hier: ›Gerichtsbezirke‹ <i>/ landmarken</i>) <i>e., j</i>. (z. B. <i>ein junker / richter, die gemeine, die herren / schiedsrichter / schöffen</i>) <i>etw. e., die leute</i> (Subj.) <i>sich miteinander e., jm. etw. e., etw</i>. [wie] (z. B. <i>auf antwort / schiedsrichter, auf ein recht, durch amptleute / recht, durch ein urteil, mit freundschaft / minne / recht, mit rechtlichem spruch, endlich / freundlich / gütlich / nüzlich / rechtlich</i>) <i>e. (lassen), über etw. e., jn. voneinander, von anderen e</i>.; <i>e., das [...]</i>. Wbg.: <i>entscheidenheit</i> 1 ›Auseinandersetzung, Klärung einer Frage‹.</p2>
+<p><sc>Strehlke</sc>, Nic. Jerosch. Chron. 1971 (preuß., um 1330/40): <i>des gab durch ganze sichirheit | der herzoge vorgeseit | den brûderen brîve wol bereit | nâch der sache <ow>intscheidinheit</ow> | mit sîme ingesigele ganz</i>. <sc>Luther</sc>, WA 33, 589, 38 (1531): <i>dan wie ihr von der Erden geboren seidt, do sich die leuthe nicht freundlich mit einander <ol>entscheiden</ol> und Christus und die seinen sich alhier auch also vertragen</i>. <sc>Köbler</sc>, Ref. Wormbs 175, 4 (Worms 1499): <i>So zwuschen kinden vnd vormundern zweytracht wurde [...] wie solichs <ol>zuentscheiden</ol> ist</i>. <sc>Ders</sc>., Ref. Franckenfort 85, 30 (Mainz 1509): <i>Vñ wie sie [parthyen] durch die selben [Schoͤffen] <ol>entscheiden</ol> werde͂ / des [soldes] benügig zusein</i>. <sc>Kurz</sc>, Waldis. Esopus 3, 78, 16 (Frankf. 1557): <i>moͤcht ich das vppig kempffen | <ol>Entscheiden</ol> vnd in freundtschafft dempffen !</i> <sc>Österley</sc>, Kirchhof. Wendunmuth 4, 47, 31 (Frankf. 1603): <i>drey [herrn] solten zu eim sonderlichen kampff erwehlet, und der zweyspalt durch ihr gewinnen oder verlieren <ol>entscheiden</ol> und auffgehaben seyn</i>. <sc>Grosch</sc> u. a., Schöffenspr. Pössneck 146, 20 (thür., 1474): <i>So [...] dy sachen uff scheydeßrichter, uff schult unde uff antwert zcu <ol>entscheyden</ol>, befolen sint worden von deme obirhern</i>. <sc>Ebd</sc>. 152, 16: <i>dann beyde teill also irer sachen [...] uff das gemeyne landtlawftige Sechsßische rechte zu <ol>entscheiden</ol> gegangen sein</i>. <sc>Küther</sc>, UB Frauensee 259, 18 (thür., 1489): <i>geczencke, die [...] mit beyder partyen wisßen unde willen gutlich unde fruntlich abegetragen unde <ol>entscheiden</ol> ist</i>. <sc>Chron. Nürnb</sc>. 3, 71, 17 (nobd., 1488): <i>er [Hainrich] ließ auch vil sach des reichs zu Nurenberg <ol>entschaiden</ol> durch sein amptleut</i>. <sc>Köbler</sc>, Ref. Nürnberg 68, 2 (Nürnb. 1484): <i>vmb ir aller vnd ir yedes spruch. clag vnd vordrung. darumb dañ der wertlich Richter oder gericht richte͂ vnd <ol>entscheide͂</ol> moͤgen vnd zerichten haben</i>. <sc>Boos</sc>, UB Aarau 130, 31 (halem., 1379): <i>tun wir ab mit [...] kuniglicher mechte volkomenheit aller schulde [...] und <ol>entscheiden</ol>, leutern, cleren und sprechen, das [...]</i>. <sc>Koller</sc>, Ref. Siegmunds 299, 16 (Hs. ˹Basel, um 1440˺ ): <i>hat ein geystlich man im rehten ützig zuͦ sprechen an einen weltlichen umb eygen oder erb, so sol der geistlich im lossen <ol>entscheyden</ol> gegem einem weltlichem vor einem rat</i>. <sc>Rapp</sc>, UB Stuttg. 537, 24 (schwäb., 1492): <i>soͤlich irrungen und spene in zweien gerichtstagen bisher der wochen gehalten rechtlich nit gehoͤrt noch <ol>entschaiden</ol> werden</i>. – <sc>Köbler</sc>, Ref. Wormbs 32, 1; 279, 3; <sc>Kurz</sc>, a. a. O. 1, 3, 18; <sc>Grosch</sc> u. a., a. a. O. 161, 13; 164, 37; <sc>Küther</sc>, a. a. O. 282, 19; <sc>Ermisch</sc>, Sächs. Bergr. 46, 18; <sc>Kisch</sc>, Leipz. Schöffenspr. 824, 6; <sc>Wutke</sc>, Schles. Bergb., Cod. Sil. 20, 175, 31; <sc>Franck</sc>, Decl. 333, 14; <sc>Bolte</sc>, Pauli. Schimpf u. Ernst 1, 360, 26; <sc>Köbler</sc>, Stattr. Fryburg 43, 27; <sc>Uhlirz</sc>, Qu. Wien 2, 2, 3607, 5; <sc>Winter</sc>, Nöst. Weist. 3, 561, 47; <sc>Grothausmann</sc>, Stadtb. Karpfen 31, 20; <sc>Schöpper</sc> 89a; 99b; <sc>Maaler</sc> 105r; <sc>Rwb</sc> 2, 1592 f.; <sc>Schweiz. Id</sc>. 8, 241 f.; <sc>Schwäb. Wb</sc>. 2, 737; <sc>Cirullies</sc>, Rechtsterm. Anh. 1981, 139. – Vgl. ferner s. v. <i>abwesung</i> 1, <i>part</i> 3.</p>
+<p2 uuid="149570db-5a04-400e-833e-e6acc9bfc7bc">2. ›jm. das Ergebnis eines Rechtsstreites mitteilen, darlegen‹ ; außerhalb rechtlicher Kontexte: ›jm. etw. berichten, erläutern, auseinandersetzen‹ ; metonymisch zu 1; vgl. <i>ent-</i> 3a. – Bdv.: <i>berichten</i> 2, <i>deuten</i> 2, <i>erläutern</i> 1, <i>unterrichten</i> ; vgl. <i>entrichten</i> 5, <i>künden</i> 1. – Synt.: <i>jn. der dinge e., (jm.) etw</i>. [wie] (z. B. <i>freundlich / heimlich / klärlich, mit gedichten</i>) <i>e., jn. gründlich e</i>. Wbg.: <i>entscheidenheit</i> 2 (in Verbindung mit der Präposition <i>mit</i> 1) ›ausdrücklich, explizit‹, <i>entscheidenlich</i> ›ausdrücklich‹.</p2>
+<p><sc>Strehlke</sc>, Nic. Jerosch. Chron. 13462 (preuß., um 1330/40): <i>Nû wil ich mit <ow>intscheidinheit</ow> | ûch ouch dî strite kundin</i>. <sc>Ebd</sc>. 18598: <i>[sî] heimelîchin | <ol>intschidin</ol> unde duitin | den Bartin, [...] | wî iz zu Gartin was gewant | um dî burg und um daz lant</i>. <sc>Ebd</sc>. 20483: <i>Der vorgenante Dîterîch | von Esebek <ow>intscheidinlîch</ow> | hatte [...] | brûdir Conrâde Rôten | geoffenbârit sînin tôt</i>. <sc>Kopp</sc>, Volks- u. Gesellschaftsl. 182, 33 (Hs. ˹pfälz., M. 16. Jh.˺ ): <i>das best ich khan | dich der ding gruntlich <ol>entscheiden</ol></i>. <sc>Behrend</sc>, Magd. Fragen 79, 23 (omd., um 1400): <i>ich [gast] warte lantrechtis mit czuge unde mit eynis hant, alz mir ist <ol>entscheiden</ol></i>. <sc>Bindewald</sc>, Texte schles. Kanzl. 158, 6 (schles., 1378): <i>Jch Borgold von Benotindorff Bekenne [...], daz ich [...] von mȳs brudirr heynczhils weyne [...] frundlich vnd liplich bericht vnd <ol>intscheydin</ol> bin</i>. <sc>Chron. Nürnb</sc>. 3, 371, 9 (nobd., 1440/4): <i>als man in des nu clerlicher <ol>entscheiden</ol> und sie unterrichtet hette, begerten die obgenanten [...]</i>. – <sc>Strehlke</sc>, a. a. O. 3678; 6398; 14348; <sc>Qu. Schweiz. Gesch</sc>. 1, 24, 20; <sc>Maaler</sc> 105r. – Vgl. ferner s. v. <i>äussern</i> 3.</p>
+<p2 uuid="c7c66215-5530-4d74-8e69-2242d3858655">3. ›etw. (begrifflich) von etw. anderem unterscheiden, etw. von etw. anderem trennen, einer Kategorie zuordnen‹ ; auch: ›eine (theologische) Streitfrage mit dem Anspruch der Endgültigkeit klären, etw. begrifflich festlegen, definieren‹ ; seltener: ›jn. / etw. fachlich beurteilen‹ ; vgl. <i>ent-</i> 3a; 6. – Verstärkt Texte der Sinnwelt ,Religion / Didaxe‘. – Bdv.: <i>bestimmen</i> 1, <i>entrichten</i> 2, <i>richten</i> 15, <i>urteilen</i> ; vgl. <i>ausscheiden</i> 6, <sup>1</sup><i>heissen</i> 9. – Synt.: <i>jn</i>. (z. B. <i>die päpste und ire wiedersacher</i>) <i>e., etw</i>. (z. B. <i>einen sentenz, die auslegungen / fragen / planeten</i>) <i>e., etw. von got, einen tag von einem anderen e., zwischen etw. und etw. anderem e., etw. gewislich / klar e</i>. Wbg.: <i>entscheidenheit</i> 3 ›Sinn, Bedeutung‹ (im Beleg: eines Namens).</p2>
+<p><sc>Strehlke</sc>, Nic. Jerosch. Chron. 741 (preuß., um 1330/40): <i>Er [Dâvit] welte zwei geslechte, | [...] | ûz sînem volke allintsamt | und bevûl in sulch ein amt, | daz sî vor allin vârin | soldin sîn houbt bewarin | nâch irre namen <ow>entscheidinheit</ow></i>. <sc>Luther</sc>, WA 23, 338, 13 (1527): <i>wurdet yhr [Johann Hess] [...] wol selbst on vnser zuthǔn, solche vnd wol grossere fragen <ow>entscheiden</ow> vnd richten</i>. <sc>Jungbluth</sc>, J. v. Saaz. Ackermann 17, 16 (Hs. ˹omd., 1465˺ ): <i>Wo sint sie hin, die auf erden saßen under dem gestirne, umbgiengen und <ol>entschieden</ol> die planeten ?</i> <sc>Strauch</sc>, Par. anime int. 119, 14 (thür., 14. Jh.): <i>noch dan minnent si di dinc di si fon Gode nicht <ol>intschedint</ol></i>. <sc>Andreae</sc>. Ber. Nachtmal 29v, 1 ([Augsb.] 1557): <i>Nun woͤllen wir für vns nemen die Erste spaltung / naͤmlich der Paͤbster vnd jrer widersacher / vn̄ dieselbigen klaͤrlich <ol>entschayden</ol></i>. <sc>Ebd</sc>. 77v, 20: <i>Darauß kan nun ain yeder [...] leichtlich die widerwaͤrtigen außlegungen <ol>entschayden</ol></i>. <sc>Meisen</sc> u. a., J. Eck 31, 29 (Ingolst. 1526): <i>es syen nit so vill gelerter luͤt zuͦ Costentz, die yre predicanten moͤchten <ol>entscheiden</ol></i>. <sc>Höver</sc>, Bonaventura. Itin. A 412 (moobd., 2. H. 15. Jh.): <i>darumb seyt nun alle ding, dy wir gewisleicher <ol>entschayden</ol> oder entrichten, durch söllich vernunft vnd ausweysung [...] <ol>enttschayden</ol> vnd vrtailen, so [...]</i>. <sc>Bauer</sc>, Zist.-Pred. Haller 555, 23 (tir., 1466): <i>Durch die selbig ainig lieb würt <ol>entschaiden</ol> das heilig geschlecht von dem vnheiligen geschlecht</i>. – <sc>Mayer</sc>, Folz. Meisterl. 10, 34; <sc>Adomatis</sc> u. a., J. Murer. Bab. 4578; <sc>Höver</sc>, a. a. O. 1, 446; <sc>Voc. Teut.-Lat</sc>. g iiijv; <sc>Dict. Germ.-Gall.-Lat</sc>. 139; <sc>Schweiz. Id</sc>. 8, 241.</p>
+<p2 uuid="f82e3bdf-a8d1-43ed-9403-3e5930a21ffd">4. ›jn. / sich von etw. abspalten, trennen‹ ; ütr.: ›sich von einer Meinung, einem Irrtum distanzieren, lösen‹ ; zu <i>ent-</i> 6. – Bdv.: <i>teilen</i> 2; 3; vgl. <i>entfremden</i> 3.</p2>
+<p><sc>Baumann</sc>, Bauernkr. Rotenb. 25, 13 (nobd., 1525): <i>aus welicher christlicher gemain du dich mitsampt den deinen [...] nit <ol>entschieden</ol> wurdst</i>. <sc>UB Zug</sc> 935, 2 (halem., 1451): <i>Nachdem als min matt und weid Morgarten geteilt und <ol>entscheiden</ol> ist von Ruͤdis [...] matten</i>. <sc>Karnein</sc>, de amore dt. 92, 153 (moobd., v. 1440): <i>Aber darumb, das der adel allain von zucht, tugent vnd recht thün in erbern sitn entsprungen ist, so mügt ir ewrs ersten jrrgangks wol <ol>entschaiden</ol> sein vnd den niderlegen</i>.</p>
+<p2 uuid="51b79a8f-813e-426a-bd9d-1e8c32aeaea6">5. ›js. Seele vom Körper abtrennen, jn. abberufen‹ ; intrans.: ›sterben, verscheiden‹ ; Spezialisierung zu 4; vgl. <i>ent-</i> 3a; 6. – Phras.: <i>der tod jn. von seinem körper e</i>. – Bdv.: <i>entschlafen</i> 2.</p2>
+<p><sc>Hoffmeister</sc>, Kuffstein. Gef. B ir, 1 (Leipzig 1625): <i>biß so lang der Todt von diesem Coͤrper mich <ol>entscheidet</ol></i>. <sc>Qu. Brassó</sc> 4, 508, 2 (siebenb., 1548, Hs. 1613/7): <i>Anno 1547 [...] ist die vieltugendsame, gottsfürchtige Matrona Apollonia [...] im Herrn seliglichen <ol>entscheiden</ol> und entschlafen</i>.</p>
+
+-->
+
+</TEI>
