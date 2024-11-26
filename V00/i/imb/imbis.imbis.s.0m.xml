@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>
+          imbis
+        </title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence notBefore="2007-02-01"/>
+        </availability>
+      </publicationStmt>
+      <notesStmt>
+        <note type="orth.de_DE">imbiss</note>
+      </notesStmt>
+      <sourceDesc>
+        <bibl type="printedSource">
+          <title>Frühneuhochdeutsches Wörterbuch</title>
+          <idno>79e67536-b5d9-4edf-afa9-9fd305c74e51</idno>
+          <biblScope unit="volume">08</biblScope>
+          <biblScope unit="column">26</biblScope>
+        </bibl>
+        <listBibl type="examples">
+          <bibl>
+            <!-- TODO: hier sollte die Liste der Quellen stehen -->
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <!-- Bedeutung der @type-Attribute in ref bzw. von @subtype in re -->
+        <taxonomy xml:id="ref.type_re.subtype">
+          <category xml:id="cnv">
+            <catDesc>konvertiert: aus dem Konvertierungsprozess</catDesc>
+          </category>
+          <category xml:id="nex">
+            <catDesc>nicht existent: Verweisziel in unbearbeitetem Lemmabereich</catDesc>
+          </category>
+          <category xml:id="non">
+            <catDesc>unbekannt: kein Ziel in der Verweisprüfung gefunden</catDesc>
+          </category>
+          <category xml:id="unc">
+            <catDesc>unsicher: nach Verweisprüfung mehrere Ziele möglich</catDesc>
+          </category>
+          <category xml:id="mat">
+            <catDesc>abgeglichen: durch Verweisprüfung eingetragen</catDesc>
+          </category>
+          <category xml:id="gen">
+            <catDesc>generiert: das Verweisziel ist als Synonym generiert worden</catDesc>
+          </category>
+          <category xml:id="sta">
+            <catDesc>stabil: manuell verifiziert</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in re -->
+        <taxonomy xml:id="re.type">
+          <category xml:id="re.neblem">
+            <catDesc>verbundener Eintrag: Nebenlemma (auch als Ziel eines Verweisartikels)</catDesc>
+          </category>
+          <category xml:id="re.wbg">
+            <catDesc>verbundener Eintrag: Wortbildung als Ziel eines Verweisartikels</catDesc>
+          </category>
+          <category xml:id="re.bdv">
+            <catDesc>verbundener Eintrag: Verweisziel ist synonym</catDesc>
+          </category>
+          <category xml:id="re.ggs">
+            <catDesc>verbundener Eintrag: Verweisziel ist antonym</catDesc>
+          </category>
+          <category xml:id="re.ofe">
+            <catDesc>verbundener Eintrag: Verweisziel im Orientierungsfeld</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in oRef (die Verwendung von "oRef." und "oVar." erfolgt bewusst!) -->
+        <taxonomy xml:id="oRef.type">
+          <category xml:id="oRef.lem">
+            <catDesc>Ellipse des Lemmas in den Kopfdaten eines Artikels</catDesc>
+          </category>
+          <category xml:id="oVar.lem">
+            <catDesc>Originalschreibung des Lemmas (in Zitaten)</catDesc>
+          </category>
+          <category xml:id="oVar.wbg">
+            <catDesc>Originalschreibung einer Wortbildung (in Zitaten)</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <tagsDecl>
+        <!-- Typografie: verwendet z.B. als <hi rendition="#sc">Text in Kapitälchen</hi> -->
+        <rendition xml:id="rect" scheme="css">font-variant: normal;</rendition>
+        <rendition xml:id="sc" scheme="css">font-variant: small-caps;</rendition>
+        <rendition xml:id="b" scheme="css">font-weight: bold;</rendition>
+        <rendition xml:id="it" scheme="css">font-style: italic;</rendition>
+        <rendition xml:id="hoch" scheme="css">vertical-align: super;</rendition>
+        <rendition xml:id="tief" scheme="css">vertical-align: sub;</rendition>
+        <rendition xml:id="wide" scheme="css">letter-spacing: 0.5em;</rendition>
+        <namespace name="http://www.tei-c.org/ns/1.0">
+          <!-- Bedeutung der unterschiedlichen dictScrap Bereiche -->
+          <tagUsage gi="dictScrap">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>artkopf</label>
+              <item>Artikelkopf</item>
+              <label>bdv</label>
+              <item>Synomyme</item>
+              <label>bls</label>
+              <item>Belegstellenangaben</item>
+              <label>cit</label>
+              <item>Quellenzitate</item>
+              <label>ggs</label>
+              <item>Antonyme</item>
+              <label>phrase</label>
+              <item>Phraseme</item>
+              <label>ra</label>
+              <item>Redensarten</item>
+              <label>ref</label>
+              <item>Sachkommentar</item>
+              <label>semcom</label>
+              <item>semantischer Kommentar</item>
+              <label>stw</label>
+              <item>Symptomwertangaben</item>
+              <label>sv</label>
+              <item>sub-voce-Angaben</item>
+              <label>synt</label>
+              <item>Syntagmen</item>
+              <label>vw</label>
+              <item>Verweis (bei Verweisstichwörtern)</item>
+              <label>wbg</label>
+              <item>Wortbildungen</item>
+              <label>wbv</label>
+              <item>Wortbildungsverweise</item>
+              <label>meta</label>
+              <item>Einschub, Einleitung oder ergänzende Texte</item>
+              <label>ipLiPkt</label>
+              <item>Punkt einer Informationsprogrammliste</item>
+              <label>BBlock</label>
+              <item>Abgrenzung eines Belegstellenblocks</item>
+            </list>
+          </tagUsage>
+          <tagUsage gi="citedRange">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>export</label>
+              <item>Ein ggf. vorhandener externer Link darf öffentlich exportiert werden</item>
+            </list>
+          </tagUsage>
+        </namespace>
+      </tagsDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change status="cnvResult">Text blieb erhalten; XML-Struktur: ok</change>
+      <change status="cnv" when-iso="2024-11-18">converted from print</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <entry xml:id="imbis.s.0m" sortKey="imbis.imbis.s.0m">
+        <form type="lemma">
+          <orth>imbis,</orth>
+        </form>
+        
+        <dictScrap rend="artkopf" xml:space="preserve">
+
+<!-- Nebenlemma -->
+<re type="re.neblem" subtype="mat" copyOf="inbis.s.9ref">inbis, </re>
+
+<!-- Nebenlemma -->
+<re type="re.neblem" subtype="mat" copyOf="imbs.s.9ref">imbs, </re><gram xml:space="preserve" type="wortart"><hi rendition="it">der</hi></gram> und <gram xml:space="preserve" type="wortart"><hi rendition="it">das</hi>;</gram> <gram xml:space="preserve" type="flex"><hi rendition="it"><oRef type="oRef.lem">-</oRef>Ø</hi>/<oRef type="oRef.lem">-</oRef>(s)e, auch <hi rendition="it"><oRef type="oRef.lem">-</oRef>Ø</hi>;</gram> die Reihenfolge der Lemmaformen spiegelt die Beleghäufigkeit wieder; darüber hinaus herrscht große Schreibvarianz.</dictScrap>
+        
+        <!-- Bedeutung 1.  -->
+        <sense xml:id="imbis.s.0m_s1" rend="1">
+          <!-- Definition -->
+          <def>›Mahlzeit am Morgen, am Mittag oder (vereinzelt) am Abend‹; auch ›Zwischenmahlzeit‹; metonymisch ›Zeit der Essenseinnahme, Essenszeit‹ sowie ›eingenommenes Essen‹; in Rechtstexten ›rechtsbräuchliche Mahlzeit‹.</def>
+          <dictScrap rend="ref">Zu verschiedenen Bräuchen vgl. <bibl xml:space="preserve"><name n="b98" cert="high">Kramer</name>, Volksl. Bamb. <citedRange n="b98" facs="1967,151">1967, 151</citedRange></bibl> sowie <bibl xml:space="preserve"><name n="b107" cert="high">Zoepfl</name>, Alterthümer. <citedRange n="b107" facs="1860,391">1860, 391</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/></bibl>.</dictScrap>
+          <dictScrap rend="stw">Überwiegend frk. und alem. Belege.</dictScrap>
+          <dictScrap rend="bdv"><ref type="nex" target="früsuppe.s.*">früsuppe</ref>, <ref type="nex" target="früstük.s.*">früstük</ref>, <ref type="mat" target="morgenbrot.s.2n">morgenbrot</ref>, <ref type="mat" target="mittag.s.0m">mittag</ref> <ref type="mat" target="mittag.s.0m#mittag.s.0m_s2">2</ref>, <ref type="mat" target="mittagessen.s.2n">mittagessen</ref>, <ref type="mat" target="mittagmal.s.2n">mittagmal</ref>, <ref type="mat" target="nachtmal.s.2n">nachtmal</ref> <ref type="mat" target="nachtmal.s.2n#nachtmal.s.2n_s1">1</ref>; vgl. <ref type="mat" target="abendessen.s.2n">abendessen</ref> (<hi rendition="it">das</hi>) <ref type="mat" target="abendessen.s.2n#abendessen.s.2n_s1">1</ref>, <hi rendition="hoch">2</hi><ref type="mat" target="jausen.h2.1f">jausen</ref>.</dictScrap>
+          <dictScrap rend="synt"><hi rendition="it">ein(en) i. bieten / einnemen / geben / halten / machen / nemen / volbringen / zubereiten / zurüsten, jm. ein(en) i. schuldig sein, dem gericht ein i. kosten; jn. zu i. berufen, zu i. essen / fressen</hi>; als Zeitangabe: <hi rendition="it">auf / um den i., in / nach / unter / vor dem i.</hi></dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="89" cert="high">Schade</name>, Sat. u. Pasqu. <citedRange n="89" facs="3,13,24" rend="export" target="https://archive.org/details/satirenundpasqu00schagoog/page/n672">3, 13, 24</citedRange> (<region key="alem.">orhein.</region> <date from="1520" to="1520" confidence="1">1520</date>)</bibl>
+              <quote xml:space="preserve">so geschicht es […] daß hunt und wölf beid ob eim schaf zů <oRef norm="imbs" type="oVar.lem" rend="automatic" n="80">ims</oRef> freßen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="777" cert="high">Krebs</name>, Prot. Spey. Domkap. <citedRange n="777" facs="1,3957">1, 3957</citedRange> (<region key="rhfrk.">rhfrk.</region>, <date from="1513" to="1513" confidence="1">1513</date>)</bibl>
+              <quote xml:space="preserve">der bischof zum wyhenachten mit dem <oRef norm="imbs" type="oVar.lem" rend="automatic" n="83">ymbs</oRef> wie bisher gehalten werden sol. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="223" cert="high">Kollnig</name>, Weist. Schriesh. <citedRange n="223" facs="89,20">89, 20</citedRange> (<region key="rhfrk.">rhfrk.</region><add>, o. J.</add>)<date from="1320" to="1680" confidence="0.0028"/></bibl>
+              <quote xml:space="preserve">Derselbige pflegt hernacher seinen aydsbrüdern, sambt deren weibern zum einstand einen <oRef norm="imbis" type="oVar.lem" rend="automatic" n="92">imbis</oRef> zue geben. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="223" cert="high">Ebd.</name> <citedRange n="223" facs="275,48">275, 48</citedRange><region key="rhfrk."/> (<date from="1562" to="1562" confidence="1">1562</date>)</bibl>
+              <quote xml:space="preserve">wann sie einen zu ihnen ins gericht tut, so ist er denen im gericht ein <oRef norm="imbs" type="oVar.lem" rend="automatic" n="91">imbs</oRef> schuldig. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="286" cert="high">Brinkmann</name>, Bad. Weist. <citedRange n="286" facs="137,36" rend="export" target="https://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=buecher&amp;term=badw&amp;seite=g137">137, 36</citedRange> (<region key="rhfrk.">rhfrk.</region>, <date from="1566" to="1566" confidence="1">1566</date>)</bibl>
+              <quote xml:space="preserve">den schniedern zeit der ernden zu mittag zu essen ein suppen, gemüs und brot, und zu undern etwa ein sauer milchsuppen […] den fruchtbindern aber ein trunk weins zum <oRef norm="imbs" type="oVar.lem" rend="automatic" n="91">imbs</oRef> nach gelegenheit der menge. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="286" cert="high">Ebd.</name> <citedRange n="286" facs="203,31" rend="export" target="https://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=buecher&amp;term=badw&amp;seite=g203">203, 31</citedRange><region key="rhfrk."/> (<date from="1603" to="1603" confidence="1">1603</date>)</bibl>
+              <quote xml:space="preserve">ist zu wißen, daß man diesen königsleuten […] ein <oRef norm="imbs" type="oVar.lem" rend="automatic" n="91">imbs</oRef> zu geben schuldig ist. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="254" cert="high">Franz</name> u. a., Qu. hess. Ref. <citedRange n="254" facs="2,135,28">2, 135, 28</citedRange> (<region key="hess.">hess.</region>, <date from="1525" to="1535" confidence="0.0909">um 1530</date>)</bibl>
+              <quote xml:space="preserve">2 fl. 9 alb., so bisher gehort haben zu dem brueder <oRef norm="imbs" type="oVar.lem" rend="automatic" n="82">ymbs</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="6" cert="high">Feudel</name>, Evangelistar <citedRange n="6" facs="128,19">128, 19</citedRange> (<region key="omd.">omd.</region>, <date from="1340" to="1360" confidence="0.0476">M. 14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">,wenne du machist eyn ymmyz adir eyn abynt ezzen, so enlade nicht dyne frunt. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="263" cert="high">Palm</name>, Veter Buoch <citedRange n="263" facs="69,20" rend="export" target="https://commons.wikimedia.org/w/index.php?title=File:BLV_072_Der_Veter_Buoch_Nach_einer_Breslauer_Handschrift.pdf&amp;page=73">69, 20</citedRange> (<region key="schles.">schles.</region><add>, Hs. </add><date from="1380" to="1399" confidence="0.05">E. 14.</date>/<date from="1400" to="1420" confidence="0.0476">A. 15. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Bereite vns ein gut <oRef norm="imbis" type="oVar.lem" rend="automatic" n="83">imbiz</oRef> durch diesen appel von egipto. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="164" cert="high">Mon. Boica</name>, NF. <citedRange n="164" facs="1,153,1" rend="export" target="https://archive.org/details/monumentaboicae13wissgoog/page/n181">1, 153, 1</citedRange> (<region key="nobd.">nobd.</region>, <date from="1350" to="1399" confidence="0.02">2. H. 14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Man sol […] alle jar dreu <oRef norm="imbis" type="oVar.lem" rend="automatic" n="87">imbiz</oRef> haben und zů jedem <oRef norm="imbis" type="oVar.lem" rend="automatic" n="87">imbiz</oRef> ein pfunt haller. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="150" cert="high">Dinklage</name>, Frk. Bauernweist. <citedRange n="150" facs="48,5">48, 5</citedRange> (<region key="nobd.">nobd.</region> <date from="1465" to="1465" confidence="1">1465</date>)</bibl>
+              <quote xml:space="preserve">wan das gericht gescheen ist, so mugen im die menner umb gunst und lieb willen woll ein <oRef norm="imbis" type="oVar.lem" rend="automatic" n="87">imbiß</oRef> biten. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="19" cert="high">Bihlmeyer</name>, Seuse <citedRange n="19" facs="256,28" rend="export" target="https://archive.org/details/deutscheschrift01seusgoog/page/n443">256, 28</citedRange> (<region key="alem.">alem.</region>, <date from="1300" to="1399" confidence="0.01">14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Und do er ze einer zit also sas in der zelle nach dem <oRef norm="imbis" type="oVar.lem" rend="automatic" n="93">imbis</oRef>, da hat in daz liden úberwunden. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="392" cert="high">Bernoulli</name>, Basler Chron. 4, <citedRange n="392" facs="91,8">91, 8</citedRange> (<region key="alem.">alem.</region>, <date from="1507" to="1507" confidence="1">1507</date>)</bibl>
+              <quote xml:space="preserve">asz man zu <oRef norm="imbis" type="oVar.lem" rend="automatic" n="82">ymbisz</oRef> und zu nacht daselbs. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="392" cert="high">Ebd.</name> <citedRange n="392" facs="95,31">95, 31</citedRange><date from="1507" to="1507" confidence="1"/><region key="alem."/></bibl>
+              <quote xml:space="preserve">das die selben […] eydtgnossen uff dryen stuben alle <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef> […] morgens und nachts geessen haben. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="234" cert="high">Geier</name>, Stadtr. Überl. <citedRange n="234" facs="249,22" rend="export" target="https://archive.org/details/oberrheinisches02kommgoog/page/n291">249, 22</citedRange> (<region key="nalem.">nalem.</region>, <date from="1584" to="1584" confidence="1">1584</date>)</bibl>
+              <quote xml:space="preserve">Ir sollen aber nit mer […] mit ainander zů <oRef norm="imbis" type="oVar.lem" rend="automatic" n="92">imbis</oRef> essen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="355" cert="high">Illing</name>, Albert. Sup. miss. <citedRange n="355" facs="921">921</citedRange> (<region key="els.">els.</region>, <date from="1380" to="1390" confidence="0.0909">n. 1380</date>)</bibl>
+              <quote xml:space="preserve">dar vmbe ist dise edel wurtschaft genant ein naht mas, noch deme kein <oRef norm="inbis" type="oVar.lem" rend="automatic" n="92">inbis</oRef> me got. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="175" cert="high">Chron. Strassb.</name> <citedRange n="175" facs="75,14" rend="export" target="https://books.google.de/books?id=UWAbAAAAMAAJ&amp;hl=de&amp;pg=RA1-PA75#v=onepage&amp;q&amp;f=false">75, 14</citedRange> (<region key="els.">els.</region>, <date from="1362" to="1362" confidence="1">1362</date>)</bibl>
+              <quote xml:space="preserve">do worent […] vil […] in die stat gangen eßen, wand ez was in deme <oRef norm="inbis" type="oVar.lem" rend="automatic" n="85">inbiße</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="175" cert="high">Ebd.</name> <citedRange n="175" facs="505,26" rend="export" target="https://books.google.de/books?id=w0ABAAAAMAAJ&amp;hl=de&amp;pg=PA505#v=onepage&amp;q&amp;f=false">505, 26</citedRange><region key="els."/> (<date from="1400" to="1420" confidence="0.0476">A. 15. Jh.</date>)</bibl>
+              <quote xml:space="preserve">dis geschach alles am ostertage vor ymbeße. […] Noch ymbeße gingent die Juden aber zů rote. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="175" cert="high">Ebd.</name> <citedRange n="175" facs="1050,39" rend="export" target="https://books.google.de/books?id=w0ABAAAAMAAJ&amp;hl=de&amp;pg=PA1050#v=onepage&amp;q&amp;f=false">1050, 39</citedRange><region key="els."/> (<date from="1401" to="1401" confidence="1">1401</date>)</bibl>
+              <quote xml:space="preserve">8 ℔ 8 fl. kostet der <oRef norm="imbs" type="oVar.lem" rend="automatic" n="91">imbs</oRef> die nuwen rittere offent uf des ammeisters stube. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="111" cert="high">Kurrelmeyer</name>, Dt. Bibel <citedRange n="111" facs="7,6,3" rend="export" target="https://archive.org/details/DieErsteDeutscheBibel7Tobias-Psalmen/page/n9">7, 6, 3</citedRange> (<region key="els.">Straßb.</region> <date from="1466" to="1466" confidence="1">1466</date><add>; Var. </add><region key="schwäb.">Augsb.</region> <date from="1475" to="1475" confidence="1">1475</date>)</bibl>
+              <quote xml:space="preserve">es waz der mestag dez herren vnd ein gůt <oRef norm="imbis" type="oVar.lem" rend="automatic" n="92">imbis</oRef><hi rendition="rect"> [Var. Z. </hi><oRef norm="imbis" type="oVar.lem" rend="automatic" n="92">imbis</oRef> oder mittagmal<hi rendition="rect">] </hi>ward gemacht. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="111" cert="high">Ebd.</name> <citedRange n="111" facs="9,512,15" rend="export" target="https://archive.org/details/DieErsteDeutscheBibel9Jeremia-Daniel/page/n515">9, 512, 15</citedRange><date from="1466" to="1466" confidence="1"/><date from="1475" to="1475" confidence="1"/><region key="els."/><region key="schwäb."/> Var.</bibl>
+              <quote xml:space="preserve">wir gen heim wann es ist die stund des <oRef norm="imbis" type="oVar.lem" rend="automatic" n="82">ymbiß</oRef><hi rendition="rect"> [Var. Z. </hi><oRef norm="imbis" type="oVar.lem" rend="automatic" n="82">ymbiß</oRef> oder morgenessens<hi rendition="rect">]. </hi></quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="111" cert="high">Ebd.</name> <citedRange n="111" facs="9,522,12" rend="export" target="https://archive.org/details/DieErsteDeutscheBibel9Jeremia-Daniel/page/n525">9, 522, 12</citedRange><region key="els."/><region key="schwäb."/> (<date from="1466" to="1466" confidence="1">1466</date>)</bibl>
+              <quote xml:space="preserve">der engel des herrn sprach zů abacuck. Bring das <oRef norm="imbis" type="oVar.lem" rend="automatic" n="82">ymbiß</oRef> das du hast in babilon danieln. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="102" cert="high">Pfeiffer-Belli</name>, Murner. Kl. Schrr. <citedRange n="102" facs="7,30,4">7, 30, 4</citedRange> (<region key="els.">Straßb.</region> <date from="1520" to="1520" confidence="1">1520</date>)</bibl>
+              <quote xml:space="preserve">Als Jhesus zu <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef> gessen het, sprach er zu Simon petro. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="805" cert="high">Roloff</name>, Brant. Tsp. <citedRange n="805" facs="1481">1481</citedRange> (<region key="els.">Straßb.</region> <date from="1554" to="1554" confidence="1">1554</date>)</bibl>
+              <quote xml:space="preserve">Wir weren wol bliben do heim noch heüt<lb/>[…]<lb/>So hetten wir langest zů <oRef norm="imbs" type="oVar.lem" rend="automatic" n="91">imbs</oRef> fressen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="940" cert="high">Wickram</name> 4, <citedRange n="940" facs="21,10">21, 10</citedRange> (<region key="els.">Straßb.</region> <date from="1556" to="1556" confidence="1">1556</date>)</bibl>
+              <quote xml:space="preserve">Als er […] seinem weib befalh […] auff den mornigen tag uff den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef> / ein gůt mal anzůschicken. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="940" cert="high">Ebd.</name> <citedRange n="940" facs="36,33">36, 33</citedRange><date from="1556" to="1556" confidence="1"/><region key="els."/></bibl>
+              <quote xml:space="preserve">Als sie […] ir zeit vertriben / bis das es umb den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef> war. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="940" cert="high">Ebd.</name> <citedRange n="940" facs="43,35">43, 35</citedRange><date from="1556" to="1556" confidence="1"/><region key="els."/></bibl>
+              <quote xml:space="preserve">Als nůn die armen leut den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef> volbracht / hand sie Gott dem Herren lob und danck gesagt. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="209" cert="high">Leisi</name>, Thurg. UB <citedRange n="209" facs="7,1020,22">7, 1020, 22</citedRange> (<region key="halem.">halem.</region>, <date from="1380" to="1399" confidence="0.05">E. 14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Und sol im ain keller selb dritt den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="87">imbiß</oRef> geben. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="803" cert="high">Bachmann</name>, Morgant  <citedRange n="803" facs="182,35" rend="export" target="https://archive.org/details/morgantderriese00pulcgoog/page/n265">182, 35</citedRange> (<region key="halem.">halem.</region>, <date from="1530" to="1530" confidence="1">1530</date>)</bibl>
+              <quote xml:space="preserve">gsach ein hyrt, der huot der rindern und wott by einem brunnen zymbiß essen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="950" cert="high">Plant</name> u. a., Main. Naturl. <citedRange n="950" facs="297ra,27">297ra, 27</citedRange> (<region key="halem.">ohalem.</region><add>, Hs. </add><date from="1380" to="1399" confidence="0.05">E. 14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">So man danne gisset ze <oRef norm="inbis" type="oVar.lem" rend="automatic" n="84">inbisse</oRef> so sol man vf senften betten ein wile slafẽ. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="738" cert="high">Kläui</name>, Schweiz. Urbare <citedRange n="738" facs="139,9">139, 9</citedRange> (<region key="halem.">halem.</region>, <date from="1384" to="1384" confidence="1">1384</date>)</bibl>
+              <quote xml:space="preserve">die vorgen. guͤter sullent jerlich ein dienst einem kamrer geben, ein nachtzal und ein <oRef norm="imbis" type="oVar.lem" rend="automatic" n="91">imbis</oRef> mit fuͥnf pferden. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="747s" cert="high">Panzer</name>, Seifrid Füetrers <citedRange n="747s" facs="175,5">175, 5</citedRange> (<region key="moobd.">moobd.</region>, <date from="1478" to="1478" confidence="1">1478</date>/<date from="1484" to="1484" confidence="1">84</date>)</bibl>
+              <quote xml:space="preserve">nach dem der <oRef norm="imbis" type="oVar.lem" rend="automatic" n="87">jmbis</oRef> phrait ward, […] mit vleiß er ward verwappent wol.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="363" cert="high">Struck</name>, Kollegiatstifte <citedRange n="363" facs="289,5">289, 5</citedRange><region key="mosfrk."/><date from="1350" to="1500" confidence="0.0066"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="777" cert="high">Krebs</name>, a. a. O. <citedRange n="777" facs="1,4963,5">1, 4963, 5</citedRange><region key="rhfrk."/><date from="1500" to="1531" confidence="0.0312"/>; <citedRange n="777" facs="2,7476,3">2, 7476, 3</citedRange><region key="rhfrk."/><date from="1500" to="1531" confidence="0.0312"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="223" cert="high">Kollnig</name>, a. a. O. <citedRange n="223" facs="150,26">150, 26</citedRange><region key="rhfrk."/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="286" cert="high">Brinkmann</name>, a. a. O. <citedRange n="286" facs="67,21" rend="export" target="https://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=buecher&amp;term=badw&amp;seite=g067">67, 21</citedRange><region key="rhfrk."/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="5lk" cert="high">Bechstein</name>, M. v. Beheim. Evang. Lk. <citedRange n="5lk" facs="11,38" rend="export" target="https://archive.org/details/desmatthiasvonb00behegoog/page/n234/mode/2up">11, 38</citedRange><region key="osächs."/><date from="1343" to="1343" confidence="1"/>; <citedRange n="5lk" facs="14,12" rend="export" target="https://archive.org/details/desmatthiasvonb00behegoog/page/n240/mode/2up">14, 12</citedRange><region key="osächs."/><date from="1343" to="1343" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="234" cert="high">Geier</name>, a. a. O. <citedRange n="234" facs="202,27" rend="export" target="https://archive.org/details/oberrheinisches02kommgoog/page/n244">202, 27</citedRange><region key="nalem."/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="111" cert="high">Kurrelmeyer</name>, a. a. O. <citedRange n="111" facs="5,365,1" rend="export" target="https://archive.org/details/dieerstedeutsch03kurrgoog/page/n372">5, 365, 1</citedRange><region key="els."/><date from="1466" to="1466" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="3601" cert="high">Bolte</name>, Pauli. Schimpf u. Ernst <citedRange n="3601" facs="1,166,33" rend="export" target="https://archive.org/details/schimpfundernst01pauluoft/page/n205/mode/2up">1, 166, 33</citedRange><region key="els."/><date from="1522" to="1522" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="9312" cert="high">Harsdoerffer.</name> Trichter <citedRange n="9312" facs="2,150,12" rend="export" target="https://archive.org/details/bub_gb_OiJLAAAAcAAJ/page/n367/mode/2up">2, 150, 12</citedRange><region key="ofrk."/><date from="1648" to="1648" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="392" cert="high">Bernoulli</name>, a. a. O. <citedRange n="392" facs="5,278,24">5, 278, 24</citedRange><region key="alem."/><date from="1400" to="1499" confidence="0.01"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="19" cert="high">Bihlmeyer</name>, a. a. O. <citedRange n="19" facs="44,5" rend="export" target="https://archive.org/details/deutscheschrift01seusgoog/page/n231">44, 5</citedRange><region key="alem."/><date from="1300" to="1399" confidence="0.01"/>; <citedRange n="19" facs="86,27" rend="export" target="https://archive.org/details/deutscheschrift01seusgoog/page/n273">86, 27</citedRange><region key="alem."/><date from="1300" to="1399" confidence="0.01"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="1008" cert="high">Williams</name> u. a., Els. Leg. Aurea <citedRange n="1008" facs="226,21">226, 21</citedRange><region key="els."/><date from="1362" to="1362" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="345" cert="high">Vetter</name>, Pred. Taulers <citedRange n="345" facs="30,27" rend="export" target="https://digital.ub.uni-duesseldorf.de/ihd/content/pageview/273016">30, 27</citedRange><region key="els."/><date from="1350" to="1399" confidence="0.02"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="162" cert="high">Roder</name>, Hugs Vill. Chron. <citedRange n="162" facs="180,12" rend="export" target="https://archive.org/stream/heinrichhugsvil00huggoog?ref=ol#page/n189/mode/2up">180, 12</citedRange><region key="önalem."/><date from="1495" to="1533" confidence="0.0256"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="14" cert="high">Koppitz</name>, Trojanerkr. <citedRange n="14" facs="746" rend="export" target="http://www.mhgta.uni-trier.de/frameset.php?ses_id=7cfc4fb0cf6c5d6bd3f80228c9d96726&amp;id=GTROJ&amp;pid=14">746</citedRange><region key="önalem."/><date from="1400" to="1499" confidence="0.01"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="314" cert="high">Müller</name>, Alte Landsch. St. Gallen <citedRange n="314" facs="122,42" rend="export" target="https://www.ssrq-sds-fds.ch/online/SG_I_2_1/index.html#p_122">122, 42</citedRange><region key="halem."/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="192" cert="high">Dierauer</name>, Chron. Zürich <citedRange n="192" facs="17,3" rend="export" target="https://www.e-helvetica.nb.admin.ch/api/download/urn%3Anbn%3Ach%3Anbdig-56867%3Anbdig-56867.pdf/nbdig-56867.pdf#page=72">17, 3</citedRange><region key="halem."/><date from="1415" to="1420" confidence="0.1667"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="769" cert="high">Merz</name>, Urk. Bremgarten <citedRange n="769" facs="541,12">541, 12</citedRange><region key="halem."/><date from="1350" to="1500" confidence="0.0066"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="803" cert="high">Bachmann</name>, a. a. O. <citedRange n="803" facs="120,22" rend="export" target="https://archive.org/details/morgantderriese00pulcgoog/page/n203">120, 22</citedRange><region key="halem."/><date from="1530" to="1530" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="344" cert="high">ders.</name>, Haimonsk. <citedRange n="344" facs="57,31" rend="export" target="https://archive.org/details/diehaimonskinde00bachgoog/page/n88">57, 31</citedRange><region key="halem."/><date from="1530" to="1530" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="964" cert="high">hail. altvaͤter</name> <citedRange n="964" facs="100r,15" rend="export" target="http://digital.wlb-stuttgart.de/sammlungen/sammlungsliste/werksansicht/?id=6&amp;tx_dlf%5Bid%5D=3268&amp;tx_dlf%5Bpage%5D=201">100r, 15</citedRange><region key="schwäb."/><date from="1380" to="1399" confidence="0.05"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="1009" cert="high">Bremer</name>, Voc. opt. <citedRange n="1009" facs="300">300</citedRange><region key="unknown"/><date from="1350" to="1650" confidence="0.0033"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="455" cert="low">Munz</name>, Füetrer, Persibein <citedRange n="455" facs="166,6">166, 6</citedRange><region key="moobd."/><date from="1478" to="1484" confidence="0.1429"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="747s" cert="high">Panzer</name>, a. a. O. <citedRange n="747s" facs="461,1">461, 1</citedRange><region key="moobd."/><date from="1478" to="1484" confidence="0.1429"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d13" cert="high">Voc. rerum</name> <citedRange n="d13" facs="74v" rend="export" target="https://collections.thulb.uni-jena.de/rsc/viewer/HisBest_derivate_00010020/BE_1134_0152.tif">74v</citedRange><region key="schwäb."/><date from="1465" to="1474" confidence="0.1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d8" cert="high">Voc. Teut.-Lat.</name> <citedRange n="d8" facs="p vr" target="https://www.digitale-sammlungen.de/de/view/bsb00038907?page=236,237">p vr</citedRange><region key="ofrk."/><date from="1482" to="1482" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="467" cert="high">Dasypodius</name> <citedRange n="467" facs="353v" rend="export" target="https://archive.org/details/Dasypodius-Petrus-Dictionarium-Latinogermanicum/page/n713">353v</citedRange><region key="els."/><date from="1536" to="1536" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="461" cert="high">Schöpper</name> <citedRange n="461" facs="48a" rend="export" target="https://digital.staatsbibliothek-berlin.de/werkansicht?PPN=PPN671869167&amp;PHYSID=PHYS_0062&amp;DMDID=">48a</citedRange><region key="westf."/><date from="1550" to="1550" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d4" cert="high">Maaler</name> <citedRange n="d4" facs="235v" rend="export" target="https://books.google.de/books?id=57Gj3Yh2iTcC&amp;hl=de&amp;pg=PA235-IA1#v=onepage&amp;q&amp;f=false">235v</citedRange><region key="halem."/><date from="1561" to="1561" confidence="1"/>; <citedRange n="d4" facs="292v" rend="export" target="https://books.google.de/books?id=57Gj3Yh2iTcC&amp;hl=de&amp;pg=PA292-IA1#v=onepage&amp;q&amp;f=false">292v</citedRange><region key="halem."/><date from="1561" to="1561" confidence="1"/>; <citedRange n="d4" facs="442r" rend="export" target="https://books.google.de/books?id=57Gj3Yh2iTcC&amp;hl=de&amp;pg=PA442#v=onepage&amp;q&amp;f=false">442r</citedRange><region key="halem."/><date from="1561" to="1561" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d9" cert="high">Apherdianus</name> <citedRange n="d9" facs="67" rend="export" target="https://reader.digitale-sammlungen.de/de/fs1/object/display/bsb10185068_00069.html">67</citedRange><region key="rib."/><date from="1575" to="1575" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="468b" cert="high">Dict. Germ.-Gall.-Lat.</name> <citedRange n="468b" facs="257">257</citedRange><region key="halem."/><date from="1636" to="1636" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d50" cert="high">Rwb</name> <citedRange n="d50" facs="6,194" rend="export" target="http://drw-www.adw.uni-heidelberg.de/drw-cgi/zeige?index=lemmata&amp;bd6_193=F">6, 194</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d23" cert="high">Pfälz. Wb.</name> <citedRange n="d23" facs="3,1296" rend="export" target="http://www.woerterbuchnetz.de/PfWB?bookref=3,1296,1">3, 1296</citedRange><region key="pfälz."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d37" cert="high">Shess. Wb.</name> <citedRange n="d37" facs="3,892">3, 892</citedRange><region key="hess."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d24" cert="high">Schwäb. Wb.</name> <citedRange n="d24" facs="4,20" rend="export" target="https://adw-goe.de/forschung/forschungsprojekte-akademienprogramm/fruehneuhochdeutsches-woerterbuch/fwb-online/#c5617">4, 20</citedRange><region key="schwäb."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d22" cert="high">Öst. Wb.</name> <citedRange n="d22" facs="3,225">3, 225</citedRange><region key="moobd."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d39" cert="high">Schweiz. Id.</name> <citedRange n="d39" facs="1,236" rend="export" target="https://digital.idiotikon.ch/idtkn/id1.htm#!page/10235/mode/1up">1, 236</citedRange><region key="alem."/><date from="1320" to="1680" confidence="0.0028"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d34" cert="high">Vorarlb. Wb.</name> <citedRange n="d34" facs="1,1490">1, 1490</citedRange><region key="önalem."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 2.  -->
+        <sense xml:id="imbis.s.0m_s2" rend="2">
+          <!-- Definition -->
+          <def>im Syntagma <hi rendition="it">früer imbis</hi> ›Morgenmahlzeit‹; metonymisch: ›Zeit der Essenseinnahme am Morgen‹.</def>
+          <dictScrap rend="ggs">vgl. <ref type="mat" rend="ggs" target="abendbrot.s.2n">abendbrot</ref> <ref type="mat" rend="ggs" target="abendbrot.s.2n#abendbrot.s.2n_s1">1</ref>.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="942" cert="high">Lauchert</name>, Merswin <citedRange n="942" facs="32,13" rend="export" target="https://archive.org/details/desgottesfreund00laucgoog/page/n48">32, 13</citedRange> (<region key="els.">els.</region>, <date from="1352" to="1352" confidence="1">1352</date>/<date from="1370" to="1370" confidence="1">70</date>)</bibl>
+              <quote xml:space="preserve">si sint morne vor frvͤgeme <oRef norm="imbis" type="oVar.lem" rend="automatic" n="78">imbesse</oRef> bi vns hie. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="355" cert="high">Illing</name>, Albert. Sup. miss. <citedRange n="355" facs="915">915</citedRange> (<region key="els.">els.</region>, <date from="1380" to="1390" confidence="0.0909">n. 1380</date>)</bibl>
+              <quote xml:space="preserve">daz osterlembelin […] daz was also ein fruͤge <oRef norm="inbis" type="oVar.lem" rend="automatic" n="92">inbis</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="19" cert="high">Bihlmeyer</name>, Seuse <citedRange n="19" facs="74,8" rend="export" target="https://archive.org/details/deutscheschrift01seusgoog/page/n261">74, 8</citedRange> (<region key="alem.">alem.</region>, <date from="1300" to="1399" confidence="0.01">14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">sú kamen in ein dorf vor fruͤgem <oRef norm="inbis" type="oVar.lem" rend="automatic" n="89">inbiss</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="134" cert="high">Welti</name>, Stadtr. Bern <citedRange n="134" facs="146,16" rend="export" target="https://www.ssrq-sds-fds.ch/online/BE_I_1_und_2/index.html#p_146">146, 16</citedRange> (<region key="halem.">halem.</region>, <date from="1407" to="1407" confidence="1">1407</date>)</bibl>
+              <quote xml:space="preserve">alle winschenken […] suͥllent alle samstag von fruͤiem <oRef norm="imbis" type="oVar.lem" rend="automatic" n="88">ymbis</oRef> vntz zů conplet zit […] vnser vngelt antwuͥrten. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="207" cert="high">Leisi</name>, Thurg. UB <citedRange n="207" facs="5">5</citedRange>, (<region key="halem.">halem.</region>, <date from="1349" to="1349" confidence="1">1349</date>)</bibl>
+              <quote xml:space="preserve">iij iuchart ackers und j wisli, dz het ainer wol ze vruͤiem <oRef norm="imbis" type="oVar.lem" rend="automatic" n="80">immis</oRef> abgemaͤcht. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="260" cert="high">Chron. Augsb.</name> <citedRange n="260" facs="1,51,8" rend="export" target="https://archive.org/details/diechronikender11kommgoog/page/n114">1, 51, 8</citedRange> (<region key="schwäb.">schwäb.</region><add>, zu </add><date from="1377" to="1377" confidence="1">1377</date>)</bibl>
+              <quote xml:space="preserve">daz niderlegen zů Rüttlingen ist geschechen uf den donrstag nach dem hailigen pfingstag uf fruͤen <oRef norm="inbis" type="oVar.lem" rend="automatic" n="87">inbiz</oRef>.</quote>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 3.  -->
+        <sense xml:id="imbis.s.0m_s3" rend="3">
+          <!-- Definition -->
+          <def>›Festmahl‹; in den Belegen Gebrauch des Wortes im Zusammenhang mit Festmahlen bei Fürsten, z. B. beim Kaiser, mit Hochzeiten und mit dem Leichenschmaus.</def>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="175" cert="high">Chron. Strassb.</name> <citedRange n="175" facs="482,10" rend="export" target="https://books.google.de/books?id=UWAbAAAAMAAJ&amp;hl=de&amp;pg=RA1-PA482#v=onepage&amp;q&amp;f=false">482, 10</citedRange> (<region key="els.">els.</region>, <date from="1400" to="1420" confidence="0.0476">A. 15. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Von dis keysers ymbeße mit den kurfürsten. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="175" cert="high">Ebd.</name> <citedRange n="175" facs="483,3" rend="export" target="https://books.google.de/books?id=UWAbAAAAMAAJ&amp;hl=de&amp;pg=RA1-PA483#v=onepage&amp;q&amp;f=false">483, 3</citedRange><date from="1400" to="1420" confidence="0.0476"/><region key="els."/></bibl>
+              <quote xml:space="preserve">wan es was der herlicheste hof und <oRef norm="imbis" type="oVar.lem" rend="automatic" n="81">ymbes</oRef> und hofieren do das men ie von keysern geschriben vindet. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="14" cert="high">Koppitz</name>, Trojanerkr. <citedRange n="14" facs="7192" rend="export" target="http://www.mhgta.uni-trier.de/frameset.php?ses_id=7cfc4fb0cf6c5d6bd3f80228c9d96726&amp;id=GTROJ&amp;pid=120">7192</citedRange> (<add>Hs. ˹</add><region key="önalem.">noschweiz.</region>, <date from="1400" to="1499" confidence="0.01">15. Jh.</date>˺)</bibl>
+              <quote xml:space="preserve">Nun waz es komen uff die zitt<lb/>Als der <oRef norm="imbis" type="oVar.lem" rend="automatic" n="88">imbis</oRef> denn gelitt.| Der riche kaysser da gebott<lb/>Daz man win und brott<lb/>Uff trüg nach gewonhaitt. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="134" cert="high">Welti</name>, Stadtr. Bern <citedRange n="134" facs="326,25" rend="export" target="https://www.ssrq-sds-fds.ch/online/BE_I_1_und_2/index.html#p_326">326, 25</citedRange> (<region key="halem.">halem.</region>, <date from="1437" to="1447" confidence="0.0909">n. 1437</date>)</bibl>
+              <quote xml:space="preserve">von dißhin enkein geselschaft noch manne samenthaftlich mit einandren me uͥber kein grab gan sollent, nemlich nach dem <oRef norm="imbis" type="oVar.lem" rend="automatic" n="91">imbis</oRef> vff dem ersten tag, so man die lichen / begrabet. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="720" cert="high">Müller</name>, Stadtr. Ravensb. <citedRange n="720" facs="132,13">132, 13</citedRange> (<region key="schwäb.">oschwäb.</region>, <date from="1413" to="1413" confidence="1">1413</date>)</bibl>
+              <quote xml:space="preserve">und sol ouch vor <oRef norm="imbis" type="oVar.lem" rend="automatic" n="91">imbis</oRef> mit dem brutgelt nieman zů dem tantz gan noch zů dem tantz gan noch zů dem win ze schenken. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="720" cert="high">Ebd.</name> <citedRange n="720" facs="210,5">210, 5</citedRange><region key="schwäb."/> (<date from="1420" to="1420" confidence="1">1420</date>)</bibl>
+              <quote xml:space="preserve">sol och vor <oRef norm="imbis" type="oVar.lem" rend="automatic" n="88">imbiss</oRef> mit dem brǔtgend nieman gaͧn zem win und im schenken.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="5mt" cert="high">Bechstein</name>, M. v. Beheim. Evang. Mt. <citedRange n="5mt" facs="22,4" rend="export" target="https://archive.org/details/desmatthiasvonb00behegoog/page/n138/mode/2up">22, 4</citedRange><region key="osächs."/><date from="1343" to="1343" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="425" cert="high">Brandstetter</name>, Wigoleis <citedRange n="425" facs="193,3">193, 3</citedRange><region key="schwäb."/><date from="1493" to="1493" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="b302" cert="high">Baumann-Zwirner</name>, Augsb. Volksb. <citedRange n="b302" facs="456">456</citedRange><region key="schwäb."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 4.  -->
+        <sense xml:id="imbis.s.0m_s4" rend="4">
+          <!-- Definition -->
+          <def>›Mittagszeit, Zeit zwischen 11 und 12 Uhr‹ (ohne Bezug auf das Essen); offen zu <ref type="mat" target="imbis.s.0m#imbis.s.0m_s1">1</ref>.</def>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="202" cert="high">Bernoulli</name>, Basler Chron. 5, <citedRange n="202" facs="36,26">36, 26</citedRange> (<region key="alem.">alem.</region><add>, Hs. </add><date from="1527" to="1537" confidence="0.0909">um 1532</date>)</bibl>
+              <quote xml:space="preserve">am 9. tag des hoͤwmonets umb den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="93">imbis</oRef> beschach die schlacht. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="202" cert="high">Ebd.</name> <citedRange n="202" facs="66,13">66, 13</citedRange><date from="1527" to="1537" confidence="0.0909"/><region key="alem."/></bibl>
+              <quote xml:space="preserve">anno domini 1386 do verlor die sunne iren schin uf den <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">ymbis</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="234" cert="high">Geier</name>, Stadtr. Überl. <citedRange n="234" facs="483,21" rend="export" target="https://archive.org/details/oberrheinisches02kommgoog/page/n514">483, 21</citedRange> (<region key="nalem.">nalem.</region>, <date from="1551" to="1551" confidence="1">1551</date>)</bibl>
+              <quote xml:space="preserve">welcher nit will biß <oRef norm="imbis" type="oVar.lem" rend="automatic" n="89">imbiß</oRef> ohn gessen sein, der soll dahaim, ee er an daß werk gang essen.</quote>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 5.  -->
+        <sense xml:id="imbis.s.0m_s5" rend="5">
+          <!-- Definition -->
+          <def>›das heilige Abendmahl‹.</def>
+          <dictScrap rend="synt"><hi rendition="it">i. nemen / speisen; des i. warnemen</hi>.</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="15" cert="high">Helm</name>, H. v. Hesler. Apok. <citedRange n="15" facs="7384" rend="export" target="https://archive.org/details/dieapokalypsehe00heslgoog/page/n143">7384</citedRange> (<region key="nrddt.">nrddt.</region>, <date from="1300" to="1399" confidence="0.01">14. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Min vorborgen manne,<lb/>Daz ist aller sorgen vorgiz,<lb/>Daz wirt da mit <oRef norm="imbs" type="oVar.lem" rend="automatic" n="58">im</oRef> min <oRef norm="inbis" type="oVar.lem" rend="automatic" n="90">inbiz</oRef>. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="113b" cert="low">Martin</name>, H. v. Sachsenh. <citedRange n="113b" facs="523">523</citedRange> (<region key="schwäb.">schwäb.</region>, <date from="1455" to="1455" confidence="1">1455</date>)</bibl>
+              <quote xml:space="preserve">Wer hört zuo gottes tisch,<lb/>Der nem des <oRef norm="inbis" type="oVar.lem" rend="automatic" n="91">inbis</oRef> war.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="15" cert="high">Helm</name>, a. a. O. <citedRange n="15" facs="7348" rend="export" target="https://archive.org/details/dieapokalypsehe00heslgoog/page/n142">7348</citedRange><region key="nrddt."/><date from="1300" to="1399" confidence="0.01"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="b45" cert="high">Dehnhardt</name>, Metaphorik d. Mystiker. <citedRange n="b45" facs="1940,56">1940, 56</citedRange><region key="wobd."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+        
+        <!-- Bedeutung 6.  -->
+        <sense xml:id="imbis.s.0m_s6" rend="6">
+          <!-- Definition -->
+          <def>›Gebiß, Zahnreihe, Kiefer (des Pferdes)‹.</def>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="d24" cert="high">Schwäb. Wb.</name> <citedRange n="d24" facs="6,2230" rend="export" target="https://adw-goe.de/forschung/forschungsprojekte-akademienprogramm/fruehneuhochdeutsches-woerterbuch/fwb-online/#c5617">6, 2230</citedRange> (<add>a. </add><region key="schwäb."/><date from="1621" to="1621" confidence="1">1621</date>).</bibl>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+      </entry>
+    </body>
+  </text>
+  
+  
+  
+  
+
+  <!--Texttest: Original
+imbis, inbis, imbs, der und das; -Ø/-(s)e, auch -Ø; die Reihenfolge der Lemmaformen spiegelt die Beleghäufigkeit wieder; darüber hinaus herrscht große Schreibvarianz. 1. ›Mahlzeit am Morgen, am Mittag oder (vereinzelt) am Abend‹; auch ›Zwischenmahlzeit‹; metonymisch ›Zeit der Essenseinnahme, Essenszeit‹ sowie ›eingenommenes Essen‹; in Rechtstexten ›rechtsbräuchliche Mahlzeit‹. – Zu verschiedenen Bräuchen vgl. Kramer, Volksl. Bamb. 1967, 151 sowie Zoepfl, Alterthümer. 1860, 391. – Überwiegend frk. und alem. Belege. – Bdv.: früsuppe, früstük, morgenbrot, mittag 2, mittagessen, mittagmal, nachtmal 1; vgl. abendessen (das) 1, 2jausen. – Synt.: ein(en) i. bieten / einnemen / geben / halten / machen / nemen / volbringen / zubereiten / zurüsten, jm. ein(en) i. schuldig sein, dem gericht ein i. kosten; jn. zu i. berufen, zu i. essen / fressen; als Zeitangabe: auf / um den i., in / nach / unter / vor dem i. Schade, Sat. u. Pasqu. 3, 13, 24 (orhein. 1520): so geschicht es […] daß hunt und wölf beid ob eim schaf zů ims freßen. Krebs, Prot. Spey. Domkap. 1, 3957 (rhfrk., 1513): der bischof zum wyhenachten mit dem ymbs wie bisher gehalten werden sol. Kollnig, Weist. Schriesh. 89, 20 (rhfrk., o. J.): Derselbige pflegt hernacher seinen aydsbrüdern, sambt deren weibern zum einstand einen imbis zue geben. Ebd. 275, 48 (1562): wann sie einen zu ihnen ins gericht tut, so ist er denen im gericht ein imbs schuldig. Brinkmann, Bad. Weist. 137, 36 (rhfrk., 1566): den schniedern zeit der ernden zu mittag zu essen ein suppen, gemüs und brot, und zu undern etwa ein sauer milchsuppen […] den fruchtbindern aber ein trunk weins zum imbs nach gelegenheit der menge. Ebd. 203, 31 (1603): ist zu wißen, daß man diesen königsleuten […] ein imbs zu geben schuldig ist. Franz u. a., Qu. hess. Ref. 2, 135, 28 (hess., um 1530): 2 fl. 9 alb., so bisher gehort haben zu dem brueder ymbs. Feudel, Evangelistar 128, 19 (omd., M. 14. Jh.): ,wenne du machist eyn ymmyz adir eyn abynt ezzen, so enlade nicht dyne frunt. Palm, Veter Buoch 69, 20 (schles., Hs. E. 14./A. 15. Jh.): Bereite vns ein gut imbiz durch diesen appel von egipto. Mon. Boica, NF. 1, 153, 1 (nobd., 2. H. 14. Jh.): Man sol […] alle jar dreu imbiz haben und zů jedem imbiz ein pfunt haller. Dinklage, Frk. Bauernweist. 48, 5 (nobd. 1465): wan das gericht gescheen ist, so mugen im die menner umb gunst und lieb willen woll ein imbiß biten. Bihlmeyer, Seuse 256, 28 (alem., 14. Jh.): Und do er ze einer zit also sas in der zelle nach dem imbis, da hat in daz liden úberwunden. Bernoulli, Basler Chron. 4, 91, 8 (alem., 1507): asz man zu ymbisz und zu nacht daselbs. Ebd. 95, 31: das die selben […] eydtgnossen uff dryen stuben alle ymbis […] morgens und nachts geessen haben. Geier, Stadtr. Überl. 249, 22 (nalem., 1584): Ir sollen aber nit mer […] mit ainander zů imbis essen. Illing, Albert. Sup. miss. 921 (els., n. 1380): dar vmbe ist dise edel wurtschaft genant ein naht mas, noch deme kein inbis me got. Chron. Strassb. 75, 14 (els., 1362): do worent […] vil […] in die stat gangen eßen, wand ez was in deme inbiße. Ebd. 505, 26 (A. 15. Jh.): dis geschach alles am ostertage vor ymbeße. […] Noch ymbeße gingent die Juden aber zů rote. Ebd. 1050, 39 (1401): 8 ℔ 8 fl. kostet der imbs die nuwen rittere offent uf des ammeisters stube. Kurrelmeyer, Dt. Bibel 7, 6, 3 (Straßb. 1466; Var. Augsb. 1475): es waz der mestag dez herren vnd ein gůt imbis [Var. Z. imbis oder mittagmal] ward gemacht. Ebd. 9, 512, 15 Var.: wir gen heim wann es ist die stund des ymbiß [Var. Z. ymbiß oder morgenessens]. Ebd. 9, 522, 12 (1466): der engel des herrn sprach zů abacuck. Bring das ymbiß das du hast in babilon danieln. Pfeiffer-Belli, Murner. Kl. Schrr. 7, 30, 4 (Straßb. 1520): Als Jhesus zu ymbis gessen het, sprach er zu Simon petro. Roloff, Brant. Tsp. 1481 (Straßb. 1554): Wir weren wol bliben do heim noch heüt | […] | So hetten wir langest zů imbs fressen. Wickram 4, 21, 10 (Straßb. 1556): Als er […] seinem weib befalh […] auff den mornigen tag uff den ymbis / ein gůt mal anzůschicken. Ebd. 36, 33: Als sie […] ir zeit vertriben / bis das es umb den ymbis war. Ebd. 43, 35: Als nůn die armen leut den ymbis volbracht / hand sie Gott dem Herren lob und danck gesagt. Leisi, Thurg. UB 7, 1020, 22 (halem., E. 14. Jh.): Und sol im ain keller selb dritt den imbiß geben. Bachmann, Morgant 182, 35 (halem., 1530): gsach ein hyrt, der huot der rindern und wott by einem brunnen zymbiß essen. Plant u. a., Main. Naturl. 297ra, 27 (ohalem., Hs. E. 14. Jh.): So man danne gisset ze inbisse so sol man vf senften betten ein wile slafẽ. Kläui, Schweiz. Urbare 139, 9 (halem., 1384): die vorgen. guͤter sullent jerlich ein dienst einem kamrer geben, ein nachtzal und ein imbis mit fuͥnf pferden. Panzer, Seifrid Füetrers 175, 5 (moobd., 1478/84): nach dem der jmbis phrait ward, […] mit vleiß er ward verwappent wol. – Struck, Kollegiatstifte 289, 5; Krebs, a. a. O. 1, 4963, 5; 2, 7476, 3; Kollnig, a. a. O. 150, 26; Brinkmann, a. a. O. 67, 21; Bechstein, M. v. Beheim. Evang. Lk. 11, 38; 14, 12; Geier, a. a. O. 202, 27; Kurrelmeyer, a. a. O. 5, 365, 1; Bolte, Pauli. Schimpf u. Ernst 1, 166, 33; Harsdoerffer. Trichter 2, 150, 12; Bernoulli, a. a. O. 5, 278, 24; Bihlmeyer, a. a. O. 44, 5; 86, 27; Williams u. a., Els. Leg. Aurea 226, 21; Vetter, Pred. Taulers 30, 27; Roder, Hugs Vill. Chron. 180, 12; Koppitz, Trojanerkr. 746; Müller, Alte Landsch. St. Gallen 122, 42; Dierauer, Chron. Zürich 17, 3; Merz, Urk. Bremgarten 541, 12; Bachmann, a. a. O. 120, 22; ders., Haimonsk. 57, 31; hail. altvaͤter 100r, 15; Bremer, Voc. opt. 300; Munz, Füetrer, Persibein 166, 6; Panzer, a. a. O. 461, 1; Voc. rerum 74v; Voc. Teut.-Lat. p vr; Dasypodius 353v; Schöpper 48a; Maaler 235v; 292v; 442r; Apherdianus 67; Dict. Germ.-Gall.-Lat. 257; Rwb 6, 194; Pfälz. Wb. 3, 1296; Shess. Wb. 3, 892; Schwäb. Wb. 4, 20; Öst. Wb. 3, 225; Schweiz. Id. 1, 236; Vorarlb. Wb. 1, 1490. 2. im Syntagma früer imbis ›Morgenmahlzeit‹; metonymisch: ›Zeit der Essenseinnahme am Morgen‹. – Ggs.: vgl. abendbrot 1. Lauchert, Merswin 32, 13 (els., 1352/70): si sint morne vor frvͤgeme imbesse bi vns hie. Illing, Albert. Sup. miss. 915 (els., n. 1380): daz osterlembelin […] daz was also ein fruͤge inbis. Bihlmeyer, Seuse 74, 8 (alem., 14. Jh.): sú kamen in ein dorf vor fruͤgem inbiss. Welti, Stadtr. Bern 146, 16 (halem., 1407): alle winschenken […] suͥllent alle samstag von fruͤiem ymbis vntz zů conplet zit […] vnser vngelt antwuͥrten. Leisi, Thurg. UB 5, (halem., 1349): iij iuchart ackers und j wisli, dz het ainer wol ze vruͤiem immis abgemaͤcht. Chron. Augsb. 1, 51, 8 (schwäb., zu 1377): daz niderlegen zů Rüttlingen ist geschechen uf den donrstag nach dem hailigen pfingstag uf fruͤen inbiz. 3. ›Festmahl‹; in den Belegen Gebrauch des Wortes im Zusammenhang mit Festmahlen bei Fürsten, z. B. beim Kaiser, mit Hochzeiten und mit dem Leichenschmaus. Chron. Strassb. 482, 10 (els., A. 15. Jh.): Von dis keysers ymbeße mit den kurfürsten. Ebd. 483, 3: wan es was der herlicheste hof und ymbes und hofieren do das men ie von keysern geschriben vindet. Koppitz, Trojanerkr. 7192 (Hs. ˹noschweiz., 15. Jh.˺): Nun waz es komen uff die zitt | Als der imbis denn gelitt.| Der riche kaysser da gebott | Daz man win und brott | Uff trüg nach gewonhaitt. Welti, Stadtr. Bern 326, 25 (halem., n. 1437): von dißhin enkein geselschaft noch manne samenthaftlich mit einandren me uͥber kein grab gan sollent, nemlich nach dem imbis vff dem ersten tag, so man die lichen / begrabet. Müller, Stadtr. Ravensb. 132, 13 (oschwäb., 1413): und sol ouch vor imbis mit dem brutgelt nieman zů dem tantz gan noch zů dem tantz gan noch zů dem win ze schenken. Ebd. 210, 5 (1420): sol och vor imbiss mit dem brǔtgend nieman gaͧn zem win und im schenken. – Bechstein, M. v. Beheim. Evang. Mt. 22, 4; Brandstetter, Wigoleis 193, 3; Baumann-Zwirner, Augsb. Volksb. 456. 4. ›Mittagszeit, Zeit zwischen 11 und 12 Uhr‹ (ohne Bezug auf das Essen); offen zu 1. Bernoulli, Basler Chron. 5, 36, 26 (alem., Hs. um 1532): am 9. tag des hoͤwmonets umb den imbis beschach die schlacht. Ebd. 66, 13: anno domini 1386 do verlor die sunne iren schin uf den ymbis. Geier, Stadtr. Überl. 483, 21 (nalem., 1551): welcher nit will biß imbiß ohn gessen sein, der soll dahaim, ee er an daß werk gang essen. 5. ›das heilige Abendmahl‹. – Synt.: i. nemen / speisen; des i. warnemen. Helm, H. v. Hesler. Apok. 7384 (nrddt., 14. Jh.): Min vorborgen manne, | Daz ist aller sorgen vorgiz, | Daz wirt da mit im min inbiz. Martin, H. v. Sachsenh. 523 (schwäb., 1455): Wer hört zuo gottes tisch, | Der nem des inbis war. – Helm, a. a. O. 7348; Dehnhardt, Metaphorik d. Mystiker. 1940, 56. 6. ›Gebiß, Zahnreihe, Kiefer (des Pferdes)‹. – Schwäb. Wb. 6, 2230 (a. 1621).
+-->
+  <!--Texttest: Konvertiert
+imbis, inbis, imbs, der und das; -Ø/-(s)e, auch -Ø; die Reihenfolge der Lemmaformen spiegelt die Beleghäufigkeit wieder; darüber hinaus herrscht große Schreibvarianz. 1. ›Mahlzeit am Morgen, am Mittag oder (vereinzelt) am Abend‹; auch ›Zwischenmahlzeit‹; metonymisch ›Zeit der Essenseinnahme, Essenszeit‹ sowie ›eingenommenes Essen‹; in Rechtstexten ›rechtsbräuchliche Mahlzeit‹. – Zu verschiedenen Bräuchen vgl. Kramer, Volksl. Bamb. 1967, 151 sowie Zoepfl, Alterthümer. 1860, 391. – Überwiegend frk. und alem. Belege. – Bdv.: früsuppe, früstük, morgenbrot, mittag 2, mittagessen, mittagmal, nachtmal 1; vgl. abendessen (das) 1, 2jausen. – Synt.: ein(en) i. bieten / einnemen / geben / halten / machen / nemen / volbringen / zubereiten / zurüsten, jm. ein(en) i. schuldig sein, dem gericht ein i. kosten; jn. zu i. berufen, zu i. essen / fressen; als Zeitangabe: auf / um den i., in / nach / unter / vor dem i. Schade, Sat. u. Pasqu. 3, 13, 24 (orhein. 1520) so geschicht es […] daß hunt und wölf beid ob eim schaf zů ims freßen. Krebs, Prot. Spey. Domkap. 1, 3957 (rhfrk., 1513) der bischof zum wyhenachten mit dem ymbs wie bisher gehalten werden sol. Kollnig, Weist. Schriesh. 89, 20 (rhfrk., o. J.) Derselbige pflegt hernacher seinen aydsbrüdern, sambt deren weibern zum einstand einen imbis zue geben. Ebd. 275, 48 (1562) wann sie einen zu ihnen ins gericht tut, so ist er denen im gericht ein imbs schuldig. Brinkmann, Bad. Weist. 137, 36 (rhfrk., 1566) den schniedern zeit der ernden zu mittag zu essen ein suppen, gemüs und brot, und zu undern etwa ein sauer milchsuppen […] den fruchtbindern aber ein trunk weins zum imbs nach gelegenheit der menge. Ebd. 203, 31 (1603) ist zu wißen, daß man diesen königsleuten […] ein imbs zu geben schuldig ist. Franz u. a., Qu. hess. Ref. 2, 135, 28 (hess., um 1530) 2 fl. 9 alb., so bisher gehort haben zu dem brueder ymbs. Feudel, Evangelistar 128, 19 (omd., M. 14. Jh.) ,wenne du machist eyn ymmyz adir eyn abynt ezzen, so enlade nicht dyne frunt. Palm, Veter Buoch 69, 20 (schles., Hs. E. 14./A. 15. Jh.) Bereite vns ein gut imbiz durch diesen appel von egipto. Mon. Boica, NF. 1, 153, 1 (nobd., 2. H. 14. Jh.) Man sol […] alle jar dreu imbiz haben und zů jedem imbiz ein pfunt haller. Dinklage, Frk. Bauernweist. 48, 5 (nobd. 1465) wan das gericht gescheen ist, so mugen im die menner umb gunst und lieb willen woll ein imbiß biten. Bihlmeyer, Seuse 256, 28 (alem., 14. Jh.) Und do er ze einer zit also sas in der zelle nach dem imbis, da hat in daz liden úberwunden. Bernoulli, Basler Chron. 4, 91, 8 (alem., 1507) asz man zu ymbisz und zu nacht daselbs. Ebd. 95, 31 das die selben […] eydtgnossen uff dryen stuben alle ymbis […] morgens und nachts geessen haben. Geier, Stadtr. Überl. 249, 22 (nalem., 1584) Ir sollen aber nit mer […] mit ainander zů imbis essen. Illing, Albert. Sup. miss. 921 (els., n. 1380) dar vmbe ist dise edel wurtschaft genant ein naht mas, noch deme kein inbis me got. Chron. Strassb. 75, 14 (els., 1362) do worent […] vil […] in die stat gangen eßen, wand ez was in deme inbiße. Ebd. 505, 26 (A. 15. Jh.) dis geschach alles am ostertage vor ymbeße. […] Noch ymbeße gingent die Juden aber zů rote. Ebd. 1050, 39 (1401) 8 ℔ 8 fl. kostet der imbs die nuwen rittere offent uf des ammeisters stube. Kurrelmeyer, Dt. Bibel 7, 6, 3 (Straßb. 1466; Var. Augsb. 1475) es waz der mestag dez herren vnd ein gůt imbis [Var. Z. imbis oder mittagmal] ward gemacht. Ebd. 9, 512, 15 Var. wir gen heim wann es ist die stund des ymbiß [Var. Z. ymbiß oder morgenessens]. Ebd. 9, 522, 12 (1466) der engel des herrn sprach zů abacuck. Bring das ymbiß das du hast in babilon danieln. Pfeiffer-Belli, Murner. Kl. Schrr. 7, 30, 4 (Straßb. 1520) Als Jhesus zu ymbis gessen het, sprach er zu Simon petro. Roloff, Brant. Tsp. 1481 (Straßb. 1554) Wir weren wol bliben do heim noch heüt | […] | So hetten wir langest zů imbs fressen. Wickram 4, 21, 10 (Straßb. 1556) Als er […] seinem weib befalh […] auff den mornigen tag uff den ymbis / ein gůt mal anzůschicken. Ebd. 36, 33 Als sie […] ir zeit vertriben / bis das es umb den ymbis war. Ebd. 43, 35 Als nůn die armen leut den ymbis volbracht / hand sie Gott dem Herren lob und danck gesagt. Leisi, Thurg. UB 7, 1020, 22 (halem., E. 14. Jh.) Und sol im ain keller selb dritt den imbiß geben. Bachmann, Morgant 182, 35 (halem., 1530) gsach ein hyrt, der huot der rindern und wott by einem brunnen zymbiß essen. Plant u. a., Main. Naturl. 297ra, 27 (ohalem., Hs. E. 14. Jh.) So man danne gisset ze inbisse so sol man vf senften betten ein wile slafẽ. Kläui, Schweiz. Urbare 139, 9 (halem., 1384) die vorgen. guͤter sullent jerlich ein dienst einem kamrer geben, ein nachtzal und ein imbis mit fuͥnf pferden. Panzer, Seifrid Füetrers 175, 5 (moobd., 1478/84) nach dem der jmbis phrait ward, […] mit vleiß er ward verwappent wol. – Struck, Kollegiatstifte 289, 5; Krebs, a. a. O. 1, 4963, 5; 2, 7476, 3; Kollnig, a. a. O. 150, 26; Brinkmann, a. a. O. 67, 21; Bechstein, M. v. Beheim. Evang. Lk. 11, 38; 14, 12; Geier, a. a. O. 202, 27; Kurrelmeyer, a. a. O. 5, 365, 1; Bolte, Pauli. Schimpf u. Ernst 1, 166, 33; Harsdoerffer. Trichter 2, 150, 12; Bernoulli, a. a. O. 5, 278, 24; Bihlmeyer, a. a. O. 44, 5; 86, 27; Williams u. a., Els. Leg. Aurea 226, 21; Vetter, Pred. Taulers 30, 27; Roder, Hugs Vill. Chron. 180, 12; Koppitz, Trojanerkr. 746; Müller, Alte Landsch. St. Gallen 122, 42; Dierauer, Chron. Zürich 17, 3; Merz, Urk. Bremgarten 541, 12; Bachmann, a. a. O. 120, 22; ders., Haimonsk. 57, 31; hail. altvaͤter 100r, 15; Bremer, Voc. opt. 300; Munz, Füetrer, Persibein 166, 6; Panzer, a. a. O. 461, 1; Voc. rerum 74v; Voc. Teut.-Lat. p vr; Dasypodius 353v; Schöpper 48a; Maaler 235v; 292v; 442r; Apherdianus 67; Dict. Germ.-Gall.-Lat. 257; Rwb 6, 194; Pfälz. Wb. 3, 1296; Shess. Wb. 3, 892; Schwäb. Wb. 4, 20; Öst. Wb. 3, 225; Schweiz. Id. 1, 236; Vorarlb. Wb. 1, 1490. 2. im Syntagma früer imbis ›Morgenmahlzeit‹; metonymisch: ›Zeit der Essenseinnahme am Morgen‹. – Ggs.: vgl. abendbrot 1. Lauchert, Merswin 32, 13 (els., 1352/70) si sint morne vor frvͤgeme imbesse bi vns hie. Illing, Albert. Sup. miss. 915 (els., n. 1380) daz osterlembelin […] daz was also ein fruͤge inbis. Bihlmeyer, Seuse 74, 8 (alem., 14. Jh.) sú kamen in ein dorf vor fruͤgem inbiss. Welti, Stadtr. Bern 146, 16 (halem., 1407) alle winschenken […] suͥllent alle samstag von fruͤiem ymbis vntz zů conplet zit […] vnser vngelt antwuͥrten. Leisi, Thurg. UB 5, (halem., 1349) iij iuchart ackers und j wisli, dz het ainer wol ze vruͤiem immis abgemaͤcht. Chron. Augsb. 1, 51, 8 (schwäb., zu 1377) daz niderlegen zů Rüttlingen ist geschechen uf den donrstag nach dem hailigen pfingstag uf fruͤen inbiz. 3. ›Festmahl‹; in den Belegen Gebrauch des Wortes im Zusammenhang mit Festmahlen bei Fürsten, z. B. beim Kaiser, mit Hochzeiten und mit dem Leichenschmaus. Chron. Strassb. 482, 10 (els., A. 15. Jh.) Von dis keysers ymbeße mit den kurfürsten. Ebd. 483, 3 wan es was der herlicheste hof und ymbes und hofieren do das men ie von keysern geschriben vindet. Koppitz, Trojanerkr. 7192 (Hs. ˹noschweiz., 15. Jh.˺) Nun waz es komen uff die zitt | Als der imbis denn gelitt.| Der riche kaysser da gebott | Daz man win und brott | Uff trüg nach gewonhaitt. Welti, Stadtr. Bern 326, 25 (halem., n. 1437) von dißhin enkein geselschaft noch manne samenthaftlich mit einandren me uͥber kein grab gan sollent, nemlich nach dem imbis vff dem ersten tag, so man die lichen / begrabet. Müller, Stadtr. Ravensb. 132, 13 (oschwäb., 1413) und sol ouch vor imbis mit dem brutgelt nieman zů dem tantz gan noch zů dem tantz gan noch zů dem win ze schenken. Ebd. 210, 5 (1420) sol och vor imbiss mit dem brǔtgend nieman gaͧn zem win und im schenken. – Bechstein, M. v. Beheim. Evang. Mt. 22, 4; Brandstetter, Wigoleis 193, 3; Baumann-Zwirner, Augsb. Volksb. 456. 4. ›Mittagszeit, Zeit zwischen 11 und 12 Uhr‹ (ohne Bezug auf das Essen); offen zu 1. Bernoulli, Basler Chron. 5, 36, 26 (alem., Hs. um 1532) am 9. tag des hoͤwmonets umb den imbis beschach die schlacht. Ebd. 66, 13 anno domini 1386 do verlor die sunne iren schin uf den ymbis. Geier, Stadtr. Überl. 483, 21 (nalem., 1551) welcher nit will biß imbiß ohn gessen sein, der soll dahaim, ee er an daß werk gang essen. 5. ›das heilige Abendmahl‹. – Synt.: i. nemen / speisen; des i. warnemen. Helm, H. v. Hesler. Apok. 7384 (nrddt., 14. Jh.) Min vorborgen manne, | Daz ist aller sorgen vorgiz, | Daz wirt da mit im min inbiz. Martin, H. v. Sachsenh. 523 (schwäb., 1455) Wer hört zuo gottes tisch, | Der nem des inbis war. – Helm, a. a. O. 7348; Dehnhardt, Metaphorik d. Mystiker. 1940, 56. 6. ›Gebiß, Zahnreihe, Kiefer (des Pferdes)‹. – Schwäb. Wb. 6, 2230 (a. 1621).
+-->
+  <!--Interpunktionsloser Text:
+imbisinbisimbsderunddasØ/(s)eauchØdieReihenfolgederLemmaformenspiegeltdieBeleghäufigkeitwiederdarüberhinausherrschtgroßeSchreibvarianz1›MahlzeitamMorgenamMittagoder(vereinzelt)amAbend‹auch›Zwischenmahlzeit‹metonymisch›ZeitderEssenseinnahmeEssenszeit‹sowie›eingenommenesEssen‹inRechtstexten›rechtsbräuchlicheMahlzeit‹ZuverschiedenenBräuchenvglKramerVolkslBamb1967151sowieZoepflAlterthümer1860391ÜberwiegendfrkundalemBelegeBdvfrüsuppefrüstükmorgenbrotmittag2mittagessenmittagmalnachtmal1vglabendessen(das)12jausenSyntein(en)ibieten/einnemen/geben/halten/machen/nemen/volbringen/zubereiten/zurüstenjmein(en)ischuldigseindemgerichteinikostenjnzuiberufenzuiessen/fressenalsZeitangabeauf/umdeniin/nach/unter/vordemiSchadeSatuPasqu31324(orhein1520)sogeschichtes[…]daßhuntundwölfbeidobeimschafzůimsfreßenKrebsProtSpeyDomkap13957(rhfrk1513)derbischofzumwyhenachtenmitdemymbswiebishergehaltenwerdensolKollnigWeistSchriesh8920(rhfrkoJ)DerselbigepflegthernacherseinenaydsbrüdernsambtderenweibernzumeinstandeinenimbiszuegebenEbd27548(1562)wannsieeinenzuihneninsgerichttutsoisterdenenimgerichteinimbsschuldigBrinkmannBadWeist13736(rhfrk1566)denschniedernzeitdererndenzumittagzuesseneinsuppengemüsundbrotundzuundernetwaeinsauermilchsuppen[…]denfruchtbindernabereintrunkweinszumimbsnachgelegenheitdermengeEbd20331(1603)istzuwißendaßmandiesenkönigsleuten[…]einimbszugebenschuldigistFranzuaQuhessRef213528(hessum1530)2fl9albsobishergehorthabenzudembruederymbsFeudelEvangelistar12819(omdM14Jh)wennedumachisteynymmyzadireynabyntezzensoenladenichtdynefruntPalmVeterBuoch6920(schlesHsE14/A15Jh)BereitevnseingutimbizdurchdiesenappelvonegiptoMonBoicaNF11531(nobd2H14Jh)Mansol[…]allejardreuimbizhabenundzůjedemimbizeinpfunthallerDinklageFrkBauernweist485(nobd1465)wandasgerichtgescheenistsomugenimdiemennerumbgunstundliebwillenwolleinimbißbitenBihlmeyerSeuse25628(alem14Jh)UnddoerzeeinerzitalsosasinderzellenachdemimbisdahatindazlidenúberwundenBernoulliBaslerChron4918(alem1507)aszmanzuymbiszundzunachtdaselbsEbd9531dasdieselben[…]eydtgnossenuffdryenstubenalleymbis[…]morgensundnachtsgeessenhabenGeierStadtrÜberl24922(nalem1584)Irsollenabernitmer[…]mitainanderzůimbisessenIllingAlbertSupmiss921(elsn1380)darvmbeistdiseedelwurtschaftgenanteinnahtmasnochdemekeininbismegotChronStrassb7514(els1362)doworent[…]vil[…]indiestatgangeneßenwandezwasindemeinbißeEbd50526(A15Jh)disgeschachallesamostertagevorymbeße[…]NochymbeßegingentdieJudenaberzůroteEbd105039(1401)8℔8flkostetderimbsdienuwenrittereoffentufdesammeistersstubeKurrelmeyerDtBibel763(Straßb1466VarAugsb1475)eswazdermestagdezherrenvndeingůtimbis[VarZimbisodermittagmal]wardgemachtEbd951215Varwirgenheimwannesistdiestunddesymbiß[VarZymbißodermorgenessens]Ebd952212(1466)derengeldesherrnsprachzůabacuckBringdasymbißdasduhastinbabilondanielnPfeifferBelliMurnerKlSchrr7304(Straßb1520)AlsJhesuszuymbisgessenhetspracherzuSimonpetroRoloffBrantTsp1481(Straßb1554)Wirwerenwolblibendoheimnochheüt|[…]|SohettenwirlangestzůimbsfressenWickram42110(Straßb1556)Alser[…]seinemweibbefalh[…]auffdenmornigentaguffdenymbis/eingůtmalanzůschickenEbd3633Alssie[…]irzeitvertriben/bisdasesumbdenymbiswarEbd4335Alsnůndiearmenleutdenymbisvolbracht/handsieGottdemHerrenlobunddanckgesagtLeisiThurgUB7102022(halemE14Jh)UndsolimainkellerselbdrittdenimbißgebenBachmannMorgant18235(halem1530)gsacheinhyrtderhuotderrindernundwottbyeinembrunnenzymbißessenPlantuaMainNaturl297ra27(ohalemHsE14Jh)SomandannegissetzeinbissesosolmanvfsenftenbetteneinwileslafẽKläuiSchweizUrbare1399(halem1384)dievorgenguͤtersullentjerlicheindiensteinemkamrergebeneinnachtzalundeinimbismitfuͥnfpferdenPanzerSeifridFüetrers1755(moobd1478/84)nachdemderjmbisphraitward[…]mitvleißerwardverwappentwolStruckKollegiatstifte2895KrebsaaO149635274763KollnigaaO15026BrinkmannaaO6721BechsteinMvBeheimEvangLk11381412GeieraaO20227KurrelmeyeraaO53651BoltePauliSchimpfuErnst116633HarsdoerfferTrichter215012BernoulliaaO527824BihlmeyeraaO4458627WilliamsuaElsLegAurea22621VetterPredTaulers3027RoderHugsVillChron18012KoppitzTrojanerkr746MüllerAlteLandschStGallen12242DierauerChronZürich173MerzUrkBremgarten54112BachmannaaO12022dersHaimonsk5731hailaltvaͤter100r15BremerVocopt300MunzFüetrerPersibein1666PanzeraaO4611Vocrerum74vVocTeutLatpvrDasypodius353vSchöpper48aMaaler235v292v442rApherdianus67DictGermGallLat257Rwb6194PfälzWb31296ShessWb3892SchwäbWb420ÖstWb3225SchweizId1236VorarlbWb114902imSyntagmafrüerimbis›Morgenmahlzeit‹metonymisch›ZeitderEssenseinnahmeamMorgen‹Ggsvglabendbrot1LauchertMerswin3213(els1352/70)sisintmornevorfrvͤgemeimbessebivnshieIllingAlbertSupmiss915(elsn1380)dazosterlembelin[…]dazwasalsoeinfruͤgeinbisBihlmeyerSeuse748(alem14Jh)súkamenineindorfvorfruͤgeminbissWeltiStadtrBern14616(halem1407)allewinschenken[…]suͥllentallesamstagvonfruͤiemymbisvntzzůconpletzit[…]vnservngeltantwuͥrtenLeisiThurgUB5(halem1349)iijiuchartackersundjwislidzhetainerwolzevruͤiemimmisabgemaͤchtChronAugsb1518(schwäbzu1377)dazniderlegenzůRüttlingenistgeschechenufdendonrstagnachdemhailigenpfingstaguffruͤeninbiz3›Festmahl‹indenBelegenGebrauchdesWortesimZusammenhangmitFestmahlenbeiFürstenzBbeimKaisermitHochzeitenundmitdemLeichenschmausChronStrassb48210(elsA15Jh)VondiskeysersymbeßemitdenkurfürstenEbd4833waneswasderherlichestehofundymbesundhofierendodasmenievonkeyserngeschribenvindetKoppitzTrojanerkr7192(Hs˹noschweiz15Jh˺)Nunwazeskomenuffdiezitt|Alsderimbisdenngelitt|Derrichekaysserdagebott|Dazmanwinundbrott|UfftrügnachgewonhaittWeltiStadtrBern32625(halemn1437)vondißhinenkeingeselschaftnochmannesamenthaftlichmiteinandrenmeuͥberkeingrabgansollentnemlichnachdemimbisvffdemerstentagsomandielichen/begrabetMüllerStadtrRavensb13213(oschwäb1413)undsolouchvorimbismitdembrutgeltniemanzůdemtantzgannochzůdemtantzgannochzůdemwinzeschenkenEbd2105(1420)solochvorimbissmitdembrǔtgendniemangaͧnzemwinundimschenkenBechsteinMvBeheimEvangMt224BrandstetterWigoleis1933BaumannZwirnerAugsbVolksb4564›MittagszeitZeitzwischen11und12Uhr‹(ohneBezugaufdasEssen)offenzu1BernoulliBaslerChron53626(alemHsum1532)am9tagdeshoͤwmonetsumbdenimbisbeschachdieschlachtEbd6613annodomini1386doverlordiesunneirenschinufdenymbisGeierStadtrÜberl48321(nalem1551)welchernitwillbißimbißohngessenseindersolldahaimeeerandaßwerkgangessen5›dasheiligeAbendmahl‹Syntinemen/speisendesiwarnemenHelmHvHeslerApok7384(nrddt14Jh)Minvorborgenmanne|Dazistallersorgenvorgiz|DazwirtdamitimmininbizMartinHvSachsenh523(schwäb1455)Werhörtzuogottestisch|DernemdesinbiswarHelmaaO7348DehnhardtMetaphorikdMystiker1940566›GebißZahnreiheKiefer(desPferdes)‹SchwäbWb62230(a1621)
+imbisinbisimbsderunddasØ/(s)eauchØdieReihenfolgederLemmaformenspiegeltdieBeleghäufigkeitwiederdarüberhinausherrschtgroßeSchreibvarianz1›MahlzeitamMorgenamMittagoder(vereinzelt)amAbend‹auch›Zwischenmahlzeit‹metonymisch›ZeitderEssenseinnahmeEssenszeit‹sowie›eingenommenesEssen‹inRechtstexten›rechtsbräuchlicheMahlzeit‹ZuverschiedenenBräuchenvglKramerVolkslBamb1967151sowieZoepflAlterthümer1860391ÜberwiegendfrkundalemBelegeBdvfrüsuppefrüstükmorgenbrotmittag2mittagessenmittagmalnachtmal1vglabendessen(das)12jausenSyntein(en)ibieten/einnemen/geben/halten/machen/nemen/volbringen/zubereiten/zurüstenjmein(en)ischuldigseindemgerichteinikostenjnzuiberufenzuiessen/fressenalsZeitangabeauf/umdeniin/nach/unter/vordemiSchadeSatuPasqu31324(orhein1520)sogeschichtes[…]daßhuntundwölfbeidobeimschafzůimsfreßenKrebsProtSpeyDomkap13957(rhfrk1513)derbischofzumwyhenachtenmitdemymbswiebishergehaltenwerdensolKollnigWeistSchriesh8920(rhfrkoJ)DerselbigepflegthernacherseinenaydsbrüdernsambtderenweibernzumeinstandeinenimbiszuegebenEbd27548(1562)wannsieeinenzuihneninsgerichttutsoisterdenenimgerichteinimbsschuldigBrinkmannBadWeist13736(rhfrk1566)denschniedernzeitdererndenzumittagzuesseneinsuppengemüsundbrotundzuundernetwaeinsauermilchsuppen[…]denfruchtbindernabereintrunkweinszumimbsnachgelegenheitdermengeEbd20331(1603)istzuwißendaßmandiesenkönigsleuten[…]einimbszugebenschuldigistFranzuaQuhessRef213528(hessum1530)2fl9albsobishergehorthabenzudembruederymbsFeudelEvangelistar12819(omdM14Jh)wennedumachisteynymmyzadireynabyntezzensoenladenichtdynefruntPalmVeterBuoch6920(schlesHsE14/A15Jh)BereitevnseingutimbizdurchdiesenappelvonegiptoMonBoicaNF11531(nobd2H14Jh)Mansol[…]allejardreuimbizhabenundzůjedemimbizeinpfunthallerDinklageFrkBauernweist485(nobd1465)wandasgerichtgescheenistsomugenimdiemennerumbgunstundliebwillenwolleinimbißbitenBihlmeyerSeuse25628(alem14Jh)UnddoerzeeinerzitalsosasinderzellenachdemimbisdahatindazlidenúberwundenBernoulliBaslerChron4918(alem1507)aszmanzuymbiszundzunachtdaselbsEbd9531dasdieselben[…]eydtgnossenuffdryenstubenalleymbis[…]morgensundnachtsgeessenhabenGeierStadtrÜberl24922(nalem1584)Irsollenabernitmer[…]mitainanderzůimbisessenIllingAlbertSupmiss921(elsn1380)darvmbeistdiseedelwurtschaftgenanteinnahtmasnochdemekeininbismegotChronStrassb7514(els1362)doworent[…]vil[…]indiestatgangeneßenwandezwasindemeinbißeEbd50526(A15Jh)disgeschachallesamostertagevorymbeße[…]NochymbeßegingentdieJudenaberzůroteEbd105039(1401)8℔8flkostetderimbsdienuwenrittereoffentufdesammeistersstubeKurrelmeyerDtBibel763(Straßb1466VarAugsb1475)eswazdermestagdezherrenvndeingůtimbis[VarZimbisodermittagmal]wardgemachtEbd951215Varwirgenheimwannesistdiestunddesymbiß[VarZymbißodermorgenessens]Ebd952212(1466)derengeldesherrnsprachzůabacuckBringdasymbißdasduhastinbabilondanielnPfeifferBelliMurnerKlSchrr7304(Straßb1520)AlsJhesuszuymbisgessenhetspracherzuSimonpetroRoloffBrantTsp1481(Straßb1554)Wirwerenwolblibendoheimnochheüt|[…]|SohettenwirlangestzůimbsfressenWickram42110(Straßb1556)Alser[…]seinemweibbefalh[…]auffdenmornigentaguffdenymbis/eingůtmalanzůschickenEbd3633Alssie[…]irzeitvertriben/bisdasesumbdenymbiswarEbd4335Alsnůndiearmenleutdenymbisvolbracht/handsieGottdemHerrenlobunddanckgesagtLeisiThurgUB7102022(halemE14Jh)UndsolimainkellerselbdrittdenimbißgebenBachmannMorgant18235(halem1530)gsacheinhyrtderhuotderrindernundwottbyeinembrunnenzymbißessenPlantuaMainNaturl297ra27(ohalemHsE14Jh)SomandannegissetzeinbissesosolmanvfsenftenbetteneinwileslafẽKläuiSchweizUrbare1399(halem1384)dievorgenguͤtersullentjerlicheindiensteinemkamrergebeneinnachtzalundeinimbismitfuͥnfpferdenPanzerSeifridFüetrers1755(moobd1478/84)nachdemderjmbisphraitward[…]mitvleißerwardverwappentwolStruckKollegiatstifte2895KrebsaaO149635274763KollnigaaO15026BrinkmannaaO6721BechsteinMvBeheimEvangLk11381412GeieraaO20227KurrelmeyeraaO53651BoltePauliSchimpfuErnst116633HarsdoerfferTrichter215012BernoulliaaO527824BihlmeyeraaO4458627WilliamsuaElsLegAurea22621VetterPredTaulers3027RoderHugsVillChron18012KoppitzTrojanerkr746MüllerAlteLandschStGallen12242DierauerChronZürich173MerzUrkBremgarten54112BachmannaaO12022dersHaimonsk5731hailaltvaͤter100r15BremerVocopt300MunzFüetrerPersibein1666PanzeraaO4611Vocrerum74vVocTeutLatpvrDasypodius353vSchöpper48aMaaler235v292v442rApherdianus67DictGermGallLat257Rwb6194PfälzWb31296ShessWb3892SchwäbWb420ÖstWb3225SchweizId1236VorarlbWb114902imSyntagmafrüerimbis›Morgenmahlzeit‹metonymisch›ZeitderEssenseinnahmeamMorgen‹Ggsvglabendbrot1LauchertMerswin3213(els1352/70)sisintmornevorfrvͤgemeimbessebivnshieIllingAlbertSupmiss915(elsn1380)dazosterlembelin[…]dazwasalsoeinfruͤgeinbisBihlmeyerSeuse748(alem14Jh)súkamenineindorfvorfruͤgeminbissWeltiStadtrBern14616(halem1407)allewinschenken[…]suͥllentallesamstagvonfruͤiemymbisvntzzůconpletzit[…]vnservngeltantwuͥrtenLeisiThurgUB5(halem1349)iijiuchartackersundjwislidzhetainerwolzevruͤiemimmisabgemaͤchtChronAugsb1518(schwäbzu1377)dazniderlegenzůRüttlingenistgeschechenufdendonrstagnachdemhailigenpfingstaguffruͤeninbiz3›Festmahl‹indenBelegenGebrauchdesWortesimZusammenhangmitFestmahlenbeiFürstenzBbeimKaisermitHochzeitenundmitdemLeichenschmausChronStrassb48210(elsA15Jh)VondiskeysersymbeßemitdenkurfürstenEbd4833waneswasderherlichestehofundymbesundhofierendodasmenievonkeyserngeschribenvindetKoppitzTrojanerkr7192(Hs˹noschweiz15Jh˺)Nunwazeskomenuffdiezitt|Alsderimbisdenngelitt|Derrichekaysserdagebott|Dazmanwinundbrott|UfftrügnachgewonhaittWeltiStadtrBern32625(halemn1437)vondißhinenkeingeselschaftnochmannesamenthaftlichmiteinandrenmeuͥberkeingrabgansollentnemlichnachdemimbisvffdemerstentagsomandielichen/begrabetMüllerStadtrRavensb13213(oschwäb1413)undsolouchvorimbismitdembrutgeltniemanzůdemtantzgannochzůdemtantzgannochzůdemwinzeschenkenEbd2105(1420)solochvorimbissmitdembrǔtgendniemangaͧnzemwinundimschenkenBechsteinMvBeheimEvangMt224BrandstetterWigoleis1933BaumannZwirnerAugsbVolksb4564›MittagszeitZeitzwischen11und12Uhr‹(ohneBezugaufdasEssen)offenzu1BernoulliBaslerChron53626(alemHsum1532)am9tagdeshoͤwmonetsumbdenimbisbeschachdieschlachtEbd6613annodomini1386doverlordiesunneirenschinufdenymbisGeierStadtrÜberl48321(nalem1551)welchernitwillbißimbißohngessenseindersolldahaimeeerandaßwerkgangessen5›dasheiligeAbendmahl‹Syntinemen/speisendesiwarnemenHelmHvHeslerApok7384(nrddt14Jh)Minvorborgenmanne|Dazistallersorgenvorgiz|DazwirtdamitimmininbizMartinHvSachsenh523(schwäb1455)Werhörtzuogottestisch|DernemdesinbiswarHelmaaO7348DehnhardtMetaphorikdMystiker1940566›GebißZahnreiheKiefer(desPferdes)‹SchwäbWb62230(a1621)
+-->
+  <!--Original:
+<p2 uuid="79e67536-b5d9-4edf-afa9-9fd305c74e51"><b>imbis, inbis, imbs,</b> <i>der</i> und <i>das</i> ; <i>-Ø</i>/-(s)e, auch <i>-Ø</i> ; die Reihenfolge der Lemmaformen spiegelt die Beleghäufigkeit wieder; darüber hinaus herrscht große Schreibvarianz.</p2>
+<p2 uuid="5b854acd-9343-4a3e-9228-01c7f9e00563">1. ›Mahlzeit am Morgen, am Mittag oder (vereinzelt) am Abend‹ ; auch ›Zwischenmahlzeit‹ ; metonymisch ›Zeit der Essenseinnahme, Essenszeit‹ sowie ›eingenommenes Essen‹ ; in Rechtstexten ›rechtsbräuchliche Mahlzeit‹. – Zu verschiedenen Bräuchen vgl. <sc>Kramer</sc>, Volksl. Bamb. 1967, 151 sowie <sc>Zoepfl</sc>, Alterthümer. 1860, 391. – Überwiegend frk. und alem. Belege. – Bdv.: <i>früsuppe, früstük, morgenbrot, mittag</i> 2, <i>mittagessen, mittagmal, nachtmal</i> 1; vgl. <i>abendessen</i> (<i>das</i>) 1, <sup>2</sup><i>jausen</i>. – Synt.: <i>ein(en) i. bieten / einnemen / geben / halten / machen / nemen / volbringen / zubereiten / zurüsten, jm. ein(en) i. schuldig sein, dem gericht ein i. kosten; jn. zu i. berufen, zu i. essen / fressen</i> ; als Zeitangabe: <i>auf / um den i., in / nach / unter / vor dem i.</i></p2>
+<p><sc>Schade</sc>, Sat. u. Pasqu. 3, 13, 24 (orhein. 1520): <i>so geschicht es […] daß hunt und wölf beid ob eim schaf zů ims freßen</i>. <sc>Krebs</sc>, Prot. Spey. Domkap. 1, 3957 (rhfrk., 1513): <i>der bischof zum wyhenachten mit dem ymbs wie bisher gehalten werden sol</i>. <sc>Kollnig</sc>, Weist. Schriesh. 89, 20 (rhfrk., o. J.): <i>Derselbige pflegt hernacher seinen aydsbrüdern, sambt deren weibern zum einstand einen imbis zue geben</i>. <sc>Ebd</sc>. 275, 48 (1562): <i>wann sie einen zu ihnen ins gericht tut, so ist er denen im gericht ein imbs schuldig</i>. <sc>Brinkmann</sc>, Bad. Weist. 137, 36 (rhfrk., 1566): <i>den schniedern zeit der ernden zu mittag zu essen ein suppen, gemüs und brot, und zu undern etwa ein sauer milchsuppen […] den fruchtbindern aber ein trunk weins zum imbs nach gelegenheit der menge</i>. <sc>Ebd</sc>. 203, 31 (1603): <i>ist zu wißen, daß man diesen königsleuten […] ein imbs zu geben schuldig ist</i>. <sc>Franz</sc> u. a., Qu. hess. Ref. 2, 135, 28 (hess., um 1530): <i>2 fl. 9 alb., so bisher gehort haben zu dem brueder ymbs</i>. <sc>Feudel</sc>, Evangelistar 128, 19 (omd., M. 14. Jh.): <i>,wenne du machist eyn ymmyz adir eyn abynt ezzen, so enlade nicht dyne frunt</i>. <sc>Palm</sc>, Veter Buoch 69, 20 (schles., Hs. E. 14./A. 15. Jh.): <i>Bereite vns ein gut imbiz durch diesen appel von egipto</i>. <sc>Mon. Boica</sc>, NF. 1, 153, 1 (nobd., 2. H. 14. Jh.): <i>Man sol […] alle jar dreu imbiz haben und zů jedem imbiz ein pfunt haller</i>. <sc>Dinklage</sc>, Frk. Bauernweist. 48, 5 (nobd. 1465): <i>wan das gericht gescheen ist, so mugen im die menner umb gunst und lieb willen woll ein imbiß biten</i>. <sc>Bihlmeyer</sc>, Seuse 256, 28 (alem., 14. Jh.): <i>Und do er ze einer zit also sas in der zelle nach dem imbis, da hat in daz liden úberwunden</i>. <sc>Bernoulli</sc>, Basler Chron. 4, 91, 8 (alem., 1507): <i>asz man zu ymbisz und zu nacht daselbs</i>. <sc>Ebd</sc>. 95, 31: <i>das die selben […] eydtgnossen uff dryen stuben alle ymbis […] morgens und nachts geessen haben</i>. <sc>Geier</sc>, Stadtr. Überl. 249, 22 (nalem., 1584): <i>Ir sollen aber nit mer […] mit ainander zů imbis essen</i>. <sc>Illing</sc>, Albert. Sup. miss. 921 (els., n. 1380): <i>dar vmbe ist dise edel wurtschaft genant ein naht mas, noch deme kein inbis me got</i>. <sc>Chron. Strassb</sc>. 75, 14 (els., 1362): <i>do worent […] vil […] in die stat gangen eßen, wand ez was in deme inbiße</i>. <sc>Ebd</sc>. 505, 26 (A. 15. Jh.): <i>dis geschach alles am ostertage vor ymbeße. […] Noch ymbeße gingent die Juden aber zů rote</i>. <sc>Ebd</sc>. 1050, 39 (1401): <i>8 ℔ 8 fl. kostet der imbs die nuwen rittere offent uf des ammeisters stube</i>. <sc>Kurrelmeyer</sc>, Dt. Bibel 7, 6, 3 (Straßb. 1466; Var. Augsb. 1475): <i>es waz der mestag dez herren vnd ein gůt imbis</i> [Var. Z. <i>imbis oder mittagmal</i> ] <i>ward gemacht</i>. <sc>Ebd</sc>. 9, 512, 15 Var.: <i>wir gen heim wann es ist die stund des ymbiß</i> [Var. Z. <i>ymbiß oder morgenessens</i>]. <sc>Ebd</sc>. 9, 522, 12 (1466): <i>der engel des herrn sprach zů abacuck. Bring das ymbiß das du hast in babilon danieln</i>. <sc>Pfeiffer-Belli</sc>, Murner. Kl. Schrr. 7, 30, 4 (Straßb. 1520): <i>Als Jhesus zu ymbis gessen het, sprach er zu Simon petro</i>. <sc>Roloff</sc>, Brant. Tsp. 1481 (Straßb. 1554): <i>Wir weren wol bliben do heim noch heüt | […] | So hetten wir langest zů imbs fressen</i>. <sc>Wickram</sc> 4, 21, 10 (Straßb. 1556): <i>Als er […] seinem weib befalh […] auff den mornigen tag uff den ymbis / ein gůt mal anzůschicken</i>. <sc>Ebd</sc>. 36, 33: <i>Als sie […] ir zeit vertriben / bis das es umb den ymbis war</i>. <sc>Ebd</sc>. 43, 35: <i>Als nůn die armen leut den ymbis volbracht / hand sie Gott dem Herren lob und danck gesagt</i>. <sc>Leisi</sc>, Thurg. UB 7, 1020, 22 (halem., E. 14. Jh.): <i>Und sol im ain keller selb dritt den imbiß geben</i>. <sc>Bachmann</sc>, Morgant  182, 35 (halem., 1530): <i>gsach ein hyrt, der huot der rindern und wott by einem brunnen zymbiß essen</i>. <sc>Plant</sc> u. a., Main. Naturl. 297ra, 27 (ohalem., Hs. E. 14. Jh.): <i>So man danne gisset ze inbisse so sol man vf senften betten ein wile slafẽ</i>. <sc>Kläui</sc>, Schweiz. Urbare 139, 9 (halem., 1384): <i>die vorgen. guͤter sullent jerlich ein dienst einem kamrer geben, ein nachtzal und ein imbis mit fuͥnf pferden</i>. <sc>Panzer</sc>, Seifrid Füetrers 175, 5 (moobd., 1478/84): <i>nach dem der jmbis phrait ward, […] mit vleiß er ward verwappent wol</i>. – <sc>Struck</sc>, Kollegiatstifte 289, 5; <sc>Krebs</sc>, a. a. O. 1, 4963, 5; 2, 7476, 3; <sc>Kollnig</sc>, a. a. O. 150, 26; <sc>Brinkmann</sc>, a. a. O. 67, 21; <sc>Bechstein</sc>, M. v. Beheim. Evang. Lk. 11, 38; 14, 12; <sc>Geier</sc>, a. a. O. 202, 27; <sc>Kurrelmeyer</sc>, a. a. O. 5, 365, 1; <sc>Bolte</sc>, Pauli. Schimpf u. Ernst 1, 166, 33; <sc>Harsdoerffer</sc>. Trichter 2, 150, 12; <sc>Bernoulli</sc>, a. a. O. 5, 278, 24; <sc>Bihlmeyer</sc>, a. a. O. 44, 5; 86, 27; <sc>Williams</sc> u. a., Els. Leg. Aurea 226, 21; <sc>Vetter</sc>, Pred. Taulers 30, 27; <sc>Roder</sc>, Hugs Vill. Chron. 180, 12; <sc>Koppitz</sc>, Trojanerkr. 746; <sc>Müller</sc>, Alte Landsch. St. Gallen 122, 42; <sc>Dierauer</sc>, Chron. Zürich 17, 3; <sc>Merz</sc>, Urk. Bremgarten 541, 12; <sc>Bachmann</sc>, a. a. O. 120, 22; <sc>ders</sc>., Haimonsk. 57, 31; <sc>hail. altvaͤter</sc> 100r, 15; <sc>Bremer</sc>, Voc. opt. 300; <sc>Munz</sc>, Füetrer, Persibein 166, 6; <sc>Panzer</sc>, a. a. O. 461, 1; <sc>Voc. rerum</sc> 74v; <sc>Voc. Teut.-Lat</sc>. p vr; <sc>Dasypodius</sc> 353v; <sc>Schöpper</sc> 48a; <sc>Maaler</sc> 235v; 292v; 442r; <sc>Apherdianus</sc> 67; <sc>Dict. Germ.-Gall.-Lat</sc>. 257; <sc>Rwb</sc> 6, 194; <sc>Pfälz. Wb</sc>. 3, 1296; <sc>Shess. Wb</sc>. 3, 892; <sc>Schwäb. Wb</sc>. 4, 20; <sc>Öst. Wb</sc>. 3, 225; <sc>Schweiz. Id</sc>. 1, 236; <sc>Vorarlb. Wb</sc>. 1, 1490.</p>
+<p2 uuid="1bbc12d0-b6db-4919-91ec-f8c3847f3c83">2. im Syntagma <i>früer imbis</i> ›Morgenmahlzeit‹ ; metonymisch: ›Zeit der Essenseinnahme am Morgen‹. – Ggs.: vgl. <i>abendbrot</i> 1.</p2>
+<p><sc>Lauchert</sc>, Merswin 32, 13 (els., 1352/70): <i>si sint morne vor frvͤgeme imbesse bi vns hie</i>. <sc>Illing</sc>, Albert. Sup. miss. 915 (els., n. 1380): <i>daz osterlembelin […] daz was also ein fruͤge inbis</i>. <sc>Bihlmeyer</sc>, Seuse 74, 8 (alem., 14. Jh.): <i>sú kamen in ein dorf vor fruͤgem inbiss</i>. <sc>Welti</sc>, Stadtr. Bern 146, 16 (halem., 1407): <i>alle winschenken […] suͥllent alle samstag von fruͤiem ymbis vntz zů conplet zit […] vnser vngelt antwuͥrten</i>. <sc>Leisi</sc>, Thurg. UB 5, (halem., 1349): <i>iij iuchart ackers und j wisli, dz het ainer wol ze vruͤiem immis abgemaͤcht</i>. <sc>Chron. Augsb</sc>. 1, 51, 8 (schwäb., zu 1377): <i>daz niderlegen zů Rüttlingen ist geschechen uf den donrstag nach dem hailigen pfingstag uf fruͤen inbiz</i>.</p>
+<p2 uuid="6c9fd01c-367d-43b8-8470-f358d8f33977">3. ›Festmahl‹ ; in den Belegen Gebrauch des Wortes im Zusammenhang mit Festmahlen bei Fürsten, z. B. beim Kaiser, mit Hochzeiten und mit dem Leichenschmaus.</p2>
+<p><sc>Chron. Strassb</sc>. 482, 10 (els., A. 15. Jh.): <i>Von dis keysers ymbeße mit den kurfürsten</i>. <sc>Ebd</sc>. 483, 3: <i>wan es was der herlicheste hof und ymbes und hofieren do das men ie von keysern geschriben vindet</i>. <sc>Koppitz</sc>, Trojanerkr. 7192 (Hs. ˹noschweiz., 15. Jh.˺ ): <i>Nun waz es komen uff die zitt | Als der imbis denn gelitt.| Der riche kaysser da gebott | Daz man win und brott | Uff trüg nach gewonhaitt</i>. <sc>Welti</sc>, Stadtr. Bern 326, 25 (halem., n. 1437): <i>von dißhin enkein geselschaft noch manne samenthaftlich mit einandren me uͥber kein grab gan sollent, nemlich nach dem imbis vff dem ersten tag, so man die lichen / begrabet</i>. <sc>Müller</sc>, Stadtr. Ravensb. 132, 13 (oschwäb., 1413): <i>und sol ouch vor imbis mit dem brutgelt nieman zů dem tantz gan noch zů dem tantz gan noch zů dem win ze schenken</i>. <sc>Ebd</sc>. 210, 5 (1420): <i>sol och vor imbiss mit dem brǔtgend nieman gaͧn zem win und im schenken</i>. – <sc>Bechstein</sc>, M. v. Beheim. Evang. Mt. 22, 4; <sc>Brandstetter</sc>, Wigoleis 193, 3; <sc>Baumann-Zwirner</sc>, Augsb. Volksb. 456.</p>
+<p2 uuid="231f9fa8-faaa-42b1-a9f7-1385ddf88213">4. ›Mittagszeit, Zeit zwischen 11 und 12 Uhr‹ (ohne Bezug auf das Essen); offen zu 1.</p2>
+<p><sc>Bernoulli</sc>, Basler Chron. 5, 36, 26 (alem., Hs. um 1532): <i>am 9. tag des hoͤwmonets umb den imbis beschach die schlacht</i>. <sc>Ebd</sc>. 66, 13: <i>anno domini 1386 do verlor die sunne iren schin uf den ymbis</i>. <sc>Geier</sc>, Stadtr. Überl. 483, 21 (nalem., 1551): <i>welcher nit will biß imbiß ohn gessen sein, der soll dahaim, ee er an daß werk gang essen</i>.</p>
+<p2 uuid="d1817969-219c-4f1e-91fc-07902f7486ca">5. ›das heilige Abendmahl‹. – Synt.: <i>i. nemen / speisen; des i. warnemen</i>.</p2>
+<p><sc>Helm</sc>, H. v. Hesler. Apok. 7384 (nrddt., 14. Jh.): <i>Min vorborgen manne, | Daz ist aller sorgen vorgiz, | Daz wirt da mit im min inbiz</i>. <sc>Martin</sc>, H. v. Sachsenh. 523 (schwäb., 1455): <i>Wer hört zuo gottes tisch, | Der nem des inbis war</i>. – <sc>Helm</sc>, a. a. O. 7348; <sc>Dehnhardt</sc>, Metaphorik d. Mystiker. 1940, 56.</p>
+<p2 uuid="812461a2-7f10-4138-9c77-1f54f7cf1351">6. ›Gebiß, Zahnreihe, Kiefer (des Pferdes)‹. – <sc>Schwäb. Wb</sc>. 6, 2230 (a. 1621).</p2>
+
+-->
+
+</TEI>
