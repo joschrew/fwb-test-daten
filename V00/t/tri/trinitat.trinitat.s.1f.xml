@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>
+          trinitat
+        </title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence notBefore="2019-11-01"/>
+        </availability>
+      </publicationStmt>
+      <notesStmt>
+        <note type="orth.de_DE">trinität</note>
+        <note type="orth.de_DE">trinitas</note>
+      </notesStmt>
+      <sourceDesc>
+        <bibl type="printedSource">
+          <title>Frühneuhochdeutsches Wörterbuch</title>
+          <idno>bab49e39-dbce-4f3f-953b-7e3d52efa03c</idno>
+          <biblScope unit="volume">05</biblScope>
+          <biblScope unit="column">1443</biblScope>
+        </bibl>
+        <listBibl type="examples">
+          <bibl>
+            <!-- TODO: hier sollte die Liste der Quellen stehen -->
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <!-- Bedeutung der @type-Attribute in ref bzw. von @subtype in re -->
+        <taxonomy xml:id="ref.type_re.subtype">
+          <category xml:id="cnv">
+            <catDesc>konvertiert: aus dem Konvertierungsprozess</catDesc>
+          </category>
+          <category xml:id="nex">
+            <catDesc>nicht existent: Verweisziel in unbearbeitetem Lemmabereich</catDesc>
+          </category>
+          <category xml:id="non">
+            <catDesc>unbekannt: kein Ziel in der Verweisprüfung gefunden</catDesc>
+          </category>
+          <category xml:id="unc">
+            <catDesc>unsicher: nach Verweisprüfung mehrere Ziele möglich</catDesc>
+          </category>
+          <category xml:id="mat">
+            <catDesc>abgeglichen: durch Verweisprüfung eingetragen</catDesc>
+          </category>
+          <category xml:id="gen">
+            <catDesc>generiert: das Verweisziel ist als Synonym generiert worden</catDesc>
+          </category>
+          <category xml:id="sta">
+            <catDesc>stabil: manuell verifiziert</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in re -->
+        <taxonomy xml:id="re.type">
+          <category xml:id="re.neblem">
+            <catDesc>verbundener Eintrag: Nebenlemma (auch als Ziel eines Verweisartikels)</catDesc>
+          </category>
+          <category xml:id="re.wbg">
+            <catDesc>verbundener Eintrag: Wortbildung als Ziel eines Verweisartikels</catDesc>
+          </category>
+          <category xml:id="re.bdv">
+            <catDesc>verbundener Eintrag: Verweisziel ist synonym</catDesc>
+          </category>
+          <category xml:id="re.ggs">
+            <catDesc>verbundener Eintrag: Verweisziel ist antonym</catDesc>
+          </category>
+          <category xml:id="re.ofe">
+            <catDesc>verbundener Eintrag: Verweisziel im Orientierungsfeld</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in oRef (die Verwendung von "oRef." und "oVar." erfolgt bewusst!) -->
+        <taxonomy xml:id="oRef.type">
+          <category xml:id="oRef.lem">
+            <catDesc>Ellipse des Lemmas in den Kopfdaten eines Artikels</catDesc>
+          </category>
+          <category xml:id="oVar.lem">
+            <catDesc>Originalschreibung des Lemmas (in Zitaten)</catDesc>
+          </category>
+          <category xml:id="oVar.wbg">
+            <catDesc>Originalschreibung einer Wortbildung (in Zitaten)</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <tagsDecl>
+        <!-- Typografie: verwendet z.B. als <hi rendition="#sc">Text in Kapitälchen</hi> -->
+        <rendition xml:id="rect" scheme="css">font-variant: normal;</rendition>
+        <rendition xml:id="sc" scheme="css">font-variant: small-caps;</rendition>
+        <rendition xml:id="b" scheme="css">font-weight: bold;</rendition>
+        <rendition xml:id="it" scheme="css">font-style: italic;</rendition>
+        <rendition xml:id="hoch" scheme="css">vertical-align: super;</rendition>
+        <rendition xml:id="tief" scheme="css">vertical-align: sub;</rendition>
+        <rendition xml:id="wide" scheme="css">letter-spacing: 0.5em;</rendition>
+        <namespace name="http://www.tei-c.org/ns/1.0">
+          <!-- Bedeutung der unterschiedlichen dictScrap Bereiche -->
+          <tagUsage gi="dictScrap">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>artkopf</label>
+              <item>Artikelkopf</item>
+              <label>bdv</label>
+              <item>Synomyme</item>
+              <label>bls</label>
+              <item>Belegstellenangaben</item>
+              <label>cit</label>
+              <item>Quellenzitate</item>
+              <label>ggs</label>
+              <item>Antonyme</item>
+              <label>phrase</label>
+              <item>Phraseme</item>
+              <label>ra</label>
+              <item>Redensarten</item>
+              <label>ref</label>
+              <item>Sachkommentar</item>
+              <label>semcom</label>
+              <item>semantischer Kommentar</item>
+              <label>stw</label>
+              <item>Symptomwertangaben</item>
+              <label>sv</label>
+              <item>sub-voce-Angaben</item>
+              <label>synt</label>
+              <item>Syntagmen</item>
+              <label>vw</label>
+              <item>Verweis (bei Verweisstichwörtern)</item>
+              <label>wbg</label>
+              <item>Wortbildungen</item>
+              <label>wbv</label>
+              <item>Wortbildungsverweise</item>
+              <label>meta</label>
+              <item>Einschub, Einleitung oder ergänzende Texte</item>
+              <label>ipLiPkt</label>
+              <item>Punkt einer Informationsprogrammliste</item>
+              <label>BBlock</label>
+              <item>Abgrenzung eines Belegstellenblocks</item>
+            </list>
+          </tagUsage>
+          <tagUsage gi="citedRange">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>export</label>
+              <item>Ein ggf. vorhandener externer Link darf öffentlich exportiert werden</item>
+            </list>
+          </tagUsage>
+        </namespace>
+      </tagsDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change status="cnvResult">Text blieb erhalten; XML-Struktur: ok</change>
+      <change status="cnv" when-iso="2024-02-07">converted from print</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <entry xml:id="trinitat.s.1f" sortKey="trinitat.trinitat.s.1f">
+        <form type="lemma">
+          <orth>trinitat,</orth>
+        </form>
+        
+        <dictScrap rend="artkopf" xml:space="preserve">
+
+<!-- Nebenlemma -->
+<re type="re.neblem" subtype="mat" copyOf="trinität.s.9ref">trinität, </re><gram xml:space="preserve" type="wortart"><hi rendition="it">die</hi>;</gram> <gram xml:space="preserve" type="flex"><hi rendition="it"><oRef type="oRef.lem">-</oRef>Ø/–</hi>; auch mit lat. Flexionsendungen;</gram> <etym xml:space="preserve">zu <lang>mhd.</lang> <hi rendition="it">trinitât</hi> <desc>›Dreieinigkeit‹</desc> (<bibl xml:space="preserve"><name n="d51" cert="high">Lexer</name> <citedRange n="d51" facs="2,1515" rend="export" target="http://www.woerterbuchnetz.de/Lexer?bookref=2,1515,1">2, 1515</citedRange></bibl>); dies aus <lang>mlat.</lang> <hi rendition="it">trinitas</hi> <desc>›Heilige Dreifaltigkeit‹</desc> (<bibl xml:space="preserve"><name n="d81" cert="high">Kluge/S.</name> <citedRange n="d81" facs="2011,930">2011, 930</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/></bibl>; <bibl xml:space="preserve"><name n="d25" cert="high">Schulz/Basler</name> <citedRange n="d25" facs="5,464">5, 464</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/></bibl>).</etym></dictScrap>
+        
+        <!-- Bedeutung  -->
+        <sense>
+          <!-- Definition -->
+          <def>›Dreifaltigkeit, Dreieinigkeit‹; in der christlichen Glaubenslehre das zentrale Geheimnis der göttlichen Dreipersonalität, die Einheit von Vater, Sohn und Heiligem Geist, semantisierend / pragmatisierend; in den Belegen bezogen auf das Wesen und die Eigenschaften Gottes, auf die drei Personen Gottes (besonders den Sohn), auf die Auseinandersetzung des Christentums mit dem Judentum, auf das Abbild der Dreifaltigkeit in den Kreaturen, auf die Dreifaltigkeit als personalisierten Handlungsträger.</def>
+          <dictScrap rend="stw">Überwiegend Texte religiösen und didaktischen Inhalts.</dictScrap>
+          <dictScrap rend="ref">Zur Sache: <bibl xml:space="preserve"><name n="d61" cert="high">Lex. d. Mal.</name> <citedRange n="d61" facs="8,1011">8, 1011</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/></bibl>ff.; <bibl xml:space="preserve"><name n="d62" cert="high">LThK</name> <citedRange n="d62" facs="10,360">10, 360</citedRange><region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/></bibl>ff.</dictScrap>
+          <dictScrap rend="phras"><hi rendition="it">im namen der trinitat</hi> (als Ermächtigungs- und Autorisierungsformel).</dictScrap>
+          <dictScrap rend="bdv">(bzw. Orientierungsfeld): <re type="re.ofe"><ref type="mat" target="dreifalt.s.1f">dreifalt</ref> (<hi rendition="it">die</hi>), <ref type="mat" target="dreifaltigkeit.s.1f">dreifaltigkeit</ref> <ref type="mat" target="dreifaltigkeit.s.1f#dreifaltigkeit.s.1f_s1">1</ref>; <ref type="mat" target="dreifaltigkeit.s.1f#dreifaltigkeit.s.1f_s2">2</ref>; <ref type="mat" target="dreifaltigkeit.s.1f#dreifaltigkeit.s.1f_s3">3</ref>; <ref type="mat" target="dreifaltigkeit.s.1f#dreifaltigkeit.s.1f_s5">5</ref>, <ref type="mat" target="dreiheit.s.1f">dreiheit</ref>, <ref type="mat" target="got.s.0m">got</ref> <ref type="mat" target="got.s.0m#got.s.0m_s1">1</ref>, <ref type="mat" target="gutheit.s.1f">gutheit</ref> <ref type="mat" target="gutheit.s.1f#gutheit.s.1f_s4">4</ref>, <ref type="mat" target="majestat.s.1f">majestat</ref> <ref type="mat" target="majestat.s.1f#majestat.s.1f_s1">1</ref>; vgl. <ref type="mat" target="dreieinigkeit.s.1f">dreieinigkeit</ref>, <ref type="mat" target="geselschaft.s.1f">geselschaft</ref> <ref type="mat" target="geselschaft.s.1f#geselschaft.s.1f_s8">8</ref>, <hi rendition="hoch">1</hi><ref type="mat" target="glaube.h1.0m">glaube</ref> <ref type="mat" target="glaube.h1.0m#glaube.h1.0m_s1">1</ref>, <ref type="mat" target="gotheit.s.1f">gotheit</ref> <ref type="mat" target="gotheit.s.1f#gotheit.s.1f_s1">1</ref>, <hi rendition="hoch">1</hi><ref type="mat" target="gut.h1.2n">gut</ref> (<hi rendition="it">das</hi>) <ref type="mat" target="gut.h1.2n#gut.h1.2n_s7">7</ref>, <ref type="mat" target="meisterschaft.s.1f">meisterschaft</ref> <ref type="mat" target="meisterschaft.s.1f#meisterschaft.s.1f_s5">5</ref></re>.</dictScrap>
+          <dictScrap rend="synt"><hi rendition="it">die t</hi>. (Subj.) <hi rendition="it">geert, der natürlichen ungenosse, durch etw. geursacht sein, etw. erbauen, etw</hi>. (z. B. <hi rendition="it">das wort</hi>) <hi rendition="it">sprechen, noch anfang noch ende haben, jm. etw. beweisen</hi>; <hi rendition="it">j. / etw</hi>. (z. B. <hi rendition="it">keine kreatur</hi>) <hi rendition="it">der t. gegleichet werden</hi>; <hi rendition="it">etw</hi>. (z. B. <hi rendition="it">alleluja</hi>) <hi rendition="it">auf die t. ziehen, j. in der t. sein, j</hi>. (z. B. <hi rendition="it">die meid</hi> ›Jungfrau Maria‹) <hi rendition="it">mit der t. helfen, j. nichts mit der t. zu schaffen haben</hi>; <hi rendition="it">die benedicte / ganze / gedreite / götliche / heilige / hochgelobte / hohe / unbegreifenliche / ware t</hi>.; <hi rendition="it">die mutter, fustritte der t., die wirdigkeit trinitatis</hi>; <hi rendition="it">der schöpfer / son in seiner t., got mit seiner t</hi>.</dictScrap>
+          <dictScrap rend="wbg"><re type="re.wbg" subtype="mat" copyOf="trinitatis.s.9ref">trinitatis</re> ›das Dreifaltigkeitsfest; Trinitatis‹ (am 1. Sonntag nach Pfingsten).</dictScrap>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="30" cert="high">Fischer</name>, Brun v. Schoneb. <citedRange n="30" facs="4187" rend="export" target="https://commons.wikimedia.org/w/index.php?title=File:BLV_198_Brun_von_Schoenebeck_Das_Hohe_Lied.pdf&amp;page=189">4187</citedRange> (<region key="md.">md.</region><add>, Hs. </add><date from="1395" to="1405" confidence="0.0909">um 1400</date>)</bibl>
+              <quote xml:space="preserve">ja an dir [Maria] leit di <oRef norm="trinitatis" type="oVar.wbg" rend="automatic" n="83">trinitatis</oRef> wirdekeit,<lb/>got von dir enpfing di menscheit. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="284" cert="high">Laufs</name>, Reichskammergo. <citedRange n="284" facs="215,26">215, 26</citedRange> (<region key="pfälz.">Mainz</region> <date from="1555" to="1555" confidence="1">1555</date>)</bibl>
+              <quote xml:space="preserve">Vom Pfingstag abent biß an den Sontag <oRef norm="trinitatis" type="oVar.wbg" rend="automatic" n="93">Trinitatis</oRef> alles eingeschlossen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="24513" cert="high">Sudhoff</name>, Paracelsus <citedRange n="24513" facs="13,135,7" rend="export" target="https://publikationsserver.tu-braunschweig.de/rsc/viewer/dbbs_derivate_00000701/max/00000154.jpg">13, 135, 7</citedRange> (<region key="nalem."/><date from="1525" to="1535" confidence="0.0909">um 1530</date>)</bibl>
+              <quote xml:space="preserve">nun ist das wort auch dreifach gewesen, dan die <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="92">trinitet</oRef> hats gesprochen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="40" cert="high">Lindqvist</name>, K. v. Helmsd. <citedRange n="40" facs="4711">4711</citedRange> (<region key="halem.">halem.</region><add>, Hs. </add><date from="1430" to="1440" confidence="0.0909">um 1435</date>)</bibl>
+              <quote xml:space="preserve">Der [cristenhait] wirde und ere ist also brait<lb/>Das sÿ die hailge <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="92">trinitat</oRef><lb/>Sinem sun gemaͤchelt hat. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d15" cert="high">Rot</name> <citedRange n="d15" facs="357">357</citedRange> (<region key="schwäb.">Augsb.</region> <date from="1571" to="1571" confidence="1">1571</date>)</bibl>
+              <quote xml:space="preserve"><oRef norm="trinitat" type="oVar.lem" rend="automatic" n="90">Trinitet</oRef>, Dreyfaltigkeyt / die drey person Gottes in eim einigen wesen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="213a" cert="low">Klein</name>, Oswald <citedRange n="213a" facs="15,19">15, 19</citedRange> (<region key="oobd.">oobd.</region>, <date from="1405" to="1415" confidence="0.0909">um 1410</date>)</bibl>
+              <quote xml:space="preserve">hilf, mait, mit ganzer <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="93">trinitat</oRef>,<lb/>und las uns nicht der helle vas! </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="47" cert="high">Niewöhner</name>, Teichner <citedRange n="47" facs="236,75">236, 75</citedRange> (<add>Hs. ˹</add><region key="moobd.">moobd.</region>, <date from="1360" to="1360" confidence="1">1360</date>/<date from="1370" to="1370" confidence="1">70</date>˺)</bibl>
+              <quote xml:space="preserve">der pyscholf graiff im auf daz har:<lb/>,ich leich ew disew chirchen dar<lb/>in dem namen der trinitat.‘ </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="47" cert="high">Ebd.</name> <citedRange n="47" facs="332,11">332, 11</citedRange><region key="moobd."/> (<add>Hs. </add><date from="1400" to="1410" confidence="0.0909">n. 1400</date>)</bibl>
+              <quote xml:space="preserve">also ist end und anvanch<lb/>got mit seiner trinitas. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="47" cert="high">Ebd.</name> <citedRange n="47" facs="564,3450">564, 3450</citedRange><date from="1400" to="1410" confidence="0.0909"/><region key="moobd."/></bibl>
+              <quote xml:space="preserve">mit der <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="70">trinitat</oRef><lb/>wellen si [juden] nichtzen haben zeschaffen. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="1011" cert="high">Baptist-Hlawatsch</name>, U. v. Pottenst. <citedRange n="1011" facs="1954">1954</citedRange> (<region key="moobd.">moobd.</region>, <date from="1400" to="1420" confidence="0.0476">A. 15. Jh.</date>)</bibl>
+              <quote xml:space="preserve">Got wirdet gehaissen die sunne der gerechtichait [...] darumbe das die fueztritt der heyligen <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="91">trinitet</oRef> in der sunnen gespüret werden. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="1011" cert="high">Ebd.</name> <citedRange n="1011" facs="2006">2006</citedRange><date from="1400" to="1420" confidence="0.0476"/><region key="moobd."/></bibl>
+              <quote xml:space="preserve">Nu ist czu merkchen, [...] daz etleich geleichnüss der driualtichait in den creaturn erfunden werden, aber chain creatur ist, die in allen dingen der <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="91">trinitet</oRef> geleichet werd. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="1011" cert="high">Ebd.</name> <citedRange n="1011" facs="2043">2043</citedRange><date from="1400" to="1420" confidence="0.0476"/><region key="moobd."/></bibl>
+              <quote xml:space="preserve">die grözz, die czïr, der nücz der creatur beweyset dir die <oRef norm="trinitat" type="oVar.lem" rend="automatic" n="91">trinitet</oRef>: Die grözz den gewalt des vater, di schön vnd czir die weishait des suns, der nücz die gütichait des heyligen geistes.</quote>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- Belegstellen -->
+          <dictScrap rend="bls">
+            <cit>
+              <bibl xml:space="preserve"><name n="30" cert="high">Fischer</name>, a. a. O. <citedRange n="30" facs="12640" rend="export" target="https://commons.wikimedia.org/w/index.php?title=File:BLV_198_Brun_von_Schoenebeck_Das_Hohe_Lied.pdf&amp;page=440">12640</citedRange><region key="md."/><date from="1390" to="1410" confidence="0.0476"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="343" cert="high">Froning</name>, Alsf. Passionssp. <citedRange n="343" facs="3754" target="https://babel.hathitrust.org/cgi/pt?id=coo.31924082672787&amp;view=2up&amp;seq=41">3754</citedRange><region key="hess."/><date from="1501" to="1506" confidence="0.1667"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="113b" cert="high">Martin</name>, H. v. Sachsenh. Tempel <citedRange n="113b" facs="142">142</citedRange><region key="schwäb."/><date from="1455" to="1455" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="47" cert="high">Niewöhner</name>, a. a. O. <citedRange n="47" facs="464,1947">464, 1947</citedRange><region key="obd."/><date from="1360" to="1472" confidence="0.0088"/>; <citedRange n="47" facs="564,3168">564, 3168</citedRange><region key="obd."/><date from="1360" to="1472" confidence="0.0088"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="127" cert="high">Höver</name>, Bonaventura. Itin. B <citedRange n="127" facs="457">457</citedRange>f<region key="moobd."/><date from="1450" to="1499" confidence="0.02"/>.; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="455" cert="high">Munz</name>, Füetrer. Persibein <citedRange n="455" facs="229,4">229, 4</citedRange><region key="moobd."/><date from="1478" to="1484" confidence="0.1429"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="82" cert="high">Reithmeier</name>, B. v. Chiemsee <citedRange n="82" facs="7,2" rend="export" target="https://archive.org/details/MN41993ucmf_4/page/n85">7, 2</citedRange><region key="nmoobd."/><date from="1528" to="1528" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="461" cert="high">Schöpper</name> <citedRange n="461" facs="1a" rend="export" target="https://digital.staatsbibliothek-berlin.de/werkansicht?PPN=PPN671869167&amp;PHYSID=PHYS_0015&amp;DMDID=">1a</citedRange><region key="westf."/><date from="1550" to="1550" confidence="1"/>; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d25" cert="high">Schulz/Basler</name> <citedRange n="d25" facs="5,464">5, 464</citedRange>ff<region key="unknown"/><date from="1320" to="1680" confidence="0.0028"/>.; </bibl>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="d39" cert="high">Schweiz. Id.</name> <citedRange n="d39" facs="14,1082" rend="export" target="https://digital.idiotikon.ch/idtkn/id14.htm#!page/141081/mode/1up">14, 1082</citedRange><region key="alem."/><date from="1320" to="1680" confidence="0.0028"/>.</bibl>
+            </cit>
+            
+          </dictScrap>
+          
+          <!-- sub voce -->
+          <dictScrap rend="sv">Vgl. ferner s. v. <ref type="mat" target="alleluja.s.5int">alleluja</ref> <ref type="mat" target="alleluja.s.5int#alleluja.s.5int_s1">1</ref>, <ref type="mat" target="anfang.s.0m">anfang</ref> <ref type="mat" target="anfang.s.0m#anfang.s.0m_s1">1</ref>, <ref type="mat" target="gedreit.s.4adj">gedreit</ref>.</dictScrap>
+        </sense>
+      </entry>
+    </body>
+  </text>
+  
+  
+  
+  
+
+  <!--Texttest: Original
+trinitat, trinität, die; -Ø/–; auch mit lat. Flexionsendungen; zu mhd. trinitât ›Dreieinigkeit‹ (Lexer 2, 1515); dies aus mlat. trinitas ›Heilige Dreifaltigkeit‹ (Kluge/S. 2011, 930; Schulz/Basler 5, 464). ›Dreifaltigkeit, Dreieinigkeit‹; in der christlichen Glaubenslehre das zentrale Geheimnis der göttlichen Dreipersonalität, die Einheit von Vater, Sohn und Heiligem Geist, semantisierend / pragmatisierend; in den Belegen bezogen auf das Wesen und die Eigenschaften Gottes, auf die drei Personen Gottes (besonders den Sohn), auf die Auseinandersetzung des Christentums mit dem Judentum, auf das Abbild der Dreifaltigkeit in den Kreaturen, auf die Dreifaltigkeit als personalisierten Handlungsträger. – Überwiegend Texte religiösen und didaktischen Inhalts. – Zur Sache: Lex. d. Mal. 8, 1011ff.; LThK 10, 360ff. – Phras.: im namen der trinitat (als Ermächtigungs- und Autorisierungsformel). – Bdv. (bzw. Orientierungsfeld): dreifalt (die), dreifaltigkeit 1; 2; 3; 5, dreiheit, got 1, gutheit 4, majestat 1; vgl. dreieinigkeit, geselschaft 8, 1glaube 1, gotheit 1, 1gut (das) 7, meisterschaft 5. – Synt.: die t. (Subj.) geert, der natürlichen ungenosse, durch etw. geursacht sein, etw. erbauen, etw. (z. B. das wort) sprechen, noch anfang noch ende haben, jm. etw. beweisen; j. / etw. (z. B. keine kreatur) der t. gegleichet werden; etw. (z. B. alleluja) auf die t. ziehen, j. in der t. sein, j. (z. B. die meid ›Jungfrau Maria‹) mit der t. helfen, j. nichts mit der t. zu schaffen haben; die benedicte / ganze / gedreite / götliche / heilige / hochgelobte / hohe / unbegreifenliche / ware t.; die mutter, fustritte der t., die wirdigkeit trinitatis; der schöpfer / son in seiner t., got mit seiner t. Wbg.: trinitatis ›das Dreifaltigkeitsfest; Trinitatis‹ (am 1. Sonntag nach Pfingsten). Fischer, Brun v. Schoneb. 4187 (md., Hs. um 1400): ja an dir [Maria] leit di trinitatis wirdekeit, | got von dir enpfing di menscheit. Laufs, Reichskammergo. 215, 26 (Mainz 1555): Vom Pfingstag abent biß an den Sontag Trinitatis alles eingeschlossen. Sudhoff, Paracelsus 13, 135, 7 (um 1530): nun ist das wort auch dreifach gewesen, dan die trinitet hats gesprochen. Lindqvist, K. v. Helmsd. 4711 (halem., Hs. um 1435): Der [cristenhait] wirde und ere ist also brait | Das sÿ die hailge trinitat | Sinem sun gemaͤchelt hat. Rot 357 (Augsb. 1571): Trinitet, Dreyfaltigkeyt / die drey person Gottes in eim einigen wesen. Klein, Oswald 15, 19 (oobd., um 1410): hilf, mait, mit ganzer trinitat, | und las uns nicht der helle vas! Niewöhner, Teichner 236, 75 (Hs. ˹moobd., 1360/70˺): der pyscholf graiff im auf daz har: | ,ich leich ew disew chirchen dar | in dem namen der trinitat.‘ Ebd. 332, 11 (Hs. n. 1400): also ist end und anvanch | got mit seiner trinitas. Ebd. 564, 3450: mit der trinitat | wellen si [juden] nichtzen haben zeschaffen. Baptist-Hlawatsch, U. v. Pottenst. 1954 (moobd., A. 15. Jh.): Got wirdet gehaissen die sunne der gerechtichait [...] darumbe das die fueztritt der heyligen trinitet in der sunnen gespüret werden. Ebd. 2006: Nu ist czu merkchen, [...] daz etleich geleichnüss der driualtichait in den creaturn erfunden werden, aber chain creatur ist, die in allen dingen der trinitet geleichet werd. Ebd. 2043: die grözz, die czïr, der nücz der creatur beweyset dir die trinitet: Die grözz den gewalt des vater, di schön vnd czir die weishait des suns, der nücz die gütichait des heyligen geistes. – Fischer, a. a. O. 12640; Froning, Alsf. Passionssp. 3754; Martin, H. v. Sachsenh. Tempel 142; Niewöhner, a. a. O. 464, 1947; 564, 3168; Höver, Bonaventura. Itin. B 457f.; Munz, Füetrer. Persibein 229, 4; Reithmeier, B. v. Chiemsee 7, 2; Schöpper 1a; Schulz/Basler 5, 464ff.; Schweiz. Id. 14, 1082. – Vgl. ferner s. v. alleluja 1, anfang 1, gedreit.
+-->
+  <!--Texttest: Konvertiert
+trinitat, trinität, die; -Ø/–; auch mit lat. Flexionsendungen; zu mhd. trinitât ›Dreieinigkeit‹ (Lexer 2, 1515); dies aus mlat. trinitas ›Heilige Dreifaltigkeit‹ (Kluge/S. 2011, 930; Schulz/Basler 5, 464). ›Dreifaltigkeit, Dreieinigkeit‹; in der christlichen Glaubenslehre das zentrale Geheimnis der göttlichen Dreipersonalität, die Einheit von Vater, Sohn und Heiligem Geist, semantisierend / pragmatisierend; in den Belegen bezogen auf das Wesen und die Eigenschaften Gottes, auf die drei Personen Gottes (besonders den Sohn), auf die Auseinandersetzung des Christentums mit dem Judentum, auf das Abbild der Dreifaltigkeit in den Kreaturen, auf die Dreifaltigkeit als personalisierten Handlungsträger. – Überwiegend Texte religiösen und didaktischen Inhalts. – Zur Sache: Lex. d. Mal. 8, 1011ff.; LThK 10, 360ff. – Phras.: im namen der trinitat (als Ermächtigungs- und Autorisierungsformel). – Bdv.: (bzw. Orientierungsfeld): dreifalt (die), dreifaltigkeit 1; 2; 3; 5, dreiheit, got 1, gutheit 4, majestat 1; vgl. dreieinigkeit, geselschaft 8, 1glaube 1, gotheit 1, 1gut (das) 7, meisterschaft 5. – Synt.: die t. (Subj.) geert, der natürlichen ungenosse, durch etw. geursacht sein, etw. erbauen, etw. (z. B. das wort) sprechen, noch anfang noch ende haben, jm. etw. beweisen; j. / etw. (z. B. keine kreatur) der t. gegleichet werden; etw. (z. B. alleluja) auf die t. ziehen, j. in der t. sein, j. (z. B. die meid ›Jungfrau Maria‹) mit der t. helfen, j. nichts mit der t. zu schaffen haben; die benedicte / ganze / gedreite / götliche / heilige / hochgelobte / hohe / unbegreifenliche / ware t.; die mutter, fustritte der t., die wirdigkeit trinitatis; der schöpfer / son in seiner t., got mit seiner t. – Wbg.: trinitatis ›das Dreifaltigkeitsfest; Trinitatis‹ (am 1. Sonntag nach Pfingsten). Fischer, Brun v. Schoneb. 4187 (md., Hs. um 1400) ja an dir [Maria] leit di trinitatis wirdekeit, | got von dir enpfing di menscheit. Laufs, Reichskammergo. 215, 26 (Mainz 1555) Vom Pfingstag abent biß an den Sontag Trinitatis alles eingeschlossen. Sudhoff, Paracelsus 13, 135, 7 (um 1530) nun ist das wort auch dreifach gewesen, dan die trinitet hats gesprochen. Lindqvist, K. v. Helmsd. 4711 (halem., Hs. um 1435) Der [cristenhait] wirde und ere ist also brait | Das sÿ die hailge trinitat | Sinem sun gemaͤchelt hat. Rot 357 (Augsb. 1571) Trinitet, Dreyfaltigkeyt / die drey person Gottes in eim einigen wesen. Klein, Oswald 15, 19 (oobd., um 1410) hilf, mait, mit ganzer trinitat, | und las uns nicht der helle vas! Niewöhner, Teichner 236, 75 (Hs. ˹moobd., 1360/70˺) der pyscholf graiff im auf daz har: | ,ich leich ew disew chirchen dar | in dem namen der trinitat.‘ Ebd. 332, 11 (Hs. n. 1400) also ist end und anvanch | got mit seiner trinitas. Ebd. 564, 3450 mit der trinitat | wellen si [juden] nichtzen haben zeschaffen. Baptist-Hlawatsch, U. v. Pottenst. 1954 (moobd., A. 15. Jh.) Got wirdet gehaissen die sunne der gerechtichait [...] darumbe das die fueztritt der heyligen trinitet in der sunnen gespüret werden. Ebd. 2006 Nu ist czu merkchen, [...] daz etleich geleichnüss der driualtichait in den creaturn erfunden werden, aber chain creatur ist, die in allen dingen der trinitet geleichet werd. Ebd. 2043 die grözz, die czïr, der nücz der creatur beweyset dir die trinitet: Die grözz den gewalt des vater, di schön vnd czir die weishait des suns, der nücz die gütichait des heyligen geistes. – Fischer, a. a. O. 12640; Froning, Alsf. Passionssp. 3754; Martin, H. v. Sachsenh. Tempel 142; Niewöhner, a. a. O. 464, 1947; 564, 3168; Höver, Bonaventura. Itin. B 457f.; Munz, Füetrer. Persibein 229, 4; Reithmeier, B. v. Chiemsee 7, 2; Schöpper 1a; Schulz/Basler 5, 464ff.; Schweiz. Id. 14, 1082. – Vgl. ferner s. v. alleluja 1, anfang 1, gedreit.
+-->
+  <!--Interpunktionsloser Text:
+trinitattrinitätdieØ/auchmitlatFlexionsendungenzumhdtrinitât›Dreieinigkeit‹(Lexer21515)diesausmlattrinitas›HeiligeDreifaltigkeit‹(Kluge/S2011930Schulz/Basler5464)›DreifaltigkeitDreieinigkeit‹inderchristlichenGlaubenslehredaszentraleGeheimnisdergöttlichenDreipersonalitätdieEinheitvonVaterSohnundHeiligemGeistsemantisierend/pragmatisierendindenBelegenbezogenaufdasWesenunddieEigenschaftenGottesaufdiedreiPersonenGottes(besondersdenSohn)aufdieAuseinandersetzungdesChristentumsmitdemJudentumaufdasAbbildderDreifaltigkeitindenKreaturenaufdieDreifaltigkeitalspersonalisiertenHandlungsträgerÜberwiegendTextereligiösenunddidaktischenInhaltsZurSacheLexdMal81011ffLThK10360ffPhrasimnamendertrinitat(alsErmächtigungsundAutorisierungsformel)Bdv(bzwOrientierungsfeld)dreifalt(die)dreifaltigkeit1235dreiheitgot1gutheit4majestat1vgldreieinigkeitgeselschaft81glaube1gotheit11gut(das)7meisterschaft5Syntdiet(Subj)geertdernatürlichenungenossedurchetwgeursachtseinetwerbauenetw(zBdaswort)sprechennochanfangnochendehabenjmetwbeweisenj/etw(zBkeinekreatur)dertgegleichetwerdenetw(zBalleluja)aufdietziehenjindertseinj(zBdiemeid›JungfrauMaria‹)mitderthelfenjnichtsmitdertzuschaffenhabendiebenedicte/ganze/gedreite/götliche/heilige/hochgelobte/hohe/unbegreifenliche/waretdiemutterfustrittedertdiewirdigkeittrinitatisderschöpfer/soninseinertgotmitseinertWbgtrinitatis›dasDreifaltigkeitsfestTrinitatis‹(am1SonntagnachPfingsten)FischerBrunvSchoneb4187(mdHsum1400)jaandir[Maria]leitditrinitatiswirdekeit|gotvondirenpfingdimenscheitLaufsReichskammergo21526(Mainz1555)VomPfingstagabentbißandenSontagTrinitatisalleseingeschlossenSudhoffParacelsus131357(um1530)nunistdaswortauchdreifachgewesendandietrinitethatsgesprochenLindqvistKvHelmsd4711(halemHsum1435)Der[cristenhait]wirdeundereistalsobrait|Dassÿdiehailgetrinitat|SinemsungemaͤchelthatRot357(Augsb1571)TrinitetDreyfaltigkeyt/diedreypersonGottesineimeinigenwesenKleinOswald1519(oobdum1410)hilfmaitmitganzertrinitat|undlasunsnichtderhellevasNiewöhnerTeichner23675(Hs˹moobd1360/70˺)derpyscholfgraiffimaufdazhar|ichleichewdisewchirchendar|indemnamendertrinitat‘Ebd33211(Hsn1400)alsoistendundanvanch|gotmitseinertrinitasEbd5643450mitdertrinitat|wellensi[juden]nichtzenhabenzeschaffenBaptistHlawatschUvPottenst1954(moobdA15Jh)Gotwirdetgehaissendiesunnedergerechtichait[]darumbedasdiefueztrittderheyligentrinitetindersunnengespüretwerdenEbd2006Nuistczumerkchen[]dazetleichgeleichnüssderdriualtichaitindencreaturnerfundenwerdenaberchaincreaturistdieinallendingendertrinitetgeleichetwerdEbd2043diegrözzdieczïrdernüczdercreaturbeweysetdirdietrinitetDiegrözzdengewaltdesvaterdischönvndczirdieweishaitdessunsdernüczdiegütichaitdesheyligengeistesFischeraaO12640FroningAlsfPassionssp3754MartinHvSachsenhTempel142NiewöhneraaO46419475643168HöverBonaventuraItinB457fMunzFüetrerPersibein2294ReithmeierBvChiemsee72Schöpper1aSchulz/Basler5464ffSchweizId141082Vglfernersvalleluja1anfang1gedreit
+trinitattrinitätdieØ/auchmitlatFlexionsendungenzumhdtrinitât›Dreieinigkeit‹(Lexer21515)diesausmlattrinitas›HeiligeDreifaltigkeit‹(Kluge/S2011930Schulz/Basler5464)›DreifaltigkeitDreieinigkeit‹inderchristlichenGlaubenslehredaszentraleGeheimnisdergöttlichenDreipersonalitätdieEinheitvonVaterSohnundHeiligemGeistsemantisierend/pragmatisierendindenBelegenbezogenaufdasWesenunddieEigenschaftenGottesaufdiedreiPersonenGottes(besondersdenSohn)aufdieAuseinandersetzungdesChristentumsmitdemJudentumaufdasAbbildderDreifaltigkeitindenKreaturenaufdieDreifaltigkeitalspersonalisiertenHandlungsträgerÜberwiegendTextereligiösenunddidaktischenInhaltsZurSacheLexdMal81011ffLThK10360ffPhrasimnamendertrinitat(alsErmächtigungsundAutorisierungsformel)Bdv(bzwOrientierungsfeld)dreifalt(die)dreifaltigkeit1235dreiheitgot1gutheit4majestat1vgldreieinigkeitgeselschaft81glaube1gotheit11gut(das)7meisterschaft5Syntdiet(Subj)geertdernatürlichenungenossedurchetwgeursachtseinetwerbauenetw(zBdaswort)sprechennochanfangnochendehabenjmetwbeweisenj/etw(zBkeinekreatur)dertgegleichetwerdenetw(zBalleluja)aufdietziehenjindertseinj(zBdiemeid›JungfrauMaria‹)mitderthelfenjnichtsmitdertzuschaffenhabendiebenedicte/ganze/gedreite/götliche/heilige/hochgelobte/hohe/unbegreifenliche/waretdiemutterfustrittedertdiewirdigkeittrinitatisderschöpfer/soninseinertgotmitseinertWbgtrinitatis›dasDreifaltigkeitsfestTrinitatis‹(am1SonntagnachPfingsten)FischerBrunvSchoneb4187(mdHsum1400)jaandir[Maria]leitditrinitatiswirdekeit|gotvondirenpfingdimenscheitLaufsReichskammergo21526(Mainz1555)VomPfingstagabentbißandenSontagTrinitatisalleseingeschlossenSudhoffParacelsus131357(um1530)nunistdaswortauchdreifachgewesendandietrinitethatsgesprochenLindqvistKvHelmsd4711(halemHsum1435)Der[cristenhait]wirdeundereistalsobrait|Dassÿdiehailgetrinitat|SinemsungemaͤchelthatRot357(Augsb1571)TrinitetDreyfaltigkeyt/diedreypersonGottesineimeinigenwesenKleinOswald1519(oobdum1410)hilfmaitmitganzertrinitat|undlasunsnichtderhellevasNiewöhnerTeichner23675(Hs˹moobd1360/70˺)derpyscholfgraiffimaufdazhar|ichleichewdisewchirchendar|indemnamendertrinitat‘Ebd33211(Hsn1400)alsoistendundanvanch|gotmitseinertrinitasEbd5643450mitdertrinitat|wellensi[juden]nichtzenhabenzeschaffenBaptistHlawatschUvPottenst1954(moobdA15Jh)Gotwirdetgehaissendiesunnedergerechtichait[]darumbedasdiefueztrittderheyligentrinitetindersunnengespüretwerdenEbd2006Nuistczumerkchen[]dazetleichgeleichnüssderdriualtichaitindencreaturnerfundenwerdenaberchaincreaturistdieinallendingendertrinitetgeleichetwerdEbd2043diegrözzdieczïrdernüczdercreaturbeweysetdirdietrinitetDiegrözzdengewaltdesvaterdischönvndczirdieweishaitdessunsdernüczdiegütichaitdesheyligengeistesFischeraaO12640FroningAlsfPassionssp3754MartinHvSachsenhTempel142NiewöhneraaO46419475643168HöverBonaventuraItinB457fMunzFüetrerPersibein2294ReithmeierBvChiemsee72Schöpper1aSchulz/Basler5464ffSchweizId141082Vglfernersvalleluja1anfang1gedreit
+-->
+  <!--Original:
+<p2 uuid="bab49e39-dbce-4f3f-953b-7e3d52efa03c"><b>trinitat, trinität,</b> <i>die</i> ; <i>-Ø/–</i> ; auch mit lat. Flexionsendungen; zu mhd. <i>trinitât</i> ›Dreieinigkeit‹ (<sc>Lexer</sc> 2, 1515); dies aus mlat. <i>trinitas</i> ›Heilige Dreifaltigkeit‹ (<sc>Kluge/S</sc>. 2011, 930; <sc>Schulz/Basler</sc> 5, 464).</p2>
+<p2 uuid="7c144540-3ee0-4cda-b2d0-c36393bf18fe">›Dreifaltigkeit, Dreieinigkeit‹ ; in der christlichen Glaubenslehre das zentrale Geheimnis der göttlichen Dreipersonalität, die Einheit von Vater, Sohn und Heiligem Geist, semantisierend / pragmatisierend; in den Belegen bezogen auf das Wesen und die Eigenschaften Gottes, auf die drei Personen Gottes (besonders den Sohn), auf die Auseinandersetzung des Christentums mit dem Judentum, auf das Abbild der Dreifaltigkeit in den Kreaturen, auf die Dreifaltigkeit als personalisierten Handlungsträger. – Überwiegend Texte religiösen und didaktischen Inhalts. – Zur Sache: <sc>Lex. d. Mal</sc>. 8, 1011 ff.; <sc>LThK</sc> 10, 360 ff. – Phras.: <i>im namen der trinitat</i> (als Ermächtigungs- und Autorisierungsformel). – Bdv. (bzw. Orientierungsfeld): <i>dreifalt</i> (<i>die</i>), <i>dreifaltigkeit</i> 1; 2; 3; 5, <i>dreiheit, got</i> 1, <i>gutheit</i> 4, <i>majestat</i> 1; vgl. <i>dreieinigkeit, geselschaft</i> 8, <sup>1</sup><i>glaube</i> 1, <i>gotheit</i> 1, <sup>1</sup><i>gut</i> (<i>das</i>) 7, <i>meisterschaft</i> 5. – Synt.: <i>die t</i>. (Subj.) <i>geert, der natürlichen ungenosse, durch etw. geursacht sein, etw. erbauen, etw</i>. (z. B. <i>das wort</i> ) <i>sprechen, noch anfang noch ende haben, jm. etw. beweisen</i> ; <i>j. / etw</i>. (z. B. <i>keine kreatur</i>) <i>der t. gegleichet werden</i> ; <i>etw</i>. (z. B. <i>alleluja</i>) <i>auf die t. ziehen, j. in der t. sein, j</i>. (z. B. <i>die meid</i> ›Jungfrau Maria‹) <i>mit der t. helfen, j. nichts mit der t. zu schaffen haben</i> ; <i>die benedicte / ganze / gedreite / götliche / heilige / hochgelobte / hohe / unbegreifenliche / ware t</i>.; <i>die mutter, fustritte der t., die wirdigkeit trinitatis</i> ; <i>der schöpfer / son in seiner t., got mit seiner t</i>. Wbg.: <i>trinitatis</i> ›das Dreifaltigkeitsfest; Trinitatis‹ (am 1. Sonntag nach Pfingsten).</p2>
+<p><sc>Fischer</sc>, Brun v. Schoneb. 4187 (md., Hs. um 1400): <i>ja an dir [Maria] leit di trinitatis wirdekeit, | got von dir enpfing di menscheit</i>. <sc>Laufs</sc>, Reichskammergo. 215, 26 (Mainz 1555): <i>Vom Pfingstag abent biß an den Sontag Trinitatis alles eingeschlossen</i>. <sc>Sudhoff</sc>, Paracelsus 13, 135, 7 (um 1530): <i>nun ist das wort auch dreifach gewesen, dan die trinitet hats gesprochen</i>. <sc>Lindqvist</sc>, K. v. Helmsd. 4711 (halem., Hs. um 1435): <i>Der [cristenhait] wirde und ere ist also brait | Das sÿ die hailge trinitat | Sinem sun gemaͤchelt hat</i>. <sc>Rot</sc> 357 (Augsb. 1571): <i>Trinitet, Dreyfaltigkeyt / die drey person Gottes in eim einigen wesen</i>. <sc>Klein</sc>, Oswald 15, 19 (oobd., um 1410): <i>hilf, mait, mit ganzer trinitat, | und las uns nicht der helle vas!</i> <sc>Niewöhner</sc>, Teichner 236, 75 (Hs. ˹moobd., 1360/70˺ ): <i>der pyscholf graiff im auf daz har: | ,ich leich ew disew chirchen dar | in dem namen der trinitat.‘</i> <sc>Ebd</sc>. 332, 11 (Hs. n. 1400): <i>also ist end und anvanch | got mit seiner trinitas</i>. <sc>Ebd</sc>. 564, 3450: <i>mit der trinitat | wellen si [juden] nichtzen haben zeschaffen</i>. <sc>Baptist-Hlawatsch</sc>, U. v. Pottenst. 1954 (moobd., A. 15. Jh.): <i>Got wirdet gehaissen die sunne der gerechtichait [...] darumbe das die fueztritt der heyligen trinitet in der sunnen gespüret werden</i>. <sc>Ebd</sc>. 2006: <i>Nu ist czu merkchen, [...] daz etleich geleichnüss der driualtichait in den creaturn erfunden werden, aber chain creatur ist, die in allen dingen der trinitet geleichet werd</i>. <sc>Ebd</sc>. 2043: <i>die grözz, die czïr, der nücz der creatur beweyset dir die trinitet: Die grözz den gewalt des vater, di schön vnd czir die weishait des suns, der nücz die gütichait des heyligen geistes</i>. – <sc>Fischer</sc>, a. a. O. 12640; <sc>Froning</sc>, Alsf. Passionssp. 3754; <sc>Martin</sc>, H. v. Sachsenh. Tempel 142; <sc>Niewöhner</sc>, a. a. O. 464, 1947; 564, 3168; <sc>Höver</sc>, Bonaventura. Itin. B 457 f.; <sc>Munz</sc>, Füetrer. Persibein 229, 4; <sc>Reithmeier</sc>, B. v. Chiemsee 7, 2; <sc>Schöpper</sc> 1a; <sc>Schulz/Basler</sc> 5, 464 ff.; <sc>Schweiz. Id</sc>. 14, 1082 . – Vgl. ferner s. v. <i>alleluja</i> 1, <i>anfang</i> 1, <i>gedreit</i>.</p>
+
+-->
+
+</TEI>
