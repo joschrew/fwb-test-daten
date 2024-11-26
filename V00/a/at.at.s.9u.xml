@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>
+          at
+        </title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence notBefore="2004-11-01"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="printedSource">
+          <title>Frühneuhochdeutsches Wörterbuch</title>
+          <idno>ba88ebe2-6004-491c-b5b3-0c33e62099f9</idno>
+          <biblScope unit="volume">02</biblScope>
+          <biblScope unit="column">272</biblScope>
+        </bibl>
+        <listBibl type="examples">
+          <bibl>
+            <!-- TODO: hier sollte die Liste der Quellen stehen -->
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <!-- Bedeutung der @type-Attribute in ref bzw. von @subtype in re -->
+        <taxonomy xml:id="ref.type_re.subtype">
+          <category xml:id="cnv">
+            <catDesc>konvertiert: aus dem Konvertierungsprozess</catDesc>
+          </category>
+          <category xml:id="nex">
+            <catDesc>nicht existent: Verweisziel in unbearbeitetem Lemmabereich</catDesc>
+          </category>
+          <category xml:id="non">
+            <catDesc>unbekannt: kein Ziel in der Verweisprüfung gefunden</catDesc>
+          </category>
+          <category xml:id="unc">
+            <catDesc>unsicher: nach Verweisprüfung mehrere Ziele möglich</catDesc>
+          </category>
+          <category xml:id="mat">
+            <catDesc>abgeglichen: durch Verweisprüfung eingetragen</catDesc>
+          </category>
+          <category xml:id="gen">
+            <catDesc>generiert: das Verweisziel ist als Synonym generiert worden</catDesc>
+          </category>
+          <category xml:id="sta">
+            <catDesc>stabil: manuell verifiziert</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in re -->
+        <taxonomy xml:id="re.type">
+          <category xml:id="re.neblem">
+            <catDesc>verbundener Eintrag: Nebenlemma (auch als Ziel eines Verweisartikels)</catDesc>
+          </category>
+          <category xml:id="re.wbg">
+            <catDesc>verbundener Eintrag: Wortbildung als Ziel eines Verweisartikels</catDesc>
+          </category>
+          <category xml:id="re.bdv">
+            <catDesc>verbundener Eintrag: Verweisziel ist synonym</catDesc>
+          </category>
+          <category xml:id="re.ggs">
+            <catDesc>verbundener Eintrag: Verweisziel ist antonym</catDesc>
+          </category>
+          <category xml:id="re.ofe">
+            <catDesc>verbundener Eintrag: Verweisziel im Orientierungsfeld</catDesc>
+          </category>
+        </taxonomy>
+        <!-- Bedeutung des @type Attributs in oRef (die Verwendung von "oRef." und "oVar." erfolgt bewusst!) -->
+        <taxonomy xml:id="oRef.type">
+          <category xml:id="oRef.lem">
+            <catDesc>Ellipse des Lemmas in den Kopfdaten eines Artikels</catDesc>
+          </category>
+          <category xml:id="oVar.lem">
+            <catDesc>Originalschreibung des Lemmas (in Zitaten)</catDesc>
+          </category>
+          <category xml:id="oVar.wbg">
+            <catDesc>Originalschreibung einer Wortbildung (in Zitaten)</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <tagsDecl>
+        <!-- Typografie: verwendet z.B. als <hi rendition="#sc">Text in Kapitälchen</hi> -->
+        <rendition xml:id="rect" scheme="css">font-variant: normal;</rendition>
+        <rendition xml:id="sc" scheme="css">font-variant: small-caps;</rendition>
+        <rendition xml:id="b" scheme="css">font-weight: bold;</rendition>
+        <rendition xml:id="it" scheme="css">font-style: italic;</rendition>
+        <rendition xml:id="hoch" scheme="css">vertical-align: super;</rendition>
+        <rendition xml:id="tief" scheme="css">vertical-align: sub;</rendition>
+        <rendition xml:id="wide" scheme="css">letter-spacing: 0.5em;</rendition>
+        <namespace name="http://www.tei-c.org/ns/1.0">
+          <!-- Bedeutung der unterschiedlichen dictScrap Bereiche -->
+          <tagUsage gi="dictScrap">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>artkopf</label>
+              <item>Artikelkopf</item>
+              <label>bdv</label>
+              <item>Synomyme</item>
+              <label>bls</label>
+              <item>Belegstellenangaben</item>
+              <label>cit</label>
+              <item>Quellenzitate</item>
+              <label>ggs</label>
+              <item>Antonyme</item>
+              <label>phrase</label>
+              <item>Phraseme</item>
+              <label>ra</label>
+              <item>Redensarten</item>
+              <label>ref</label>
+              <item>Sachkommentar</item>
+              <label>semcom</label>
+              <item>semantischer Kommentar</item>
+              <label>stw</label>
+              <item>Symptomwertangaben</item>
+              <label>sv</label>
+              <item>sub-voce-Angaben</item>
+              <label>synt</label>
+              <item>Syntagmen</item>
+              <label>vw</label>
+              <item>Verweis (bei Verweisstichwörtern)</item>
+              <label>wbg</label>
+              <item>Wortbildungen</item>
+              <label>wbv</label>
+              <item>Wortbildungsverweise</item>
+              <label>meta</label>
+              <item>Einschub, Einleitung oder ergänzende Texte</item>
+              <label>ipLiPkt</label>
+              <item>Punkt einer Informationsprogrammliste</item>
+              <label>BBlock</label>
+              <item>Abgrenzung eines Belegstellenblocks</item>
+            </list>
+          </tagUsage>
+          <tagUsage gi="citedRange">
+            <title>Auflösung der @rend-Werte</title>
+            <list>
+              <label>export</label>
+              <item>Ein ggf. vorhandener externer Link darf öffentlich exportiert werden</item>
+            </list>
+          </tagUsage>
+        </namespace>
+      </tagsDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change status="cnvResult">Text blieb erhalten; XML-Struktur: ok</change>
+      <change status="cnv" when-iso="2024-11-18">converted from print</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <entry xml:id="at.s.9u" sortKey="at.at.s.9u">
+        <form type="lemma">
+          <orth>at,</orth>
+        </form>
+        
+        <dictScrap rend="artkopf" xml:space="preserve">
+        
+        <etym xml:space="preserve"> Etymologie und Wortart unsicher.</etym>
+        
+      </dictScrap>
+        
+        <!-- Bedeutung  -->
+        <sense>
+          <!-- Definition -->
+          <def>laut <bibl xml:space="preserve"><name n="492" cert="high">Henisch</name> eine kindersprachliche Interjektion</bibl>; im Beleg von H. Salat könnte die Bed. ›Essen‹ angesetzt werden.</def>
+          
+          <!-- Quellen -->
+          <dictScrap rend="cit">
+            <cit>
+              <bibl xml:space="preserve"><name n="492" cert="high">Henisch</name> <citedRange n="492" facs="135" rend="export" target="https://www.digitale-sammlungen.de/de/view/bsb10495873?page=84">135</citedRange> (<region key="schwäb.">Augsb.</region> <date from="1616" to="1616" confidence="1">1616</date>)</bibl>
+              <quote xml:space="preserve"><oRef norm="at" type="oVar.lem" rend="automatic" n="67">At</oRef> / ein woͤrtlin der Kinder / so speiß begeren / von as, esca. </quote>
+            </cit>
+            
+            <cit>
+              <bibl xml:space="preserve"><name n="724" cert="high">Bächtold</name>, H. Salat <citedRange n="724" facs="47,28" rend="export" target="https://archive.org/details/hanssalateinsch00baecgoog/page/n67">47, 28</citedRange> (<region key="halem.">Luzern</region> <date from="1534" to="1534" confidence="1">1534</date>)</bibl>
+              <quote xml:space="preserve">ward er krank, dass man meint, er hetts blatt; dann im moht kein aat werden.</quote>
+            </cit>
+            
+          </dictScrap>
+        </sense>
+      </entry>
+    </body>
+  </text>
+  
+  
+  
+  
+
+  <!--Texttest: Original
+at, Etymologie und Wortart unsicher. laut Henisch eine kindersprachliche Interjektion; im Beleg von H. Salat könnte die Bed. ›Essen‹ angesetzt werden. Henisch 135 (Augsb. 1616): At / ein woͤrtlin der Kinder / so speiß begeren / von as, esca. Bächtold, H. Salat 47, 28 (Luzern 1534): ward er krank, dass man meint, er hetts blatt; dann im moht kein aat werden.
+-->
+  <!--Texttest: Konvertiert
+at, Etymologie und Wortart unsicher. laut Henisch eine kindersprachliche Interjektion; im Beleg von H. Salat könnte die Bed. ›Essen‹ angesetzt werden. Henisch 135 (Augsb. 1616) At / ein woͤrtlin der Kinder / so speiß begeren / von as, esca. Bächtold, H. Salat 47, 28 (Luzern 1534) ward er krank, dass man meint, er hetts blatt; dann im moht kein aat werden.
+-->
+  <!--Interpunktionsloser Text:
+atEtymologieundWortartunsicherlautHenischeinekindersprachlicheInterjektionimBelegvonHSalatkönntedieBed›Essen‹angesetztwerdenHenisch135(Augsb1616)At/einwoͤrtlinderKinder/sospeißbegeren/vonasescaBächtoldHSalat4728(Luzern1534)warderkrankdassmanmeinterhettsblattdannimmohtkeinaatwerden
+atEtymologieundWortartunsicherlautHenischeinekindersprachlicheInterjektionimBelegvonHSalatkönntedieBed›Essen‹angesetztwerdenHenisch135(Augsb1616)At/einwoͤrtlinderKinder/sospeißbegeren/vonasescaBächtoldHSalat4728(Luzern1534)warderkrankdassmanmeinterhettsblattdannimmohtkeinaatwerden
+-->
+  <!--Original:
+<p2 uuid="ba88ebe2-6004-491c-b5b3-0c33e62099f9"><b>at,</b> Etymologie und Wortart unsicher.</p2>
+<p2 uuid="bf12d5d1-bf70-4c60-8381-f05a3d298040">laut <sc>Henisch</sc> eine kindersprachliche Interjektion; im Beleg von H. Salat könnte die Bed. ›Essen‹ angesetzt werden.</p2>
+<p><sc>Henisch</sc> 135 (Augsb. 1616): <i>At / ein woͤrtlin der Kinder / so speiß begeren / von as, esca.</i> <sc>Bächtold</sc>, H. Salat 47, 28 (Luzern 1534): <i>ward er krank, dass man meint, er hetts blatt; dann im moht kein aat werden.</i></p>
+
+-->
+
+</TEI>
